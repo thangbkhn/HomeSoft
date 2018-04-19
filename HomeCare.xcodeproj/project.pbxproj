@@ -12,7 +12,6 @@
 		1C0008D3205F471000971557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0008D1205F471000971557 /* Main.storyboard */; };
 		1C0008D5205F471100971557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0008D4205F471100971557 /* Assets.xcassets */; };
 		1C0008D8205F471100971557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0008D6205F471100971557 /* LaunchScreen.storyboard */; };
-		1C0008E0205F508400971557 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0008DF205F508400971557 /* MainScreen.swift */; };
 		1C0008E3205F522A00971557 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0008E2205F522A00971557 /* CustomTabBarController.swift */; };
 		1C0008E9205F6F3200971557 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0008E8205F6F3200971557 /* MyButton.swift */; };
 		1C0008EB205F758500971557 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0008EA205F758500971557 /* NotificationViewController.swift */; };
@@ -106,7 +105,6 @@
 		1C0008D4205F471100971557 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C0008D7205F471100971557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C0008D9205F471100971557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C0008DF205F508400971557 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		1C0008E2205F522A00971557 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		1C0008E8205F6F3200971557 /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		1C0008EA205F758500971557 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 		1C0008E4205F647000971557 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1C0008DF205F508400971557 /* MainScreen.swift */,
 				1C0008EA205F758500971557 /* NotificationViewController.swift */,
 				1C000906205FEA3600971557 /* PaymentViewController.swift */,
 				1C00090F2060FE0000971557 /* NotLoginViewController.swift */,
@@ -633,7 +630,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C0008E0205F508400971557 /* MainScreen.swift in Sources */,
 				1C0C623A206BDEBD00CBAC1B /* NewResidentViewController.swift in Sources */,
 				1C9697552064B33200EC0105 /* Constant.swift in Sources */,
 				1C9697572064B3D800EC0105 /* NotificationItem.swift in Sources */,

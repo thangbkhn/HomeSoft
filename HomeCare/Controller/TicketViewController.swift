@@ -62,6 +62,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         let titleV = UILabel()
         titleV.text = "YÊU CẦU"
         titleV.textColor = .white
+        titleV.font = UIFont.boldSystemFont(ofSize: 19)
         titleV.textAlignment = NSTextAlignment.center
         return titleV
     }()
@@ -207,7 +208,10 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
             addView?.tag = loginTag
             self.view.addSubview(addView!)
             loginView.didMove(toParentViewController: self)
+            self.titleView.frame = (self.navigationController?.view.frame)!
+            self.navigationItem.titleView = self.titleView
         }else{
+            self.navigationItem.titleView = self.searchController.searchBar;
             self.tbTicket.separatorStyle = .none
             setupResultController()
             if let viewWithTag = self.view.viewWithTag(loginTag){

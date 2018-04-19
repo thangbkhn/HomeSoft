@@ -267,7 +267,7 @@
                                     <constraint firstAttribute="height" constant="100" id="irb-ZX-kX3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOME CARE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0T9-ti-Nn2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMESOFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0T9-ti-Nn2">
                                 <rect key="frame" x="20" y="135" width="335" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="xmH-6s-0yA"/>

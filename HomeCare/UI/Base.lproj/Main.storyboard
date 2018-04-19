@@ -756,7 +756,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng cộng: 1.565.000 vnđ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="042-08-orC">
-                                                                    <rect key="frame" x="8" y="30" width="179.66666666666666" height="25"/>
+                                                                    <rect key="frame" x="8" y="30" width="359" height="25"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     <nil key="highlightedColor"/>
@@ -783,7 +783,7 @@
                                                                 <constraint firstItem="042-08-orC" firstAttribute="top" secondItem="3Xj-vO-mpZ" secondAttribute="bottom" id="UMv-5t-HsO"/>
                                                                 <constraint firstItem="fN5-gu-l5b" firstAttribute="top" secondItem="rHw-mb-axZ" secondAttribute="bottom" id="eCM-tL-EQV"/>
                                                                 <constraint firstItem="3Xj-vO-mpZ" firstAttribute="width" secondItem="r90-sE-VGa" secondAttribute="width" multiplier="1/2" id="iBv-nx-gKr"/>
-                                                                <constraint firstItem="042-08-orC" firstAttribute="trailing" secondItem="3Xj-vO-mpZ" secondAttribute="trailing" id="man-mM-OfG"/>
+                                                                <constraint firstItem="042-08-orC" firstAttribute="width" secondItem="r90-sE-VGa" secondAttribute="width" id="uJ1-tT-Zfm"/>
                                                                 <constraint firstAttribute="height" constant="55" id="veF-6d-5TI"/>
                                                             </constraints>
                                                         </view>

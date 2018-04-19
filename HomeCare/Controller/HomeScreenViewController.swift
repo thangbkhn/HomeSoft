@@ -24,6 +24,8 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
+        navigationController?.navigationBar.isTranslucent = false
         Messaging.messaging().subscribe(toTopic: "alert")
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
         imageView.contentMode = .scaleAspectFit

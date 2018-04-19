@@ -42,6 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Didot", size: 13)!],for: .normal)
         IQKeyboardManager.sharedManager().enable = true
         
+        let attrs = [
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 19)
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        
         return true
     }
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -99,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         return UIInterfaceOrientationMask.portrait
     }
     override init() {
-        UIFont.overrideInitialize()
+        //UIFont.overrideInitialize()
     }
 }
 extension AppDelegate : MessagingDelegate {
