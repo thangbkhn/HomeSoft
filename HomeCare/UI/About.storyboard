@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About View Controller-->
+        <scene sceneID="43F-9i-fRI">
+            <objects>
+                <viewController storyboardIdentifier="aboutVC" id="U60-mi-l1A" customClass="AboutViewController" customModule="HomeCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hri-bD-4ev">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_homecare" translatesAutoresizingMaskIntoConstraints="NO" id="88L-fG-vfj">
+                                <rect key="frame" x="137.5" y="52" width="100" height="100"/>
+                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4jo-nO-nZp"/>
+                                    <constraint firstAttribute="width" constant="100" id="gYk-KB-OcT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMESOFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlh-YH-zgb">
+                                <rect key="frame" x="50" y="167" width="275" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="i4W-2t-LSB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMESOFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHi-FG-L9Q">
+                                <rect key="frame" x="30" y="222" width="295" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E4w-lf-XqA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui6-bl-xVU">
+                                <rect key="frame" x="30" y="260" width="315" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="h95-ca-bGx"/>
+                                </constraints>
+                                <string key="text">As application provides communication channels, the exhchanger between the Manager Board and apartment residents, allowing paid basic service charge by phone</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coppyright: Star team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW2-t2-VKO">
+                                <rect key="frame" x="30" y="386" width="315" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cO4-HG-wEU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUK-fC-2NW">
+                                <rect key="frame" x="30" y="424" width="315" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="xBb-Mg-fHk"/>
+                                </constraints>
+                                <string key="text">Email: sonns1@gmail.com
+Website: homesafe.cpm.vn
+Hotline: 0978954549</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-dL-FMh">
+                                <rect key="frame" x="30" y="502" width="315" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4Na-4R-Wx1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.26274509800000001" green="0.5568627451" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="Rlh-YH-zgb" secondAttribute="trailing" constant="50" id="1jT-YM-JBm"/>
+                            <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="QW2-t2-VKO" secondAttribute="trailing" constant="30" id="2pX-bz-Rh7"/>
+                            <constraint firstItem="yUK-fC-2NW" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="5E2-Gf-uW2"/>
+                            <constraint firstItem="UHi-FG-L9Q" firstAttribute="top" secondItem="Rlh-YH-zgb" secondAttribute="bottom" constant="15" id="5FI-W0-MDl"/>
+                            <constraint firstItem="Rlh-YH-zgb" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="50" id="BUx-bY-5sV"/>
+                            <constraint firstItem="Rlh-YH-zgb" firstAttribute="centerX" secondItem="88L-fG-vfj" secondAttribute="centerX" id="FyM-be-zHo"/>
+                            <constraint firstItem="88L-fG-vfj" firstAttribute="top" secondItem="ExC-9q-oBB" secondAttribute="top" constant="32" id="HlA-pL-lqQ"/>
+                            <constraint firstItem="QW2-t2-VKO" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="J24-Bs-h1Q"/>
+                            <constraint firstItem="QW2-t2-VKO" firstAttribute="top" secondItem="ui6-bl-xVU" secondAttribute="bottom" constant="8" id="Jyg-v7-TBn"/>
+                            <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="UHi-FG-L9Q" secondAttribute="trailing" constant="50" id="V36-Bz-22K"/>
+                            <constraint firstItem="ui6-bl-xVU" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="WRN-76-HXv"/>
+                            <constraint firstItem="88L-fG-vfj" firstAttribute="centerX" secondItem="ExC-9q-oBB" secondAttribute="centerX" id="YdM-uA-yod"/>
+                            <constraint firstItem="Pka-dL-FMh" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="b1x-sH-zZr"/>
+                            <constraint firstItem="Pka-dL-FMh" firstAttribute="top" secondItem="yUK-fC-2NW" secondAttribute="bottom" constant="8" id="bzf-er-Ng0"/>
+                            <constraint firstItem="yUK-fC-2NW" firstAttribute="top" secondItem="QW2-t2-VKO" secondAttribute="bottom" constant="8" id="eFV-r9-3Sg"/>
+                            <constraint firstItem="ui6-bl-xVU" firstAttribute="top" secondItem="UHi-FG-L9Q" secondAttribute="bottom" constant="8" id="fpS-IV-Xo3"/>
+                            <constraint firstItem="UHi-FG-L9Q" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="hME-fH-kfV"/>
+                            <constraint firstAttribute="trailing" secondItem="ui6-bl-xVU" secondAttribute="trailing" constant="30" id="mY1-Ue-wmA"/>
+                            <constraint firstItem="Rlh-YH-zgb" firstAttribute="top" secondItem="88L-fG-vfj" secondAttribute="bottom" constant="15" id="pBx-Ez-aXW"/>
+                            <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="yUK-fC-2NW" secondAttribute="trailing" constant="30" id="vDn-ro-9Tz"/>
+                            <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="Pka-dL-FMh" secondAttribute="trailing" constant="30" id="x6w-MA-aSl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ExC-9q-oBB"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgLogo" destination="88L-fG-vfj" id="afd-av-9hf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1q9-HB-HGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="121.88905547226388"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_homecare" width="100" height="100"/>
+    </resources>
+</document>
