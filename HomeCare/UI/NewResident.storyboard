@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="XLG-5Z-qjv"/>
                                     <constraint firstAttribute="height" constant="46" id="ZGh-wo-eUv"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -65,7 +65,7 @@
                                     <constraint firstAttribute="height" constant="46" id="fMp-uJ-5Ms"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="vmc-j6-2Nf"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="joo-ZH-fUa"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="obD-d6-5e8"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -133,7 +133,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="cc6-rF-fyh"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="dg8-FP-WAa"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -286,7 +286,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="LRV-aG-lzb"/>
                                     <constraint firstAttribute="height" constant="46" id="nON-S2-SoU"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>

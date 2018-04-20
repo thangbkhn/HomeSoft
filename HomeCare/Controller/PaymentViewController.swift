@@ -26,12 +26,13 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:PaymentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "paymentItem", for: indexPath) as! PaymentTableViewCell
         let item = feeList[indexPath.row]
-        cell.tvDate.text = "Tháng: \(item.month)"
+        cell.tvDate.text = "Tháng \(item.month)/\(currentYear)"
         cell.tvMotorFee.text = "\(GlobalUtil.formatMoney(value: item.paymentParking))"
         cell.tvServiceFee.text = "\(GlobalUtil.formatMoney(value: item.paymentService))"
         cell.tvWaterFee.text = "\(GlobalUtil.formatMoney(value: item.paymentWater))"
         cell.tvElectricFee.text = "\(GlobalUtil.formatMoney(value: item.paymentElectric))"
-        cell.tvSumFee.text = "\(GlobalUtil.formatMoney(value: item.paymentParking + item.paymentService + item.paymentWater + item.paymentElectric))"
+        cell.tvSumFee.text = "Tổng: \(GlobalUtil.formatMoney(value: item.paymentParking + item.paymentService + item.paymentWater + item.paymentElectric))"
+        cell.tvNotifyDate.text = "Ngày thông báo: \(item.createdDatetime?.substring(with: 0..<10) ?? "")"
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.clear
         cell.selectedBackgroundView = backgroundView
@@ -104,6 +105,7 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.view.addSubview(addView!)
             loginView.didMove(toParentViewController: self)
         }else{
+            tbPayment.separatorStyle = .none
             NotificationCenter.default.addObserver(self, selector: #selector(reloadFormPayment(_:)), name: NotificationConstant.reloadFromChartView, object: nil)
             tbYear.setTitle("Năm \(currentYear)", for: .normal)
             if let viewWithTag = self.view.viewWithTag(loginTag){

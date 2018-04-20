@@ -15,6 +15,7 @@ class PaymentTableViewCell: UITableViewCell {
     @IBOutlet var tvServiceFee: UILabel!
     @IBOutlet var tvWaterFee: UILabel!
     @IBOutlet var tvElectricFee: UILabel!
+    @IBOutlet var tvNotifyDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
