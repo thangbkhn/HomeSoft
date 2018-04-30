@@ -105,6 +105,7 @@
 		A078192D2096A676003E1DA9 /* SqliteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192C2096A676003E1DA9 /* SqliteHelper.swift */; };
 		A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */; };
 		A07819332096DA4C003E1DA9 /* ReviewDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */; };
+		A0BD9F2020975A8B00632CB4 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD9F1F20975A8B00632CB4 /* RateViewController.swift */; };
 		A0DF0A45208643530025911F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF0A44208643530025911F /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +211,7 @@
 		A078192C2096A676003E1DA9 /* SqliteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteHelper.swift; sourceTree = "<group>"; };
 		A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewDialog.storyboard; sourceTree = "<group>"; };
+		A0BD9F1F20975A8B00632CB4 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		A0DF0A44208643530025911F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C48F39D5A68B477A2447E731 /* Pods_HomeCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE96B4B2A0E65E4790D3633C /* Pods-HomeCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeCare/Pods-HomeCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				1CC0B713207CE1AC00CFD374 /* HelpViewController.swift */,
 				1C59AA4D20806E5900CAAE49 /* FilterTicketTableViewController.swift */,
 				A0DF0A44208643530025911F /* AboutViewController.swift */,
+				A0BD9F1F20975A8B00632CB4 /* RateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				1CA00F3320858E530073745E /* JSONAble.swift in Sources */,
 				1C96975D20651F6400EC0105 /* TicketResponse.swift in Sources */,
 				1C9697532064B1C600EC0105 /* GlobalInfo.swift in Sources */,
+				A0BD9F2020975A8B00632CB4 /* RateViewController.swift in Sources */,
 				1CA00F3820858EE00073745E /* MyTextField.swift in Sources */,
 				1C0C6228206B80E900CBAC1B /* TicketType.swift in Sources */,
 				1C0008F8205FAAAD00971557 /* NotificationTestItem.swift in Sources */,
