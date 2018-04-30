@@ -853,6 +853,21 @@
                                             <outlet property="delegate" destination="WQg-Wv-v3X" id="vmQ-TC-2Vm"/>
                                         </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX8-yy-lR7">
+                                        <rect key="frame" x="309" y="679" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.60784313729999995" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Z8A-Dt-lDM"/>
+                                            <constraint firstAttribute="height" constant="50" id="g5e-md-orP"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                        <state key="normal" image="review"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -866,8 +881,10 @@
                                     <constraint firstAttribute="trailing" secondItem="ibD-rC-76F" secondAttribute="trailing" id="ein-62-I1P"/>
                                     <constraint firstAttribute="trailing" secondItem="KAW-Tl-qIm" secondAttribute="trailing" id="hp4-ky-fr1"/>
                                     <constraint firstAttribute="trailing" secondItem="6NH-5H-i3r" secondAttribute="trailing" id="iWT-qW-ywH"/>
+                                    <constraint firstAttribute="bottom" secondItem="cX8-yy-lR7" secondAttribute="bottom" constant="5" id="jB8-tb-gc8"/>
                                     <constraint firstItem="ibD-rC-76F" firstAttribute="leading" secondItem="TjQ-ZU-hVg" secondAttribute="leading" id="piC-ei-got"/>
                                     <constraint firstAttribute="trailing" secondItem="IAf-D6-cIu" secondAttribute="trailing" id="qgF-PS-DhL"/>
+                                    <constraint firstAttribute="trailing" secondItem="cX8-yy-lR7" secondAttribute="trailing" id="zAh-li-rSz"/>
                                     <constraint firstItem="6NH-5H-i3r" firstAttribute="leading" secondItem="TjQ-ZU-hVg" secondAttribute="leading" id="zJ2-pI-oz5"/>
                                 </constraints>
                             </view>
@@ -2472,6 +2489,7 @@
         <image name="placeholder" width="32" height="32"/>
         <image name="power" width="256" height="256"/>
         <image name="reply-all" width="64" height="64"/>
+        <image name="review" width="128" height="128"/>
         <image name="service" width="32" height="32"/>
         <image name="service1" width="327" height="350"/>
         <image name="service_ic" width="300" height="300"/>

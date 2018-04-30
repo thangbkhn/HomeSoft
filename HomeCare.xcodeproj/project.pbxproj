@@ -104,6 +104,7 @@
 		A057FAD62088E65C00322934 /* ConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057FAD52088E65C00322934 /* ConvertHelper.swift */; };
 		A078192D2096A676003E1DA9 /* SqliteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192C2096A676003E1DA9 /* SqliteHelper.swift */; };
 		A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */; };
+		A07819332096DA4C003E1DA9 /* ReviewDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */; };
 		A0DF0A45208643530025911F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF0A44208643530025911F /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -208,6 +209,7 @@
 		A057FAD52088E65C00322934 /* ConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertHelper.swift; sourceTree = "<group>"; };
 		A078192C2096A676003E1DA9 /* SqliteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteHelper.swift; sourceTree = "<group>"; };
 		A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewDialog.storyboard; sourceTree = "<group>"; };
 		A0DF0A44208643530025911F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C48F39D5A68B477A2447E731 /* Pods_HomeCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE96B4B2A0E65E4790D3633C /* Pods-HomeCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeCare/Pods-HomeCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				A057FAD22088E32700322934 /* RequestCell.xib */,
+				A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */,
 			);
 			path = NibUI;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				1CC0B71F207E47EA00CFD374 /* About.storyboard in Resources */,
 				1CC0B712207CDFE600CFD374 /* Help.storyboard in Resources */,
 				1C27290E207B7E780031CA90 /* Courier Oblique.otf in Resources */,
+				A07819332096DA4C003E1DA9 /* ReviewDialog.storyboard in Resources */,
 				1C96975F206524C900EC0105 /* TicketRequest.storyboard in Resources */,
 				1C0008D8205F471100971557 /* LaunchScreen.storyboard in Resources */,
 				1C0008D5205F471100971557 /* Assets.xcassets in Resources */,
