@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RAMAnimatedTabBarController
 
 class ResidentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UpdateSuccess {
 
@@ -26,6 +27,10 @@ class ResidentViewController: UIViewController, UITableViewDelegate, UITableView
         if frame == nil {
             frame = self.view.frame
         }
+        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        let backButton = UIBarButtonItem(title: "Thành viên gia đình", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         if !isLogin {
             let loginStoryboard :UIStoryboard = UIStoryboard(name: "NotLoginScreen", bundle: nil)
@@ -123,5 +128,15 @@ class ResidentViewController: UIViewController, UITableViewDelegate, UITableView
         if isSuccess{
             loadResident()
         }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.showTabar(isShow: true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.showTabar(isShow: false)
+    }
+    func showTabar(isShow:Bool)  {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(!isShow)
     }
 }

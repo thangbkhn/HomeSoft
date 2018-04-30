@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--YÊU CẦU MỚI-->
+        <!--New Request View Controller-->
         <scene sceneID="MUx-Vm-a75">
             <objects>
-                <viewController storyboardIdentifier="newRequest" title="YÊU CẦU MỚI" id="Vm6-fk-pPc" customClass="NewRequestViewController" customModule="HomeCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newRequest" id="Vm6-fk-pPc" customClass="NewRequestViewController" customModule="HomeCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kvc-lS-9vZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

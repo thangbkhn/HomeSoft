@@ -31,15 +31,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMESOFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlh-YH-zgb">
-                                <rect key="frame" x="50" y="167" width="275" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="i4W-2t-LSB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMESOFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHi-FG-L9Q">
                                 <rect key="frame" x="30" y="222" width="295" height="30"/>
                                 <constraints>
@@ -89,30 +80,35 @@ Hotline: 0978954549</string>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon3" translatesAutoresizingMaskIntoConstraints="NO" id="jT7-K7-wLF">
+                                <rect key="frame" x="30" y="160" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UbT-ku-Q76"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.5568627451" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="Rlh-YH-zgb" secondAttribute="trailing" constant="50" id="1jT-YM-JBm"/>
                             <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="QW2-t2-VKO" secondAttribute="trailing" constant="30" id="2pX-bz-Rh7"/>
                             <constraint firstItem="yUK-fC-2NW" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="5E2-Gf-uW2"/>
-                            <constraint firstItem="UHi-FG-L9Q" firstAttribute="top" secondItem="Rlh-YH-zgb" secondAttribute="bottom" constant="15" id="5FI-W0-MDl"/>
-                            <constraint firstItem="Rlh-YH-zgb" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="50" id="BUx-bY-5sV"/>
-                            <constraint firstItem="Rlh-YH-zgb" firstAttribute="centerX" secondItem="88L-fG-vfj" secondAttribute="centerX" id="FyM-be-zHo"/>
+                            <constraint firstItem="jT7-K7-wLF" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="Ffk-Jm-dxE"/>
                             <constraint firstItem="88L-fG-vfj" firstAttribute="top" secondItem="ExC-9q-oBB" secondAttribute="top" constant="32" id="HlA-pL-lqQ"/>
                             <constraint firstItem="QW2-t2-VKO" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="J24-Bs-h1Q"/>
                             <constraint firstItem="QW2-t2-VKO" firstAttribute="top" secondItem="ui6-bl-xVU" secondAttribute="bottom" constant="8" id="Jyg-v7-TBn"/>
                             <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="UHi-FG-L9Q" secondAttribute="trailing" constant="50" id="V36-Bz-22K"/>
                             <constraint firstItem="ui6-bl-xVU" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="WRN-76-HXv"/>
                             <constraint firstItem="88L-fG-vfj" firstAttribute="centerX" secondItem="ExC-9q-oBB" secondAttribute="centerX" id="YdM-uA-yod"/>
+                            <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="jT7-K7-wLF" secondAttribute="trailing" constant="30" id="Yj6-Kr-ng1"/>
                             <constraint firstItem="Pka-dL-FMh" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="b1x-sH-zZr"/>
+                            <constraint firstItem="UHi-FG-L9Q" firstAttribute="top" secondItem="88L-fG-vfj" secondAttribute="bottom" constant="70" id="bD7-YQ-BoR"/>
                             <constraint firstItem="Pka-dL-FMh" firstAttribute="top" secondItem="yUK-fC-2NW" secondAttribute="bottom" constant="8" id="bzf-er-Ng0"/>
                             <constraint firstItem="yUK-fC-2NW" firstAttribute="top" secondItem="QW2-t2-VKO" secondAttribute="bottom" constant="8" id="eFV-r9-3Sg"/>
                             <constraint firstItem="ui6-bl-xVU" firstAttribute="top" secondItem="UHi-FG-L9Q" secondAttribute="bottom" constant="8" id="fpS-IV-Xo3"/>
                             <constraint firstItem="UHi-FG-L9Q" firstAttribute="leading" secondItem="ExC-9q-oBB" secondAttribute="leading" constant="30" id="hME-fH-kfV"/>
                             <constraint firstAttribute="trailing" secondItem="ui6-bl-xVU" secondAttribute="trailing" constant="30" id="mY1-Ue-wmA"/>
-                            <constraint firstItem="Rlh-YH-zgb" firstAttribute="top" secondItem="88L-fG-vfj" secondAttribute="bottom" constant="15" id="pBx-Ez-aXW"/>
                             <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="yUK-fC-2NW" secondAttribute="trailing" constant="30" id="vDn-ro-9Tz"/>
                             <constraint firstItem="ExC-9q-oBB" firstAttribute="trailing" secondItem="Pka-dL-FMh" secondAttribute="trailing" constant="30" id="x6w-MA-aSl"/>
+                            <constraint firstItem="jT7-K7-wLF" firstAttribute="top" secondItem="88L-fG-vfj" secondAttribute="bottom" constant="8" id="xFB-dH-D2S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ExC-9q-oBB"/>
                     </view>
@@ -127,5 +123,6 @@ Hotline: 0978954549</string>
     </scenes>
     <resources>
         <image name="ic_homecare" width="100" height="100"/>
+        <image name="icon3" width="387" height="100"/>
     </resources>
 </document>

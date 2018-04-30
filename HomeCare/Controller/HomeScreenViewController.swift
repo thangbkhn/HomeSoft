@@ -8,13 +8,14 @@
 
 import UIKit
 import Firebase
+import RAMAnimatedTabBarController
 
 class HomeScreenViewController: UIViewController {
     @IBOutlet var imgAdvert: UIImageView!
     @IBOutlet var pageControll: UIPageControl!
-    @IBOutlet var tvName: UILabel!
-    @IBOutlet var tvLogin: UIButton!
-    @IBOutlet var tvUse: UILabel!
+    @IBOutlet weak var tvName: UILabel!
+    @IBOutlet weak var tvLogin: UIButton!
+    @IBOutlet weak var tvUse: UILabel!
     
     var timer: Timer!
     var updateCounter:Int!
@@ -29,7 +30,7 @@ class HomeScreenViewController: UIViewController {
         Messaging.messaging().subscribe(toTopic: "alert")
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
         imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "logo")
+        let image = UIImage(named: "icon3")
         imageView.image = image
         navigationItem.titleView = imageView
         navigationController?.navigationBar.tintColor = .white
@@ -44,10 +45,12 @@ class HomeScreenViewController: UIViewController {
         reloadForm()
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
+        navigationController?.navigationBar.barTintColor = .white
     }
     @objc internal func updateTimer(){
         if (updateCounter <= 2){
@@ -115,4 +118,10 @@ class HomeScreenViewController: UIViewController {
             //
         }
     }
+    @IBAction func aboutAction(_ sender: Any) {
+        let ramTBC = self.tabBarController as! RAMAnimatedTabBarController
+        ramTBC.selectedIndex = 3
+        ramTBC.setSelectIndex(from: 0, to: 3)
+    }
+    
 }

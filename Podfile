@@ -26,4 +26,5 @@ target 'HomeCare' do
   #https://github.com/Ramotion/animated-tab-bar
   #https://swift.unicorn.tv/screencasts/create-an-animated-tabbar
   pod 'RAMAnimatedTabBarController'
+  pod 'SQLite.swift', '~> 0.11.4'
 end

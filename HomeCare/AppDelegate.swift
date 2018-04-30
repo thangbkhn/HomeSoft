@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
         //Keyboard
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Didot", size: 13)!],for: .normal)
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
         
         let attrs = [
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 19)

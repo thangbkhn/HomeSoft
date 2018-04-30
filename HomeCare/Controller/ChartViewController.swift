@@ -14,13 +14,15 @@ class ChartViewController: UIViewController {
     //@IBOutlet var txtRoomNumber: UILabel!
     @IBOutlet var chartView: Chart!
     @IBOutlet var btYear: UIButton!
+    @IBOutlet weak var isLoading: UIActivityIndicatorView!
     var listFee :[Double] = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
     var currentYear = GlobalUtil.getYearList()[10]
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.startLoading(mIsLoading: false)
 //        NotificationCenter.default.addObserver(self, selector: #selector(reloadForm(_:)), name: NotificationConstant.reloadFromPaymentView, object: nil)
         //txtRoomNumber.text = "Căn hộ \(GlobalInfo.sharedInstance.userInfo?.roomName ?? "")"
-        btYear.setTitle("Năm \(currentYear)", for: .normal)
+        btYear.setTitle("\(currentYear)", for: .normal)
         chartView.removeAllSeries()
         let data = [
             (x: 1, y: listFee[0]),
@@ -44,14 +46,10 @@ class ChartViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func viewPayment(_ sender: Any) {
-        
-        NotificationCenter.default.post(name: NotificationConstant.swithPayment, object: nil)
-    }
     @IBAction func btYearSelector(_ sender: Any) {
         let datePicker = ActionSheetStringPicker(title: "Chọn năm", rows: GlobalUtil.getYearList(), initialSelection: 10, doneBlock: { (picker, value, index) in
             if index != nil{
-                self.btYear.setTitle("Năm \((index! as? String)!)", for: .normal)
+                self.btYear.setTitle("\((index! as? String)!)", for: .normal)
                 self.currentYear = (index! as? String)!
                 self.getFeeList(year: Int((index! as? String)!)!)
             }
@@ -91,6 +89,7 @@ class ChartViewController: UIViewController {
         chartView.add(series)
     }
     func getFeeList(year:Int) {
+        self.startLoading(mIsLoading: true)
         let getFeeListRequest = GetFeeListRequest()
         getFeeListRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
         getFeeListRequest.roomCode = GlobalInfo.sharedInstance.userInfo?.roomCode
@@ -111,6 +110,16 @@ class ChartViewController: UIViewController {
                 GlobalUtil.showToast(context: self, message: "Không thể lấy danh sách chi phí hàng tháng")
             }
             NotificationCenter.default.post(name: NotificationConstant.reloadFromChartView, object: nil, userInfo: ["Data":feeList,"currentYear":self.currentYear])
+            self.startLoading(mIsLoading: false)
         }, parameter: getFeeListRequest.toDict())
+    }
+    func startLoading(mIsLoading:Bool) {
+        if mIsLoading {
+            self.isLoading.startAnimating()
+            self.isLoading.isHidden = false
+        }else{
+            self.isLoading.stopAnimating()
+            self.isLoading.isHidden = true
+        }
     }
 }

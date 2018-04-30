@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--THÊM MỚI THÀNH VIÊN-->
+        <!--New Resident View Controller-->
         <scene sceneID="CtP-Zq-WPX">
             <objects>
-                <viewController storyboardIdentifier="newResident" title="THÊM MỚI THÀNH VIÊN" id="Esq-k0-cuw" customClass="NewResidentViewController" customModule="HomeCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newResident" id="Esq-k0-cuw" customClass="NewResidentViewController" customModule="HomeCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CW1-MH-CyH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,6 +25,9 @@
                                     <constraint firstAttribute="width" constant="100" id="Igr-SY-VTe"/>
                                 </constraints>
                                 <state key="normal" image="billgates"/>
+                                <connections>
+                                    <action selector="btProfileAction:" destination="Esq-k0-cuw" eventType="touchUpInside" id="Cy6-BV-6kd"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="by0-Tt-Oqb" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
                                 <rect key="frame" x="8" y="162" width="359" height="46"/>
@@ -330,6 +333,9 @@
                                 <rect key="frame" x="50" y="129" width="275" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Chọn ảnh đại diện"/>
+                                <connections>
+                                    <action selector="btProfileAction2:" destination="Esq-k0-cuw" eventType="touchUpInside" id="pE4-qD-5or"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

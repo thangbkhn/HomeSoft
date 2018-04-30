@@ -267,7 +267,7 @@
                                     <constraint firstAttribute="height" constant="100" id="irb-ZX-kX3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMESOFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0T9-ti-Nn2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0T9-ti-Nn2">
                                 <rect key="frame" x="20" y="135" width="335" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="xmH-6s-0yA"/>
@@ -276,6 +276,9 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoApp" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-na-i7M">
+                                <rect key="frame" x="20" y="135" width="335" height="39"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -284,9 +287,13 @@
                             <constraint firstItem="0T9-ti-Nn2" firstAttribute="leading" secondItem="efy-Ee-7qp" secondAttribute="leading" constant="20" id="Ihd-CE-Ffz"/>
                             <constraint firstItem="0T9-ti-Nn2" firstAttribute="top" secondItem="mIf-CZ-UKh" secondAttribute="bottom" constant="5" id="Jlw-aI-SL3"/>
                             <constraint firstItem="8IJ-1x-QCP" firstAttribute="leading" secondItem="yw0-qD-9UU" secondAttribute="leading" id="Km8-qZ-KXk"/>
+                            <constraint firstItem="h1k-na-i7M" firstAttribute="trailing" secondItem="0T9-ti-Nn2" secondAttribute="trailing" id="Leb-TM-Zzo"/>
                             <constraint firstItem="mIf-CZ-UKh" firstAttribute="top" secondItem="efy-Ee-7qp" secondAttribute="top" constant="10" id="STU-pD-ugS"/>
+                            <constraint firstItem="h1k-na-i7M" firstAttribute="top" secondItem="0T9-ti-Nn2" secondAttribute="top" id="WzS-Pf-rge"/>
                             <constraint firstItem="efy-Ee-7qp" firstAttribute="trailing" secondItem="0T9-ti-Nn2" secondAttribute="trailing" constant="20" id="XW4-hd-sUc"/>
+                            <constraint firstItem="h1k-na-i7M" firstAttribute="leading" secondItem="0T9-ti-Nn2" secondAttribute="leading" id="np2-8t-K5i"/>
                             <constraint firstItem="efy-Ee-7qp" firstAttribute="bottom" secondItem="8IJ-1x-QCP" secondAttribute="bottom" id="qrP-Nx-VbO"/>
+                            <constraint firstItem="h1k-na-i7M" firstAttribute="bottom" secondItem="0T9-ti-Nn2" secondAttribute="bottom" id="zlZ-7D-5Rq"/>
                             <constraint firstItem="mIf-CZ-UKh" firstAttribute="centerX" secondItem="efy-Ee-7qp" secondAttribute="centerX" id="zrp-hq-doD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="efy-Ee-7qp"/>
@@ -308,5 +315,6 @@
         <image name="ic_language_128" width="128" height="128"/>
         <image name="ic_register_256" width="256" height="256"/>
         <image name="login-1" width="256" height="256"/>
+        <image name="logoApp" width="387" height="100"/>
     </resources>
 </document>

@@ -16,7 +16,9 @@ class GlobalUtil: NSObject {
     static var groupFCM = "groupFCM"
     static let keyLanguage = "keyLanguage"
     static func getMainColor() -> UIColor{
-        return UIColor.rbg(red: 67, green: 142, blue: 185)
+        //return UIColor.rbg(red: 67, green: 142, blue: 185)
+        //return UIColor.rbg(red: 102, green: 117, blue: 133)
+        return UIColor.rbg(red: 40, green: 155, blue: 211)
     }
     static func getSeperateColor() -> UIColor{
         return UIColor.rbg(red: 235, green: 235, blue: 241)
@@ -29,7 +31,9 @@ class GlobalUtil: NSObject {
         return UIColor.rbg(red: 126, green: 176, blue: 26)
     }
     
-    
+    static func getGrayColor() -> UIColor{
+        return UIColor.rbg(red: 92, green: 94, blue: 102)
+    }
     static func showToast(context:UIViewController, message : String) {
         
         let toastLabel = UILabel(frame: CGRect(x: 0 + 10, y: context.view.frame.size.height-100, width: context.view.frame.width - 20 , height: 35))

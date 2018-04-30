@@ -21,6 +21,8 @@ class OtherViewController: UIViewController {
     var frame:CGRect!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         if frame == nil {
             frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.height)! - (self.tabBarController?.tabBar.frame.height)!)
         }
@@ -44,6 +46,7 @@ class OtherViewController: UIViewController {
             }
             
         }else{
+            
             if let viewWithTag = self.view.viewWithTag(loginTag){
                 viewWithTag.removeFromSuperview()
             }
@@ -175,5 +178,11 @@ class OtherViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .white
         self.definesPresentationContext = true;
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = .white
     }
 }

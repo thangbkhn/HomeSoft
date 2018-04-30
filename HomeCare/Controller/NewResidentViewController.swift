@@ -10,11 +10,12 @@ import UIKit
 import SkyFloatingLabelTextField
 import BEMCheckBox
 import DatePickerDialog
+import RAMAnimatedTabBarController
 
 protocol UpdateSuccess {
     func result(isSuccess:Bool)
 }
-class NewResidentViewController: UIViewController, UITextFieldDelegate {
+class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var imgProfile: UIButton!
     @IBOutlet var txtFullName: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet var txtIdentityNo: SkyFloatingLabelTextFieldWithIcon!
@@ -30,6 +31,9 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate {
     var delegate : UpdateSuccess?
     var isEdit = false
     var accout:Account?
+    //browse file
+    var imagePicker = UIImagePickerController()
+    var alert:UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +46,7 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate {
         txtPhone.delegate = self
         txtPhone.keyboardType = UIKeyboardType.numberPad
         txtIdentityNo.delegate = self
+        imagePicker.delegate = self
         if isEdit{
             txtFullName.text = accout?.fullName
             txtIdentityNo.text = accout?.identityNo
@@ -130,6 +135,13 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate {
         isOwner.setOn(!isOwner.on, animated: true)
     }
     
+    @IBAction func btProfileAction(_ sender: Any) {
+        self.addMore()
+    }
+    @IBAction func btProfileAction2(_ sender: Any) {
+        self.addMore()
+    }
+    
     func validateScreen() -> Bool {
         if txtFullName.text?.trimmingCharacters(in: .whitespaces) == ""{
             GlobalUtil.showToast(context: self, message: "Bạn phải nhập họ và tên")
@@ -170,5 +182,53 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate {
             }
             self.loading.isHidden = true
         }, parameter: residentUpdateRequest.toDict())
+    }
+    func browseFileFunction() {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    func captureImage() {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            let imageData = UIImagePNGRepresentation(pickedImage)
+            let strBase64 = imageData?.base64EncodedString(options: .lineLength64Characters)
+            
+            //print(strBase64 ?? "None data")
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    func addMore() {
+        alert = UIAlertController(title: "Chọn file để upload", message: "", preferredStyle: .alert)
+        
+        let image = UIImage(named: "ic_camera_32")
+        let capture = UIAlertAction(title: "Chụp ảnh", style: .default) { (captureImage) in
+            self.captureImage()
+        }
+        
+        capture.setValue(image, forKey: "image")
+        alert?.addAction(capture)
+        
+        let browse = UIImage(named: "ic_attachment_32")
+        let browseAction = UIAlertAction(title: "Chọn ảnh", style: .default) { (browseFile) in
+            self.browseFileFunction()
+        }
+        browseAction.setValue(browse, forKey: "image")
+        alert?.addAction(browseAction)
+        
+        let cancel = UIImage(named: "ic_back_32")
+        let cancelAction = UIAlertAction(title: "Huỷ", style: .default, handler: nil)
+        cancelAction.setValue(cancel, forKey: "image")
+        alert?.addAction(cancelAction)
+        
+        self.present(alert!, animated: true, completion: nil)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(true)
     }
 }

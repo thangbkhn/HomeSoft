@@ -92,8 +92,18 @@
 		1CC0B71C207E3DBA00CFD374 /* SelectionDialogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0B719207E3DBA00CFD374 /* SelectionDialogItem.swift */; };
 		1CC0B71D207E3DBA00CFD374 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0B71A207E3DBA00CFD374 /* UIImageExtension.swift */; };
 		1CC0B71F207E47EA00CFD374 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC0B71E207E47EA00CFD374 /* About.storyboard */; };
+		A0011E8F2094BE790006BEA0 /* FoodTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E8E2094BE790006BEA0 /* FoodTest.swift */; };
+		A0011E912094BF640006BEA0 /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E902094BF640006BEA0 /* FoodCollectionViewCell.swift */; };
+		A0011E932094DB1E0006BEA0 /* ServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E922094DB1E0006BEA0 /* ServiceCollectionViewCell.swift */; };
+		A0011E952094DBEB0006BEA0 /* ServiceItemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E942094DBEB0006BEA0 /* ServiceItemTest.swift */; };
+		A0011E972094E2B00006BEA0 /* AppliancesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E962094E2B00006BEA0 /* AppliancesCollectionViewCell.swift */; };
+		A0011E992094E2C70006BEA0 /* KidToyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E982094E2C70006BEA0 /* KidToyCollectionViewCell.swift */; };
+		A0011E9B2094E3DE0006BEA0 /* AppliancesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E9A2094E3DE0006BEA0 /* AppliancesTest.swift */; };
+		A0011E9D2094E3F90006BEA0 /* KidToyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E9C2094E3F90006BEA0 /* KidToyTest.swift */; };
 		A057FAD32088E32700322934 /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A057FAD22088E32700322934 /* RequestCell.xib */; };
 		A057FAD62088E65C00322934 /* ConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057FAD52088E65C00322934 /* ConvertHelper.swift */; };
+		A078192D2096A676003E1DA9 /* SqliteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192C2096A676003E1DA9 /* SqliteHelper.swift */; };
+		A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */; };
 		A0DF0A45208643530025911F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF0A44208643530025911F /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -186,8 +196,18 @@
 		1CC0B719207E3DBA00CFD374 /* SelectionDialogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionDialogItem.swift; sourceTree = "<group>"; };
 		1CC0B71A207E3DBA00CFD374 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		1CC0B71E207E47EA00CFD374 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		A0011E8E2094BE790006BEA0 /* FoodTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTest.swift; sourceTree = "<group>"; };
+		A0011E902094BF640006BEA0 /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0011E922094DB1E0006BEA0 /* ServiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0011E942094DBEB0006BEA0 /* ServiceItemTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceItemTest.swift; sourceTree = "<group>"; };
+		A0011E962094E2B00006BEA0 /* AppliancesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliancesCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0011E982094E2C70006BEA0 /* KidToyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidToyCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0011E9A2094E3DE0006BEA0 /* AppliancesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliancesTest.swift; sourceTree = "<group>"; };
+		A0011E9C2094E3F90006BEA0 /* KidToyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidToyTest.swift; sourceTree = "<group>"; };
 		A057FAD22088E32700322934 /* RequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCell.xib; sourceTree = "<group>"; };
 		A057FAD52088E65C00322934 /* ConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertHelper.swift; sourceTree = "<group>"; };
+		A078192C2096A676003E1DA9 /* SqliteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteHelper.swift; sourceTree = "<group>"; };
+		A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A0DF0A44208643530025911F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C48F39D5A68B477A2447E731 /* Pods_HomeCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE96B4B2A0E65E4790D3633C /* Pods-HomeCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeCare/Pods-HomeCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +263,7 @@
 		1C0008CC205F471000971557 /* HomeCare */ = {
 			isa = PBXGroup;
 			children = (
+				A07E36AF208B788E0010F97A /* NibUI */,
 				A057FAD42088E5FD00322934 /* Other */,
 				1C48CCD2207F54D2001C661B /* GoogleService-Info.plist */,
 				1C936ED4206CECDA00E2AD3D /* HomeCare.entitlements */,
@@ -322,6 +343,7 @@
 				1C0C6227206B80E900CBAC1B /* TicketType.swift */,
 				1CA32B792071E5B900A1528D /* FCMObject.swift */,
 				1CA32B7F20722A3900A1528D /* FeeItem.swift */,
+				A0011E8E2094BE790006BEA0 /* FoodTest.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -331,6 +353,9 @@
 			children = (
 				1C0008F7205FAAAD00971557 /* NotificationTestItem.swift */,
 				1C000904205FE99D00971557 /* PaymentTestItem.swift */,
+				A0011E942094DBEB0006BEA0 /* ServiceItemTest.swift */,
+				A0011E9A2094E3DE0006BEA0 /* AppliancesTest.swift */,
+				A0011E9C2094E3F90006BEA0 /* KidToyTest.swift */,
 			);
 			path = TestObject;
 			sourceTree = "<group>";
@@ -342,6 +367,11 @@
 				1C000908205FEA5000971557 /* PaymentTableViewCell.swift */,
 				1C00097C20648B5A00971557 /* TicketTableViewCell.swift */,
 				1C0C622F206BC8A900CBAC1B /* ResidentTableViewCell.swift */,
+				A0011E902094BF640006BEA0 /* FoodCollectionViewCell.swift */,
+				A0011E922094DB1E0006BEA0 /* ServiceCollectionViewCell.swift */,
+				A0011E962094E2B00006BEA0 /* AppliancesCollectionViewCell.swift */,
+				A0011E982094E2C70006BEA0 /* KidToyCollectionViewCell.swift */,
+				A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -361,7 +391,6 @@
 				1C0C6237206BD55600CBAC1B /* NewResident.storyboard */,
 				1CC0B711207CDFE600CFD374 /* Help.storyboard */,
 				1CC0B71E207E47EA00CFD374 /* About.storyboard */,
-				A057FAD22088E32700322934 /* RequestCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -369,6 +398,7 @@
 		1C00096A20626F3200971557 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A078192C2096A676003E1DA9 /* SqliteHelper.swift */,
 				1C000978206289D700971557 /* ServiceApi.swift */,
 			);
 			path = API;
@@ -440,6 +470,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		A07E36AF208B788E0010F97A /* NibUI */ = {
+			isa = PBXGroup;
+			children = (
+				A057FAD22088E32700322934 /* RequestCell.xib */,
+			);
+			path = NibUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -452,7 +490,6 @@
 				1C0008C7205F471000971557 /* Frameworks */,
 				1C0008C8205F471000971557 /* Resources */,
 				23BBD1AEC32101BA5692E582 /* [CP] Embed Pods Frameworks */,
-				9C559A88D100ED67A60C57C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -559,6 +596,7 @@
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -581,6 +619,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -588,21 +627,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomeCare/Pods-HomeCare-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9C559A88D100ED67A60C57C5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomeCare/Pods-HomeCare-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C4F1D3C8449AA7F1B6722816 /* [CP] Check Pods Manifest.lock */ = {
@@ -631,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C0C623A206BDEBD00CBAC1B /* NewResidentViewController.swift in Sources */,
+				A0011E912094BF640006BEA0 /* FoodCollectionViewCell.swift in Sources */,
 				1C9697552064B33200EC0105 /* Constant.swift in Sources */,
 				1C9697572064B3D800EC0105 /* NotificationItem.swift in Sources */,
 				1CA00F2D20858E180073745E /* ResidentListRequest.swift in Sources */,
@@ -640,7 +665,10 @@
 				1C0009732062874E00971557 /* Account.swift in Sources */,
 				1C000979206289D700971557 /* ServiceApi.swift in Sources */,
 				1C00095820612D7F00971557 /* ChartViewController.swift in Sources */,
+				A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */,
 				1CBC3C03206A254200AA799B /* UpdateTicketResponse.swift in Sources */,
+				A0011E992094E2C70006BEA0 /* KidToyCollectionViewCell.swift in Sources */,
+				A0011E972094E2B00006BEA0 /* AppliancesCollectionViewCell.swift in Sources */,
 				1CA00F3320858E530073745E /* JSONAble.swift in Sources */,
 				1C96975D20651F6400EC0105 /* TicketResponse.swift in Sources */,
 				1C9697532064B1C600EC0105 /* GlobalInfo.swift in Sources */,
@@ -648,6 +676,7 @@
 				1C0C6228206B80E900CBAC1B /* TicketType.swift in Sources */,
 				1C0008F8205FAAAD00971557 /* NotificationTestItem.swift in Sources */,
 				1CA00F2C20858E180073745E /* LoginRequest.swift in Sources */,
+				A0011E9B2094E3DE0006BEA0 /* AppliancesTest.swift in Sources */,
 				A057FAD62088E65C00322934 /* ConvertHelper.swift in Sources */,
 				1CBC3BF120660A3C00AA799B /* FeedbackViewController.swift in Sources */,
 				1C000909205FEA5000971557 /* PaymentTableViewCell.swift in Sources */,
@@ -658,6 +687,7 @@
 				1C0009542061193E00971557 /* NotificationConstant.swift in Sources */,
 				1C59AA4E20806E5900CAAE49 /* FilterTicketTableViewController.swift in Sources */,
 				1C0C6226206B796C00CBAC1B /* FooterView.swift in Sources */,
+				A0011E952094DBEB0006BEA0 /* ServiceItemTest.swift in Sources */,
 				1C0008FF205FB32000971557 /* GlobalUtil.swift in Sources */,
 				1CA00F3420858E530073745E /* NavItem.swift in Sources */,
 				1CBC3BF52066925800AA799B /* ServiceViewController.swift in Sources */,
@@ -669,6 +699,7 @@
 				1C0009142060FF8100971557 /* LoginViewController.swift in Sources */,
 				1C96975B20651DA100EC0105 /* TicketItem.swift in Sources */,
 				1C000907205FEA3600971557 /* PaymentViewController.swift in Sources */,
+				A0011E932094DB1E0006BEA0 /* ServiceCollectionViewCell.swift in Sources */,
 				1C9697592064DD3900EC0105 /* SavedAccount.swift in Sources */,
 				1C0008FD205FAF0600971557 /* NotificationTableCell.swift in Sources */,
 				1C0009102060FE0000971557 /* NotLoginViewController.swift in Sources */,
@@ -679,7 +710,10 @@
 				1C0E9454206B557B0062DF67 /* GetTicketTypeResponse.swift in Sources */,
 				1CA32B7E20722A0200A1528D /* GetFeeListResponse.swift in Sources */,
 				1CBC3BF32066872000AA799B /* OtherViewController.swift in Sources */,
+				A078192D2096A676003E1DA9 /* SqliteHelper.swift in Sources */,
+				A0011E8F2094BE790006BEA0 /* FoodTest.swift in Sources */,
 				A0DF0A45208643530025911F /* AboutViewController.swift in Sources */,
+				A0011E9D2094E3F90006BEA0 /* KidToyTest.swift in Sources */,
 				1CC0B71D207E3DBA00CFD374 /* UIImageExtension.swift in Sources */,
 				1C0C6236206BCE6400CBAC1B /* ResidentListResponse.swift in Sources */,
 				1CA32B7A2071E5B900A1528D /* FCMObject.swift in Sources */,

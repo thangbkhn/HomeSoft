@@ -2,7 +2,7 @@
 //  TicketViewController.swift
 //  HomeCare
 //
-//  Created by Nguyen Van Tho on 3/22/18.
+//  Created by Nguyen Van Tho on 3/30/18.
 //  Copyright © 2018 Viettel. All rights reserved.
 //
 
@@ -77,8 +77,9 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedbackItem", for: indexPath) as! TicketTableViewCell
         let item = tableView == tbTicket ? ticketList[indexPath.row] : filtedTicketList[indexPath.row]
         cell.txtTitle.text = item.ticketTypeName != nil ? "Loại yêu cầu: \(item.ticketTypeName ?? "")":"Loại yêu cầu: "
-        cell.txtDate.text = item.updatedDatetime != nil ? "Ngày yêu cầu: \(item.updatedDatetime?.substring(with: 0..<10) ?? "")" : "Ngày yêu cầu: "
+        cell.txtDate.text = item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
         cell.txtContent.text = item.desc != nil ? "Mô tả: \(item.desc ?? "")" : "Mô tả: "
+        cell.txtContent.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsMake(40,40,40,40)
         let backgroundView = UIView()
@@ -88,9 +89,17 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         cell.backgroundColor = .white
         cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
         cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 3
+        cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
-        
+        if item.ticketTypeId == Constant.motobikeId {
+            cell.img.image = UIImage(named: "scooter-front-view")?.imageWithColor(color1: .white).imageWithInsets(insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))
+        }else if item.ticketTypeId == Constant.carId {
+            cell.img.image = UIImage(named: "car")?.imageWithColor(color1: .white).imageWithInsets(insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))
+        }else if item.ticketTypeId == Constant.furnitureId {
+            cell.img.image = UIImage(named: "icon-1")?.imageWithColor(color1: .white).imageWithInsets(insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))
+        }else if item.ticketTypeId == Constant.water_eleciId {
+            cell.img.image = UIImage(named: "light-bulb")?.imageWithColor(color1: .white).imageWithInsets(insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))
+        }
         cell.rightButtons = [MGSwipeButton(title: "Sửa", icon: nil, backgroundColor: UIColor.gray, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), callback: { (edit) -> Bool in
             let storyBoard : UIStoryboard = UIStoryboard(name: "NewRequest", bundle:nil)
             let newRequestViewController = storyBoard.instantiateViewController(withIdentifier: "newRequest") as! NewRequestViewController
@@ -107,10 +116,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -149,12 +155,8 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         searchNavigationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(searchClicked)))
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-
-//        navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: addNavigationButton)
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: searchNavigationButton)
-        //navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: searchNavigationButton)
         
-        navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
+        navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.isTranslucent = false
         
         self.searchController = UISearchController(searchResultsController: self.resultController)
@@ -171,8 +173,14 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         //self.searchController.searchBar.isHidden = true
         self.definesPresentationContext = true;
         
-        //self.titleView.frame = (self.navigationController?.view.frame)!
-        //self.navigationItem.titleView = self.titleView
+        self.searchController.searchBar.tintColor = GlobalUtil.getGrayColor()
+        for s in self.searchController.searchBar.subviews[0].subviews {
+            if s is UITextField {
+                s.layer.borderWidth = 1.0
+                s.layer.cornerRadius = 10
+                s.layer.borderColor = UIColor.gray.cgColor
+            }
+        }
     }
     func updateSearchResults(for searchController: UISearchController) {
         self.filtedTicketList = self.ticketList.filter { (ticket:TicketItem) -> Bool in
@@ -200,6 +208,9 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         if !isLogin {
+            
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
             let loginStoryboard :UIStoryboard = UIStoryboard(name: "NotLoginScreen", bundle: nil)
             let loginView = loginStoryboard.instantiateViewController(withIdentifier: "loginView") as! NotLoginViewController
             self.addChildViewController(loginView)

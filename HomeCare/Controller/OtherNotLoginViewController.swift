@@ -58,7 +58,4 @@ class OtherNotLoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = .white
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
-    }
 }

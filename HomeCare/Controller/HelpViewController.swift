@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RAMAnimatedTabBarController
 
 class HelpViewController: UIPageViewController{
     private(set) lazy var orderedViewControllers: [UIViewController] = {
@@ -23,6 +24,11 @@ class HelpViewController: UIPageViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
+        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        navigationController?.navigationBar.barTintColor = .white
+        let backButton = UIBarButtonItem(title: "Hướng dẫn sử dụng", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
                                direction: .forward,
@@ -83,5 +89,15 @@ extension HelpViewController: UIPageViewControllerDataSource {
         }
         
         return firstViewControllerIndex
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.showTabar(isShow: true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.showTabar(isShow: false)
+    }
+    func showTabar(isShow:Bool)  {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(!isShow)
     }
 }

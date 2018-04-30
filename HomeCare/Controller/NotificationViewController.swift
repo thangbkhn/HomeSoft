@@ -8,9 +8,12 @@
 
 import UIKit
 import MGSwipeTableCell
+import RAMAnimatedTabBarController
 
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tbNotification: UITableView!
+    @IBOutlet weak var isLoading: UIActivityIndicatorView!
+    
     var isLogin = false
     var frame:CGRect!
     var notificationList :[NotificationItem] = []
@@ -66,12 +69,19 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         if frame == nil {
             frame = self.view.frame
         }
+        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        let backButton = UIBarButtonItem(title: "Thông báo", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         let tap = UITapGestureRecognizer(target: self, action:#selector(dismissKeyBoard))
         view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = false
         if !isLogin {
+            
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
             let loginStoryboard :UIStoryboard = UIStoryboard(name: "NotLoginScreen", bundle: nil)
             let loginView = loginStoryboard.instantiateViewController(withIdentifier: "loginView") as! NotLoginViewController
             self.addChildViewController(loginView)
@@ -93,6 +103,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         self.viewDidLoad()
     }
     func loadNotification(page:Int) {
+        self.startLoading(mIsLoading: true)
          let notificationRequest = GetListRequest()
         notificationRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
         notificationRequest.isPagging = true
@@ -107,10 +118,30 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                     GlobalUtil.showToast(context: self, message: "Không thể lấy danh sách thông báo")
                 }
             }
+            self.startLoading(mIsLoading: false)
         }, parameter: notificationRequest.toDict())
     }
     //keyboard
     @objc func dismissKeyBoard(){
         self.view.endEditing(true)
+    }
+    func startLoading(mIsLoading:Bool) {
+        if mIsLoading {
+            self.isLoading.startAnimating()
+            self.isLoading.isHidden = false
+        }else{
+            self.isLoading.stopAnimating()
+            self.isLoading.isHidden = true
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.showTabar(isShow: true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.showTabar(isShow: false)
+    }
+    func showTabar(isShow:Bool)  {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(!isShow)
     }
 }
