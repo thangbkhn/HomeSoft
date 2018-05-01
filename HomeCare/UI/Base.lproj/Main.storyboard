@@ -782,11 +782,9 @@
                                                             <color key="textColor" red="0.55294117647058827" green="0.61568627450980395" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This game is very bad that I'm not tall this game is very important nice game" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLi-rp-p7M">
-                                                            <rect key="frame" x="52" y="37" width="287" height="35"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="35" id="Si1-6l-ql9"/>
-                                                            </constraints>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLi-rp-p7M">
+                                                            <rect key="frame" x="52" y="37" width="287" height="33.666666666666657"/>
+                                                            <string key="text">This game is very bad that I'm not tall this game is very important nice game.This game is very bad that I'm not tall this game is very important nice game</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.55294117649999996" green="0.61568627450000002" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -812,6 +810,7 @@
                                                         <constraint firstItem="thp-ac-LXS" firstAttribute="bottom" secondItem="Rqw-hC-F2O" secondAttribute="bottom" id="QgS-gV-h2h"/>
                                                         <constraint firstItem="sh4-IV-WQB" firstAttribute="leading" secondItem="A3L-tD-YZW" secondAttribute="trailing" constant="2" id="TNr-tV-A26"/>
                                                         <constraint firstItem="sh4-IV-WQB" firstAttribute="top" secondItem="xWv-gN-7HF" secondAttribute="top" id="U7q-uD-Xr4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MLi-rp-p7M" secondAttribute="bottom" constant="10" id="VN6-4k-bQM"/>
                                                         <constraint firstItem="Rqw-hC-F2O" firstAttribute="top" secondItem="gZm-aU-aHQ" secondAttribute="top" id="WuQ-Tt-4Nj"/>
                                                         <constraint firstItem="xWv-gN-7HF" firstAttribute="leading" secondItem="kuw-zS-yoR" secondAttribute="trailing" constant="3" id="Ywx-d5-F7t"/>
                                                         <constraint firstItem="thp-ac-LXS" firstAttribute="top" secondItem="Rqw-hC-F2O" secondAttribute="top" id="Zzn-GK-0aj"/>

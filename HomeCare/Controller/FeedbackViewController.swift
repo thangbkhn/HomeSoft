@@ -62,6 +62,7 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
             self.view.addSubview(addView!)
             loginView.didMove(toParentViewController: self)
         }else{
+            tbComment.separatorStyle = .none
             if let viewWithTag = self.view.viewWithTag(loginTag){
                 viewWithTag.removeFromSuperview()
             }
@@ -83,11 +84,16 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
+        cell.tvComment.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.preservesSuperviewLayoutMargins = false
+        cell.selectionStyle = .none
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "ReplyComment", bundle:nil)
+        let replyCommentViewController = storyBoard.instantiateViewController(withIdentifier: "replyComment") as! ReplyCommentViewController
+        self.navigationController?.pushViewController(replyCommentViewController, animated: true)
     }
     @objc func reloadForm() {
         self.viewDidLoad()

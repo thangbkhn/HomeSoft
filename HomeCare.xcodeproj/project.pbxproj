@@ -106,6 +106,9 @@
 		A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */; };
 		A07819332096DA4C003E1DA9 /* ReviewDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */; };
 		A0BD9F2020975A8B00632CB4 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD9F1F20975A8B00632CB4 /* RateViewController.swift */; };
+		A0BD9F222097EC8C00632CB4 /* ReplyComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BD9F212097EC8C00632CB4 /* ReplyComment.storyboard */; };
+		A0BD9F242098028A00632CB4 /* ReplyCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD9F232098028A00632CB4 /* ReplyCommentViewController.swift */; };
+		A0BD9F26209802AA00632CB4 /* ReplyCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD9F25209802AA00632CB4 /* ReplyCommentTableViewCell.swift */; };
 		A0DF0A45208643530025911F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF0A44208643530025911F /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +215,9 @@
 		A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewDialog.storyboard; sourceTree = "<group>"; };
 		A0BD9F1F20975A8B00632CB4 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		A0BD9F212097EC8C00632CB4 /* ReplyComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReplyComment.storyboard; sourceTree = "<group>"; };
+		A0BD9F232098028A00632CB4 /* ReplyCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentViewController.swift; sourceTree = "<group>"; };
+		A0BD9F25209802AA00632CB4 /* ReplyCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentTableViewCell.swift; sourceTree = "<group>"; };
 		A0DF0A44208643530025911F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C48F39D5A68B477A2447E731 /* Pods_HomeCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE96B4B2A0E65E4790D3633C /* Pods-HomeCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeCare/Pods-HomeCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 				1C59AA4D20806E5900CAAE49 /* FilterTicketTableViewController.swift */,
 				A0DF0A44208643530025911F /* AboutViewController.swift */,
 				A0BD9F1F20975A8B00632CB4 /* RateViewController.swift */,
+				A0BD9F232098028A00632CB4 /* ReplyCommentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -377,6 +384,7 @@
 				A0011E962094E2B00006BEA0 /* AppliancesCollectionViewCell.swift */,
 				A0011E982094E2C70006BEA0 /* KidToyCollectionViewCell.swift */,
 				A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */,
+				A0BD9F25209802AA00632CB4 /* ReplyCommentTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -396,6 +404,7 @@
 				1C0C6237206BD55600CBAC1B /* NewResident.storyboard */,
 				1CC0B711207CDFE600CFD374 /* Help.storyboard */,
 				1CC0B71E207E47EA00CFD374 /* About.storyboard */,
+				A0BD9F212097EC8C00632CB4 /* ReplyComment.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -560,6 +569,7 @@
 				1C96975F206524C900EC0105 /* TicketRequest.storyboard in Resources */,
 				1C0008D8205F471100971557 /* LaunchScreen.storyboard in Resources */,
 				1C0008D5205F471100971557 /* Assets.xcassets in Resources */,
+				A0BD9F222097EC8C00632CB4 /* ReplyComment.storyboard in Resources */,
 				1C93DFD4207637C7009FB58F /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				1CBC3BF72068A62400AA799B /* OtherNotLogin.storyboard in Resources */,
 				1C93DFD3207637C4009FB58F /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
@@ -673,6 +683,7 @@
 				1C000979206289D700971557 /* ServiceApi.swift in Sources */,
 				1C00095820612D7F00971557 /* ChartViewController.swift in Sources */,
 				A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */,
+				A0BD9F26209802AA00632CB4 /* ReplyCommentTableViewCell.swift in Sources */,
 				1CBC3C03206A254200AA799B /* UpdateTicketResponse.swift in Sources */,
 				A0011E992094E2C70006BEA0 /* KidToyCollectionViewCell.swift in Sources */,
 				A0011E972094E2B00006BEA0 /* AppliancesCollectionViewCell.swift in Sources */,
@@ -737,6 +748,7 @@
 				1CA00F3720858EE00073745E /* Extensions.swift in Sources */,
 				1CA00F2A20858E180073745E /* GetListRequest.swift in Sources */,
 				1C96974F2064AC7300EC0105 /* NotificationResponnse.swift in Sources */,
+				A0BD9F242098028A00632CB4 /* ReplyCommentViewController.swift in Sources */,
 				1CA00F3220858E530073745E /* BaseObject.swift in Sources */,
 				1C000905205FE99D00971557 /* PaymentTestItem.swift in Sources */,
 			);
