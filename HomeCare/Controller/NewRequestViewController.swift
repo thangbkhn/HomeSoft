@@ -162,5 +162,11 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
             }
         }, parameter: getTicketTypeRequest.toDict())
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = .white
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
+    }
 }

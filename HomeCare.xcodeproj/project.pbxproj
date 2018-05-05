@@ -109,6 +109,12 @@
 		A0BD9F222097EC8C00632CB4 /* ReplyComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BD9F212097EC8C00632CB4 /* ReplyComment.storyboard */; };
 		A0BD9F242098028A00632CB4 /* ReplyCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD9F232098028A00632CB4 /* ReplyCommentViewController.swift */; };
 		A0BD9F26209802AA00632CB4 /* ReplyCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD9F25209802AA00632CB4 /* ReplyCommentTableViewCell.swift */; };
+		A0D1AD54209C84BC00A0C032 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D1AD53209C84BC00A0C032 /* CommentCell.xib */; };
+		A0D1AD56209C89EC00A0C032 /* CommentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD55209C89EC00A0C032 /* CommentItem.swift */; };
+		A0D1AD58209C8CDF00A0C032 /* GetCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD57209C8CDF00A0C032 /* GetCommentRequest.swift */; };
+		A0D1AD5A209C8FDB00A0C032 /* GetCommentRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD59209C8FDB00A0C032 /* GetCommentRespone.swift */; };
+		A0D1AD5C209C970E00A0C032 /* PostCommentRquest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD5B209C970E00A0C032 /* PostCommentRquest.swift */; };
+		A0D1AD5E209C978C00A0C032 /* ReplyComentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD5D209C978C00A0C032 /* ReplyComentResponse.swift */; };
 		A0DF0A45208643530025911F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF0A44208643530025911F /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -218,6 +224,12 @@
 		A0BD9F212097EC8C00632CB4 /* ReplyComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReplyComment.storyboard; sourceTree = "<group>"; };
 		A0BD9F232098028A00632CB4 /* ReplyCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentViewController.swift; sourceTree = "<group>"; };
 		A0BD9F25209802AA00632CB4 /* ReplyCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentTableViewCell.swift; sourceTree = "<group>"; };
+		A0D1AD53209C84BC00A0C032 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		A0D1AD55209C89EC00A0C032 /* CommentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItem.swift; sourceTree = "<group>"; };
+		A0D1AD57209C8CDF00A0C032 /* GetCommentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentRequest.swift; sourceTree = "<group>"; };
+		A0D1AD59209C8FDB00A0C032 /* GetCommentRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentRespone.swift; sourceTree = "<group>"; };
+		A0D1AD5B209C970E00A0C032 /* PostCommentRquest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentRquest.swift; sourceTree = "<group>"; };
+		A0D1AD5D209C978C00A0C032 /* ReplyComentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyComentResponse.swift; sourceTree = "<group>"; };
 		A0DF0A44208643530025911F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C48F39D5A68B477A2447E731 /* Pods_HomeCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE96B4B2A0E65E4790D3633C /* Pods-HomeCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeCare/Pods-HomeCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +368,7 @@
 				1CA32B792071E5B900A1528D /* FCMObject.swift */,
 				1CA32B7F20722A3900A1528D /* FeeItem.swift */,
 				A0011E8E2094BE790006BEA0 /* FoodTest.swift */,
+				A0D1AD55209C89EC00A0C032 /* CommentItem.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -431,6 +444,8 @@
 				1C0C6235206BCE6400CBAC1B /* ResidentListResponse.swift */,
 				1C0C623D206C861100CBAC1B /* UpdateResidentResponse.swift */,
 				1CA32B7D20722A0200A1528D /* GetFeeListResponse.swift */,
+				A0D1AD59209C8FDB00A0C032 /* GetCommentRespone.swift */,
+				A0D1AD5D209C978C00A0C032 /* ReplyComentResponse.swift */,
 			);
 			path = ResponseObject;
 			sourceTree = "<group>";
@@ -458,6 +473,8 @@
 				1CA00F2420858E180073745E /* LoginRequest.swift */,
 				1CA00F2520858E180073745E /* ResidentListRequest.swift */,
 				1CA00F2620858E180073745E /* UpdateRequest.swift */,
+				A0D1AD57209C8CDF00A0C032 /* GetCommentRequest.swift */,
+				A0D1AD5B209C970E00A0C032 /* PostCommentRquest.swift */,
 			);
 			path = RequestObject;
 			sourceTree = "<group>";
@@ -489,6 +506,7 @@
 			children = (
 				A057FAD22088E32700322934 /* RequestCell.xib */,
 				A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */,
+				A0D1AD53209C84BC00A0C032 /* CommentCell.xib */,
 			);
 			path = NibUI;
 			sourceTree = "<group>";
@@ -574,6 +592,7 @@
 				1CBC3BF72068A62400AA799B /* OtherNotLogin.storyboard in Resources */,
 				1C93DFD3207637C4009FB58F /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				A057FAD32088E32700322934 /* RequestCell.xib in Resources */,
+				A0D1AD54209C84BC00A0C032 /* CommentCell.xib in Resources */,
 				1C00090C2060C6AD00971557 /* NotLoginScreen.storyboard in Resources */,
 				1C0C622E206BC4B300CBAC1B /* ResidentManager.storyboard in Resources */,
 				1C48CCD3207F54D2001C661B /* GoogleService-Info.plist in Resources */,
@@ -678,10 +697,12 @@
 				1CA00F2D20858E180073745E /* ResidentListRequest.swift in Sources */,
 				1C0C6230206BC8A900CBAC1B /* ResidentTableViewCell.swift in Sources */,
 				1CBC3BF92068A65200AA799B /* OtherNotLoginViewController.swift in Sources */,
+				A0D1AD5E209C978C00A0C032 /* ReplyComentResponse.swift in Sources */,
 				1CBC3BFF20690B4400AA799B /* NewRequestViewController.swift in Sources */,
 				1C0009732062874E00971557 /* Account.swift in Sources */,
 				1C000979206289D700971557 /* ServiceApi.swift in Sources */,
 				1C00095820612D7F00971557 /* ChartViewController.swift in Sources */,
+				A0D1AD56209C89EC00A0C032 /* CommentItem.swift in Sources */,
 				A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */,
 				A0BD9F26209802AA00632CB4 /* ReplyCommentTableViewCell.swift in Sources */,
 				1CBC3C03206A254200AA799B /* UpdateTicketResponse.swift in Sources */,
@@ -697,6 +718,7 @@
 				1CA00F2C20858E180073745E /* LoginRequest.swift in Sources */,
 				A0011E9B2094E3DE0006BEA0 /* AppliancesTest.swift in Sources */,
 				A057FAD62088E65C00322934 /* ConvertHelper.swift in Sources */,
+				A0D1AD5C209C970E00A0C032 /* PostCommentRquest.swift in Sources */,
 				1CBC3BF120660A3C00AA799B /* FeedbackViewController.swift in Sources */,
 				1C000909205FEA5000971557 /* PaymentTableViewCell.swift in Sources */,
 				1C00097B2063C95600971557 /* TicketViewController.swift in Sources */,
@@ -706,6 +728,7 @@
 				1C0009542061193E00971557 /* NotificationConstant.swift in Sources */,
 				1C59AA4E20806E5900CAAE49 /* FilterTicketTableViewController.swift in Sources */,
 				1C0C6226206B796C00CBAC1B /* FooterView.swift in Sources */,
+				A0D1AD58209C8CDF00A0C032 /* GetCommentRequest.swift in Sources */,
 				A0011E952094DBEB0006BEA0 /* ServiceItemTest.swift in Sources */,
 				1C0008FF205FB32000971557 /* GlobalUtil.swift in Sources */,
 				1CA00F3420858E530073745E /* NavItem.swift in Sources */,
@@ -741,6 +764,7 @@
 				1C0C622C206BC0B000CBAC1B /* ChangePasswordResponse.swift in Sources */,
 				1C0008E3205F522A00971557 /* CustomTabBarController.swift in Sources */,
 				1CC0B71C207E3DBA00CFD374 /* SelectionDialogItem.swift in Sources */,
+				A0D1AD5A209C8FDB00A0C032 /* GetCommentRespone.swift in Sources */,
 				1CA00F2E20858E180073745E /* UpdateRequest.swift in Sources */,
 				1C0C6232206BC8C800CBAC1B /* ResidentViewController.swift in Sources */,
 				1CA00F2720858E180073745E /* BaseRequest.swift in Sources */,

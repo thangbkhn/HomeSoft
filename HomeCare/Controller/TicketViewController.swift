@@ -275,6 +275,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
             if (self.refresher != nil && self.refresher.isRefreshing) {
                 self.refresher.endRefreshing()
             }
+            self.footerView.isHidden = true
         }, parameter: ticketRequest.toDict())
     }
     

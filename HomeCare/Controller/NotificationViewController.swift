@@ -45,7 +45,12 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             return true
         }), MGSwipeButton(title: " Xem", icon: nil, backgroundColor: UIColor.brown, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), callback: { (open) -> Bool in
             let item = self.notificationList[indexPath.row]
-            GlobalUtil.showInfoDialog(context: self, title: item.title ?? "", message: item.desc ?? "Nội dung không có sẵn")
+//            GlobalUtil.showInfoDialog(context: self, title: item.title ?? "", message: item.desc ?? "Nội dung không có sẵn")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "ReplyComment", bundle:nil)
+            let commentViewController = storyBoard.instantiateViewController(withIdentifier: "replyComment") as! ReplyCommentViewController
+            commentViewController.type = ReplyCommentViewController.NOTIFICATION
+            commentViewController.notificationItem = item
+            self.navigationController?.pushViewController(commentViewController, animated: true)
             return true
         })]
         cell.rightSwipeSettings.transition = .rotate3D

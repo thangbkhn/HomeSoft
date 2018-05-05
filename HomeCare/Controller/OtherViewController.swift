@@ -88,6 +88,9 @@ class OtherViewController: UIViewController {
     }
     
     @IBAction func btComment(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let feeabackVC = sb.instantiateViewController(withIdentifier: "feeaback") as! FeedbackViewController
+        self.navigationController?.pushViewController(feeabackVC, animated: true)
     }
     
     @IBAction func btMember(_ sender: Any) {
