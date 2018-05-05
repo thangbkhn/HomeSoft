@@ -100,17 +100,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXh-jh-QnZ">
                                 <rect key="frame" x="10" y="622" width="355" height="50"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="os8-0e-efs">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="1"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="Lwg-AR-VfR"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOu-Ve-AHb">
                                         <rect key="frame" x="316" y="11" width="29" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="29" id="5d9-EA-qFK"/>
+                                            <constraint firstAttribute="height" constant="29" id="SyJ-Jv-b92"/>
                                         </constraints>
                                         <state key="normal" image="ic_send"/>
                                         <connections>
@@ -118,7 +112,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gv-Ja-P8W">
-                                        <rect key="frame" x="5" y="6" width="306" height="34"/>
+                                        <rect key="frame" x="5" y="10" width="306" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -137,17 +131,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="os8-0e-efs" secondAttribute="trailing" id="ADC-VN-2X6"/>
                                     <constraint firstAttribute="bottom" secondItem="xOu-Ve-AHb" secondAttribute="bottom" constant="10" id="Ekn-0s-n9z"/>
-                                    <constraint firstItem="os8-0e-efs" firstAttribute="top" secondItem="hXh-jh-QnZ" secondAttribute="top" id="Fq1-0S-tdz"/>
                                     <constraint firstAttribute="trailing" secondItem="xOu-Ve-AHb" secondAttribute="trailing" constant="10" id="GWG-WP-J7Q"/>
-                                    <constraint firstItem="xOu-Ve-AHb" firstAttribute="top" secondItem="os8-0e-efs" secondAttribute="bottom" constant="10" id="MIj-yW-l3Y"/>
                                     <constraint firstItem="2gv-Ja-P8W" firstAttribute="leading" secondItem="hXh-jh-QnZ" secondAttribute="leading" constant="5" id="QUh-X2-FWE"/>
                                     <constraint firstAttribute="bottom" secondItem="2gv-Ja-P8W" secondAttribute="bottom" constant="10" id="a74-Pi-uSs"/>
-                                    <constraint firstItem="2gv-Ja-P8W" firstAttribute="top" secondItem="os8-0e-efs" secondAttribute="bottom" constant="5" id="dvt-nV-j18"/>
                                     <constraint firstAttribute="height" constant="50" id="n6T-bB-7gX"/>
                                     <constraint firstItem="xOu-Ve-AHb" firstAttribute="leading" secondItem="2gv-Ja-P8W" secondAttribute="trailing" constant="5" id="rga-vN-Vui"/>
-                                    <constraint firstItem="os8-0e-efs" firstAttribute="leading" secondItem="hXh-jh-QnZ" secondAttribute="leading" id="yvN-eQ-Ocz"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zYt-fs-rL5">

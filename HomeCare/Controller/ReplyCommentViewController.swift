@@ -24,25 +24,39 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
     var type = 0
     var notificationItem:NotificationItem!
     var requestItem:TicketItem!
-    var feedbackItem:CommentItem!
+    var feedbackItem:FeedbackItem!
     var commentList:[CommentItem] = []
     let ITEM_LIMIT = 10
     var refresher: UIRefreshControl!
     var isLoadMore = true
     let footerView = FooterView()
     var page = 1
+    var searchController:UISearchController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.titleView = self.searchController.searchBar;
+        self.searchController.searchBar.isHidden = true
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        let backButton = UIBarButtonItem(title: "Bình luận", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard)))
         tbReply.register(nib, forCellReuseIdentifier: "commmentCell")
         if type == ReplyCommentViewController.TICKET {
-            
+            tvUSer.text = "Loại yêu cầu: \(requestItem.ticketTypeName ?? "")"
+            tvContent.text = "Nội dung: \(requestItem.desc ?? "")"
+            tvDate.text = requestItem.updatedDatetime != nil ? requestItem.updatedDatetime?.substring(with: 0..<10) : ""
         }else if type == ReplyCommentViewController.NOTIFICATION{
-            tvUSer.text = "Tiêu đề \(notificationItem.title ?? "")"
-            tvContent.text = "Nội dung \(notificationItem.desc ?? "")"
+            tvUSer.text = "Tiêu đề: \(notificationItem.title ?? "")"
+            tvContent.text = "Nội dung: \(notificationItem.desc ?? "")"
             tvDate.text = notificationItem.updatedDatetime != nil ? notificationItem.updatedDatetime?.substring(with: 0..<10) : ""
         }else if type == ReplyCommentViewController.FEEEDBACK{
-            
+            tvUSer.text = "\(feedbackItem.ownerName ?? "")"
+            tvContent.text = "Nội dung: \(feedbackItem.content ?? "")"
+            tvDate.text = feedbackItem.updatedDatetime != nil ? feedbackItem.updatedDatetime?.substring(with: 0..<10) : ""
         }
         tbReply.separatorStyle = .none
         refresher = UIRefreshControl()
@@ -104,24 +118,28 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         let getCommentRequest = GetCommentRequest()
         getCommentRequest.isPagging = true
         getCommentRequest.page = "1"
+        var url = ""
         if type == ReplyCommentViewController.TICKET {
             getCommentRequest.clientId = requestItem.clientId!
             getCommentRequest.id = requestItem.id
+            url = Constant.getTicketCommentURL
         }else if type == ReplyCommentViewController.NOTIFICATION{
             getCommentRequest.clientId = notificationItem.clientId!
             getCommentRequest.id = notificationItem.id
+            url = Constant.getNotificationCommentURL
         }else if type == ReplyCommentViewController.FEEEDBACK{
             getCommentRequest.clientId = feedbackItem.clientId!
             getCommentRequest.id = feedbackItem.id
+            url = Constant.getFeedbackCommentURL
         }
-        ServiceApi.shareInstance.postWebService(objc: GetCommentRespone.self, urlStr: Constant.getCommentURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        ServiceApi.shareInstance.postWebService(objc: GetCommentRespone.self, urlStr: url, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if self.page == 1{
                 self.commentList = []
             }
             if isSuccess{
                 let result = dataResponse as! GetCommentRespone
                 if result.resultCode == "200"{
-                    if let list = result.list {
+                    if let list = result.commentList {
                         self.handleListResult(dataList: list)
                     }
                 }else{
@@ -155,11 +173,11 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
     func postComment() {
         let info = CommentItem()
         if type == ReplyCommentViewController.TICKET {
-            
+            info.postId = requestItem.id
         }else if type == ReplyCommentViewController.NOTIFICATION{
-            
+            info.postId = notificationItem.id
         }else if type == ReplyCommentViewController.FEEEDBACK{
-            
+            info.postId = feedbackItem.id
         }
         info.postType = "\(type)"
         info.content = tvContentSend.text

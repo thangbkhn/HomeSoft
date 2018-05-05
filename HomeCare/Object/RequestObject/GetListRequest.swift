@@ -12,4 +12,5 @@ class GetListRequest: BaseRequest {
     var clientId:String?
     var isPagging:Bool?
     var page:Int?
+    var roomCode:String?
 }

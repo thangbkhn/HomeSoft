@@ -10,32 +10,16 @@ import UIKit
 import RAMAnimatedTabBarController
 
 class FeedbackViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var rateList:[Double] = [1 , 3, 6,34,100]
+    
     var isLogin = false
     let loginTag = 1
     var frame:CGRect!
-    let notRate = UIImage(named: "star")
-    let rateLess = UIImage(named: "star4")
-    let rate12 = UIImage(named: "star3")
-    let rateMore = UIImage(named: "star5")
-    let rateFull = UIImage(named: "star2")
-    
-    @IBOutlet weak var imgBuilding: UIImageView!
-    @IBOutlet weak var tvBuildingName: UILabel!
-    @IBOutlet weak var tvAddress: UILabel!
-    @IBOutlet weak var tvPhone: UILabel!
-    @IBOutlet weak var tvAverageRate: UILabel!
-    @IBOutlet weak var star1: UIImageView!
-    @IBOutlet weak var star2: UIImageView!
-    @IBOutlet weak var star3: UIImageView!
-    @IBOutlet weak var star4: UIImageView!
-    @IBOutlet weak var star5: UIImageView!
-    @IBOutlet weak var tvSumRate: UILabel!
-    @IBOutlet weak var view5: UIView!
-    @IBOutlet weak var view4: UIView!
-    @IBOutlet weak var view3: UIView!
-    @IBOutlet weak var view2: UIView!
-    @IBOutlet weak var view1: UIView!
+    var feedbackList:[FeedbackItem] = []
+    let ITEM_LIMIT = 10
+    var refresher: UIRefreshControl!
+    var isLoadMore = true
+    let footerView = FooterView()
+    var page = 1
     @IBOutlet weak var tbComment: UITableView!
     
     override func viewDidLoad() {
@@ -66,34 +50,54 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
             if let viewWithTag = self.view.viewWithTag(loginTag){
                 viewWithTag.removeFromSuperview()
             }
-            view1.setNeedsLayout()
-            view1.layoutIfNeeded()
-            view2.setNeedsLayout()
-            view2.layoutIfNeeded()
-            view3.setNeedsLayout()
-            view3.layoutIfNeeded()
-            view4.setNeedsLayout()
-            view4.layoutIfNeeded()
-            view5.setNeedsLayout()
-            view5.layoutIfNeeded()
-            setUpRateView()
+            refresher = UIRefreshControl()
+            refresher.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
+            tbComment.addSubview(refresher)
+            tbComment.tableFooterView?.isHidden = true
+            if let window = UIApplication.shared.keyWindow {
+                footerView.backgroundColor = UIColor.clear
+                footerView.frame.size = CGSize(width: window.frame.width, height: 48)
+                footerView.activityIndicatorView.startAnimating()
+                tbComment.tableFooterView = footerView
+            }
+            page = 1
+            getFeedbackList()
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return feedbackList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
+        let item = feedbackList[indexPath.row]
         cell.tvComment.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.preservesSuperviewLayoutMargins = false
         cell.selectionStyle = .none
+        cell.tvUser.text = item.ownerName
+        cell.tvComment.text = item.content
+        cell.tvDate.text =  item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "ReplyComment", bundle:nil)
         let replyCommentViewController = storyBoard.instantiateViewController(withIdentifier: "replyComment") as! ReplyCommentViewController
+        replyCommentViewController.type = ReplyCommentViewController.FEEEDBACK
+        replyCommentViewController.feedbackItem = feedbackList[indexPath.row]
         self.navigationController?.pushViewController(replyCommentViewController, animated: true)
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if isLoadMore{
+            let lastItem = self.feedbackList.count - 1
+            if indexPath.item == lastItem{
+                page = page + 1
+                getFeedbackList()
+            }
+        }
+    }
+    @objc func refreshData() {
+        page = 1
+        getFeedbackList()
     }
     @objc func reloadForm() {
         self.viewDidLoad()
@@ -118,56 +122,85 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
         customAlert.delegate = self
         self.present(customAlert, animated: true, completion: nil)
     }
-    func setUpRateView() {
-        var sum = 0.0
-        var sumRate = 0.0
-        for i in 0..<rateList.count{
-            sum += rateList[i]
-            sumRate += rateList[i] * (Double)(i+1)
-        }
-        tvAverageRate.text = "\(NSString(format: "%.1f", sumRate/sum))"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            let max = self.rateList.max()
-            self.changeWidth(max: max!, view: self.view1, i: 0)
-            self.changeWidth(max: max!, view: self.view2, i: 1)
-            self.changeWidth(max: max!, view: self.view3, i: 2)
-            self.changeWidth(max: max!, view: self.view4, i: 3)
-            self.changeWidth(max: max!, view: self.view5, i: 4)
-        }
-        let b = round(10 * sumRate/sum)
-        setStar(starList: [star1,star2,star3,star4,star5], rate: Double(b/10))
-    }
-    func  changeWidth(max:Double, view:UIView, i :Int) {
-        let frame = view.frame
-        view.frame = CGRect(x: frame.minX, y: frame.minY, width: frame.size.width * (CGFloat)(rateList[i]/max), height: frame.height)
-    }
-    func setStar(starList:[UIImageView], rate:Double) {
-        let a = (Int)(rate) - 1
-        // To diem rate
-        for i in 0...a {
-            starList[i].image = rateFull
-        }
-        // To diem k rate
-        if a < 3{
-            for i in (a+2)...4{
-                starList[i].image = notRate
+    func getFeedbackList() {
+        let request = GetFeedbackRequest()
+        request.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
+        request.isPagging = true
+        request.page = "1"
+        request.username = GlobalInfo.sharedInstance.userInfo?.mobile
+        ServiceApi.shareInstance.postWebService(objc: GetFeedbackResponse.self, urlStr: Constant.getFeedbackListUrl, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+            if self.page == 1{
+                self.feedbackList = []
             }
+            if isSuccess{
+                let result = dataResponse as! GetFeedbackResponse
+                if result.resultCode == "200"{
+                    if let list = result.list {
+                        self.handleListResult(dataList: list)
+                    }
+                }else{
+                    GlobalUtil.showToast(context: self, message: "Không thể lấy danh sách góp ý")
+                }
+            }else{
+                GlobalUtil.showToast(context: self, message: "Không thể lấy danh sách góp ý")
+            }
+            self.tbComment.reloadData()
+            if (self.refresher != nil && self.refresher.isRefreshing) {
+                self.refresher.endRefreshing()
+                self.refresher.isHidden = true
+            }
+            self.footerView.isHidden = true
+        }, parameter: request.toDict())
+    }
+    func handleListResult(dataList:[FeedbackItem]) {
+        if feedbackList.count < self.ITEM_LIMIT {
+            self.tbComment.tableFooterView?.frame.size = CGSize(width: (self.tbComment.tableFooterView?.frame.width)!, height: 0)
+            self.tbComment.tableFooterView?.isHidden = true
+            self.isLoadMore = false
+        } else if !self.isLoadMore {
+            self.tbComment.tableFooterView?.frame.size = CGSize(width: (self.tbComment.tableFooterView?.frame.width)!, height: 48)
+            self.tbComment.tableFooterView?.isHidden = false
+            self.footerView.activityIndicatorView.startAnimating()
+            self.isLoadMore = true
         }
-        //To diem hien tai
-        let b = ((Int)(rate * 10)) % 10
-        if b == 5 {
-            starList[a+1].image = rate12
-        }else if b<5{
-            starList[a+1].image = rateLess
-        }else{
-            starList[a+1].image = rateMore
-        }
+        self.feedbackList.append(contentsOf: dataList)
+        self.tbComment.reloadData()
+    }
+    func addFeedback(content:String) {
+        let info = FeedbackItem()
+        info.content = content
+        info.ownerId = GlobalInfo.sharedInstance.userInfo?.id
+        info.ownerName = GlobalInfo.sharedInstance.userInfo?.fullName
+        info.roomId = GlobalInfo.sharedInstance.userInfo?.roomId
+        info.roomCode = GlobalInfo.sharedInstance.userInfo?.roomCode
+        info.roomName = GlobalInfo.sharedInstance.userInfo?.roomName
+        
+        let request = AddObjectRequest()
+        request.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
+        request.userId = GlobalInfo.sharedInstance.userInfo?.id
+        request.info = info.toDict()
+        
+        ServiceApi.shareInstance.postWebService(objc: AddFeedbackResponse.self, urlStr: Constant.addFeedback, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+            if isSuccess{
+                let data = dataResponse as! AddFeedbackResponse
+                if data.resultCode == "200"{
+                    if data.info != nil{
+                        let newItem = [data.info!]
+                        self.handleListResult(dataList: newItem)
+                    }
+                    
+                }else{
+                    GlobalUtil.showToast(context: self, message: "Không thể gửi góp ý")
+                }
+            }else{
+                GlobalUtil.showToast(context: self, message: "Không thể gửi góp ý")
+            }
+        }, parameter: request.toDict())
     }
 }
 extension FeedbackViewController:CustomAlertViewDelegate{
-    func okButtonTapped(rateLevel: Int, commentStr: String) {
-        GlobalUtil.showToast(context: self, message: "Cảm ơn bạn đã đánh giá")
-        print("Kết quả đánh giá\n  - Mức độ hài lòng\(rateLevel)\n  - \(commentStr)")
+    func okButtonTapped( commentStr: String) {
+        self.addFeedback(content: commentStr)
     }
     
     func cancelButtonTapped() {

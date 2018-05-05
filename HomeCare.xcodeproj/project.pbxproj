@@ -115,6 +115,11 @@
 		A0D1AD5A209C8FDB00A0C032 /* GetCommentRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD59209C8FDB00A0C032 /* GetCommentRespone.swift */; };
 		A0D1AD5C209C970E00A0C032 /* PostCommentRquest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD5B209C970E00A0C032 /* PostCommentRquest.swift */; };
 		A0D1AD5E209C978C00A0C032 /* ReplyComentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD5D209C978C00A0C032 /* ReplyComentResponse.swift */; };
+		A0D1AD60209E013B00A0C032 /* FeedbackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD5F209E013B00A0C032 /* FeedbackItem.swift */; };
+		A0D1AD62209E16E900A0C032 /* GetFeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD61209E16E900A0C032 /* GetFeedbackResponse.swift */; };
+		A0D1AD64209E171700A0C032 /* GetFeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD63209E171700A0C032 /* GetFeedbackRequest.swift */; };
+		A0D1AD66209E216F00A0C032 /* AddObjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD65209E216F00A0C032 /* AddObjectRequest.swift */; };
+		A0D1AD6A209E2AD300A0C032 /* AddFeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1AD69209E2AD300A0C032 /* AddFeedbackResponse.swift */; };
 		A0DF0A45208643530025911F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF0A44208643530025911F /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +235,11 @@
 		A0D1AD59209C8FDB00A0C032 /* GetCommentRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentRespone.swift; sourceTree = "<group>"; };
 		A0D1AD5B209C970E00A0C032 /* PostCommentRquest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentRquest.swift; sourceTree = "<group>"; };
 		A0D1AD5D209C978C00A0C032 /* ReplyComentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyComentResponse.swift; sourceTree = "<group>"; };
+		A0D1AD5F209E013B00A0C032 /* FeedbackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackItem.swift; sourceTree = "<group>"; };
+		A0D1AD61209E16E900A0C032 /* GetFeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedbackResponse.swift; sourceTree = "<group>"; };
+		A0D1AD63209E171700A0C032 /* GetFeedbackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedbackRequest.swift; sourceTree = "<group>"; };
+		A0D1AD65209E216F00A0C032 /* AddObjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectRequest.swift; sourceTree = "<group>"; };
+		A0D1AD69209E2AD300A0C032 /* AddFeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedbackResponse.swift; sourceTree = "<group>"; };
 		A0DF0A44208643530025911F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C48F39D5A68B477A2447E731 /* Pods_HomeCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE96B4B2A0E65E4790D3633C /* Pods-HomeCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeCare/Pods-HomeCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -369,6 +379,7 @@
 				1CA32B7F20722A3900A1528D /* FeeItem.swift */,
 				A0011E8E2094BE790006BEA0 /* FoodTest.swift */,
 				A0D1AD55209C89EC00A0C032 /* CommentItem.swift */,
+				A0D1AD5F209E013B00A0C032 /* FeedbackItem.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -446,6 +457,8 @@
 				1CA32B7D20722A0200A1528D /* GetFeeListResponse.swift */,
 				A0D1AD59209C8FDB00A0C032 /* GetCommentRespone.swift */,
 				A0D1AD5D209C978C00A0C032 /* ReplyComentResponse.swift */,
+				A0D1AD61209E16E900A0C032 /* GetFeedbackResponse.swift */,
+				A0D1AD69209E2AD300A0C032 /* AddFeedbackResponse.swift */,
 			);
 			path = ResponseObject;
 			sourceTree = "<group>";
@@ -475,6 +488,8 @@
 				1CA00F2620858E180073745E /* UpdateRequest.swift */,
 				A0D1AD57209C8CDF00A0C032 /* GetCommentRequest.swift */,
 				A0D1AD5B209C970E00A0C032 /* PostCommentRquest.swift */,
+				A0D1AD63209E171700A0C032 /* GetFeedbackRequest.swift */,
+				A0D1AD65209E216F00A0C032 /* AddObjectRequest.swift */,
 			);
 			path = RequestObject;
 			sourceTree = "<group>";
@@ -695,6 +710,7 @@
 				1C9697552064B33200EC0105 /* Constant.swift in Sources */,
 				1C9697572064B3D800EC0105 /* NotificationItem.swift in Sources */,
 				1CA00F2D20858E180073745E /* ResidentListRequest.swift in Sources */,
+				A0D1AD60209E013B00A0C032 /* FeedbackItem.swift in Sources */,
 				1C0C6230206BC8A900CBAC1B /* ResidentTableViewCell.swift in Sources */,
 				1CBC3BF92068A65200AA799B /* OtherNotLoginViewController.swift in Sources */,
 				A0D1AD5E209C978C00A0C032 /* ReplyComentResponse.swift in Sources */,
@@ -706,7 +722,9 @@
 				A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */,
 				A0BD9F26209802AA00632CB4 /* ReplyCommentTableViewCell.swift in Sources */,
 				1CBC3C03206A254200AA799B /* UpdateTicketResponse.swift in Sources */,
+				A0D1AD64209E171700A0C032 /* GetFeedbackRequest.swift in Sources */,
 				A0011E992094E2C70006BEA0 /* KidToyCollectionViewCell.swift in Sources */,
+				A0D1AD6A209E2AD300A0C032 /* AddFeedbackResponse.swift in Sources */,
 				A0011E972094E2B00006BEA0 /* AppliancesCollectionViewCell.swift in Sources */,
 				1CA00F3320858E530073745E /* JSONAble.swift in Sources */,
 				1C96975D20651F6400EC0105 /* TicketResponse.swift in Sources */,
@@ -722,6 +740,7 @@
 				1CBC3BF120660A3C00AA799B /* FeedbackViewController.swift in Sources */,
 				1C000909205FEA5000971557 /* PaymentTableViewCell.swift in Sources */,
 				1C00097B2063C95600971557 /* TicketViewController.swift in Sources */,
+				A0D1AD62209E16E900A0C032 /* GetFeedbackResponse.swift in Sources */,
 				1C0008CE205F471000971557 /* AppDelegate.swift in Sources */,
 				1C000903205FC4A700971557 /* MainTabBar.swift in Sources */,
 				1C0008EB205F758500971557 /* NotificationViewController.swift in Sources */,
@@ -749,6 +768,7 @@
 				1CA00F2B20858E180073745E /* GetType.swift in Sources */,
 				1C93DFD7207650F7009FB58F /* HomeScreenViewController.swift in Sources */,
 				1CA32B8020722A3900A1528D /* FeeItem.swift in Sources */,
+				A0D1AD66209E216F00A0C032 /* AddObjectRequest.swift in Sources */,
 				1C0E9454206B557B0062DF67 /* GetTicketTypeResponse.swift in Sources */,
 				1CA32B7E20722A0200A1528D /* GetFeeListResponse.swift in Sources */,
 				1CBC3BF32066872000AA799B /* OtherViewController.swift in Sources */,

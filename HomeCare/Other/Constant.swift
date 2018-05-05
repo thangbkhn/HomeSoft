@@ -19,8 +19,12 @@ class Constant: NSObject {
     static let getResidentList = baseUrl + "/api/Resident/GetMember/"
     static let updateResidentURL = baseUrl + "/api/Resident/Action/"
     static let getFeeListURL = baseUrl + "/api/Fee/GetByRoomId"
-    static let getCommentURL = baseUrl + "/api/Notification/GetComment/"
+    static let getNotificationCommentURL = baseUrl + "/api/Notification/GetComment/"
+    static let getTicketCommentURL = baseUrl + "/api/Ticket/GetComment/"
     static let postCommentURL = baseUrl + "/api/Comment/Action/"
+    static let getFeedbackListUrl = baseUrl + "/api/Feedback/GetAll"
+    static let getFeedbackCommentURL = baseUrl + "/api/Feedback/GetComment/"
+    static let addFeedback = baseUrl + "/api/Feedback/Action/"
     
     static let motobikeId = "5aa14c5609ffdadedc095669"
     static let carId = "5aa14ca809ffdadedc09569d"

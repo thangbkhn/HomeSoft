@@ -8,6 +8,7 @@
 
 import UIKit
 import MGSwipeTableCell
+import RAMAnimatedTabBarController
 
 class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, CallBack, UISearchResultsUpdating, UISearchBarDelegate {
     func result(isSuccess: Bool) {
@@ -108,7 +109,12 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
             self.navigationController?.pushViewController(newRequestViewController, animated: true)
             return true
         }), MGSwipeButton(title: " Xem", icon: nil, backgroundColor: UIColor.brown, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), callback: { (open) -> Bool in
-            GlobalUtil.showInfoDialog(context: self, title:item.ticketTypeName ?? "Yêu cầu", message: item.desc ?? "Nội dung không tồn tại")
+//            GlobalUtil.showInfoDialog(context: self, title:item.ticketTypeName ?? "Yêu cầu", message: item.desc ?? "Nội dung không tồn tại")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "ReplyComment", bundle:nil)
+            let commentViewController = storyBoard.instantiateViewController(withIdentifier: "replyComment") as! ReplyCommentViewController
+            commentViewController.type = ReplyCommentViewController.TICKET
+            commentViewController.requestItem = self.ticketList[indexPath.row]
+            self.navigationController?.pushViewController(commentViewController, animated: true)
             return true
         })]
         cell.rightSwipeSettings.transition = .rotate3D
@@ -259,6 +265,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         ticketRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
         ticketRequest.isPagging = true
         ticketRequest.page = self.page
+        ticketRequest.roomCode = GlobalInfo.sharedInstance.userInfo?.roomCode
         ServiceApi.shareInstance.postWebService(objc: TicketResponse.self, urlStr: Constant.getAllTicketURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
             if self.page == 1{
                 self.ticketList = []
@@ -319,5 +326,15 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
 //        resultController.tableView.register(UINib(nibName: <#T##String#>, bundle: <#T##Bundle?#>), forCellReuseIdentifier: <#T##String#>)
 //        self.resultController.tableView.dataSource = self
 //        self.resultController.tableView.delegate = self
+    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.showTabar(isShow: true)
+//    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.showTabar(isShow: true)
+    }
+    func showTabar(isShow:Bool)  {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(!isShow)
     }
 }

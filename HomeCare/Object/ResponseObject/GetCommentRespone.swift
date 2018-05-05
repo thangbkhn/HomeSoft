@@ -9,5 +9,5 @@
 import UIKit
 
 class GetCommentRespone: BaseResponse {
-    var list:[CommentItem]?
+    var commentList:[CommentItem]?
 }
