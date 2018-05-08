@@ -133,7 +133,7 @@ class OtherViewController: UIViewController {
                 return
             }
             let requestChange = ChangePasswordRequest()
-            requestChange.username = GlobalInfo.sharedInstance.userInfo?.email
+            requestChange.username = GlobalInfo.sharedInstance.userInfo?.mobile
             requestChange.password = textPassword.text
             requestChange.newpassword = textNewPassword.text
             ServiceApi.shareInstance.postWebService(objc: ChangePasswordResponse.self, urlStr: Constant.changePasswordURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
