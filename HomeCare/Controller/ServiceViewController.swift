@@ -138,6 +138,10 @@ class ServiceViewController: UIViewController,UISearchResultsUpdating, UISearchB
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Shadow navigation line
+        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
         setNavigationBar()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard)))
         clvFood.reloadSections(IndexSet(integer: 0))

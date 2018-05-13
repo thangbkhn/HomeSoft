@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedbackItem" rowHeight="90" id="T3V-oz-9Ql" customClass="TicketTableViewCell" customModule="HomeCare" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedbackItem" rowHeight="85" id="T3V-oz-9Ql" customClass="TicketTableViewCell" customModule="HomeCare" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T3V-oz-9Ql" id="NA5-yc-vYa">
@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="request-icon" translatesAutoresizingMaskIntoConstraints="NO" id="3k0-zj-ZGW">
-                        <rect key="frame" x="6" y="6" width="50" height="50"/>
+                        <rect key="frame" x="20" y="11" width="50" height="50"/>
                         <color key="backgroundColor" red="0.3803921569" green="0.56470588239999997" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="NNg-qB-IPj"/>
@@ -34,7 +34,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKL-Ep-c5a">
-                        <rect key="frame" x="64" y="11" width="225" height="21"/>
+                        <rect key="frame" x="90" y="11" width="187.5" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="IRd-61-NJJ"/>
                         </constraints>
@@ -42,14 +42,14 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ban quản lý toà nhà xin thông báo tới tất cả hộ dân về việc triển khai" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-yb-18H">
-                        <rect key="frame" x="64" y="32" width="295" height="39"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ban quản lý toà nhà xin thông báo tới tất cả hộ dân về việc triển khai" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-yb-18H">
+                        <rect key="frame" x="90" y="32" width="269" height="47"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 tháng 3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xT-pu-uiW">
-                        <rect key="frame" x="289" y="13" width="76" height="17"/>
+                        <rect key="frame" x="277.5" y="13" width="87.5" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="6TJ-EM-xzf"/>
                         </constraints>
@@ -68,23 +68,23 @@
                 <constraints>
                     <constraint firstItem="5xT-pu-uiW" firstAttribute="centerY" secondItem="jKL-Ep-c5a" secondAttribute="centerY" id="418-OW-YXE"/>
                     <constraint firstAttribute="bottom" secondItem="xXS-ZB-XLM" secondAttribute="bottom" id="4h0-ac-FNQ"/>
-                    <constraint firstItem="jKL-Ep-c5a" firstAttribute="leading" secondItem="3k0-zj-ZGW" secondAttribute="trailing" constant="8" id="6SR-Le-y6s"/>
-                    <constraint firstItem="3k0-zj-ZGW" firstAttribute="top" secondItem="NA5-yc-vYa" secondAttribute="top" constant="6" id="HuJ-EX-EXj"/>
-                    <constraint firstItem="jKL-Ep-c5a" firstAttribute="width" secondItem="NA5-yc-vYa" secondAttribute="width" multiplier="1.8/3" id="IP1-4H-bqf"/>
+                    <constraint firstItem="jKL-Ep-c5a" firstAttribute="leading" secondItem="3k0-zj-ZGW" secondAttribute="trailing" constant="20" id="6SR-Le-y6s"/>
+                    <constraint firstItem="jKL-Ep-c5a" firstAttribute="width" secondItem="NA5-yc-vYa" secondAttribute="width" multiplier="1.5/3" id="IP1-4H-bqf"/>
                     <constraint firstItem="xXS-ZB-XLM" firstAttribute="leading" secondItem="NA5-yc-vYa" secondAttribute="leading" id="IbY-py-Q1O"/>
                     <constraint firstItem="jKL-Ep-c5a" firstAttribute="top" secondItem="NA5-yc-vYa" secondAttribute="topMargin" id="IlQ-iV-0qO"/>
                     <constraint firstAttribute="trailing" secondItem="5xT-pu-uiW" secondAttribute="trailing" constant="10" id="KoG-Iu-XHb"/>
                     <constraint firstAttribute="trailing" secondItem="xXS-ZB-XLM" secondAttribute="trailing" id="NXu-Vq-o2X"/>
                     <constraint firstItem="1ml-yb-18H" firstAttribute="top" secondItem="jKL-Ep-c5a" secondAttribute="bottom" id="U6v-RI-Mbz"/>
-                    <constraint firstItem="1ml-yb-18H" firstAttribute="leading" secondItem="3k0-zj-ZGW" secondAttribute="trailing" constant="8" id="c5G-Px-Qqv"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="1ml-yb-18H" secondAttribute="bottom" constant="8" id="cck-aJ-WsU"/>
+                    <constraint firstItem="3k0-zj-ZGW" firstAttribute="top" secondItem="jKL-Ep-c5a" secondAttribute="top" id="Z2p-NX-ihS"/>
+                    <constraint firstItem="1ml-yb-18H" firstAttribute="leading" secondItem="3k0-zj-ZGW" secondAttribute="trailing" constant="20" id="c5G-Px-Qqv"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1ml-yb-18H" secondAttribute="bottom" id="cck-aJ-WsU"/>
                     <constraint firstItem="5xT-pu-uiW" firstAttribute="leading" secondItem="jKL-Ep-c5a" secondAttribute="trailing" id="hR6-4Q-A0Q"/>
                     <constraint firstItem="1ml-yb-18H" firstAttribute="trailing" secondItem="NA5-yc-vYa" secondAttribute="trailingMargin" id="jWe-SG-IqO"/>
-                    <constraint firstItem="3k0-zj-ZGW" firstAttribute="leading" secondItem="NA5-yc-vYa" secondAttribute="leading" constant="6" id="k3q-QO-N0W"/>
+                    <constraint firstItem="3k0-zj-ZGW" firstAttribute="leading" secondItem="NA5-yc-vYa" secondAttribute="leading" constant="20" id="k3q-QO-N0W"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                        <real key="value" value="8"/>
+                        <real key="value" value="0.0"/>
                     </userDefinedRuntimeAttribute>
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
@@ -98,6 +98,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="request-icon" width="150" height="150"/>
+        <image name="request-icon" width="66" height="66"/>
     </resources>
 </document>

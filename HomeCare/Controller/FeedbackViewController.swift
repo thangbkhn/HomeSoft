@@ -27,6 +27,10 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
         if frame == nil {
             frame = self.view.frame
         }
+        //Shadow navigation line
+        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
+        
         navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
         let backButton = UIBarButtonItem(title: "Góp ý", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
@@ -34,9 +38,6 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         if !isLogin {
-            
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
             let loginStoryboard :UIStoryboard = UIStoryboard(name: "NotLoginScreen", bundle: nil)
             let loginView = loginStoryboard.instantiateViewController(withIdentifier: "loginView") as! NotLoginViewController
             self.addChildViewController(loginView)

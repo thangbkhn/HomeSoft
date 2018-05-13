@@ -54,10 +54,6 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
         backgroundView.backgroundColor = UIColor.clear
         cell.selectedBackgroundView = backgroundView
         cell.selectionStyle = .none
-//        cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
-//        cell.layer.borderWidth = 1
-//        cell.layer.cornerRadius = 3
-//        cell.clipsToBounds = true
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -88,9 +84,6 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     @objc func chartAction() {
         if isLogin {
-            
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
             let loginStoryboard :UIStoryboard = UIStoryboard(name: "Chart", bundle: nil)
             let chartView = loginStoryboard.instantiateViewController(withIdentifier: "charView") as! ChartViewController
             for i in 0 ..< feeList.count {
@@ -132,6 +125,11 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
         if frame == nil {
             frame = self.view.frame
         }
+        
+        //Shadow navigation line
+        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(swithForm), name: NotificationConstant.swithPayment, object: nil)
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)

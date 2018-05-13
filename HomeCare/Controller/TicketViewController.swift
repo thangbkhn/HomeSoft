@@ -62,7 +62,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         let titleV = UILabel()
         titleV.text = "YÊU CẦU"
         titleV.textColor = UIColor.rbg(red: 92, green: 94, blue: 102)
-        titleV.font = UIFont.boldSystemFont(ofSize: 19)
+        titleV.font = UIFont.boldSystemFont(ofSize: 17)
         titleV.textAlignment = NSTextAlignment.center
         return titleV
     }()
@@ -79,18 +79,18 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         cell.txtTitle.text = item.ticketTypeName != nil ? "Loại yêu cầu: \(item.ticketTypeName ?? "")":"Loại yêu cầu: "
         cell.txtDate.text = item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
         cell.txtContent.text = item.desc != nil ? "Mô tả: \(item.desc ?? "")" : "Mô tả: "
-        cell.txtContent.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.preservesSuperviewLayoutMargins = false
+//        cell.txtContent.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsMake(40,40,40,40)
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.clear
         cell.selectedBackgroundView = backgroundView
         cell.selectionStyle = .none
         cell.backgroundColor = .white
-        cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
+//        cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 8
+//        cell.clipsToBounds = true
         if item.ticketTypeId == Constant.motobikeId {
             cell.img.image = UIImage(named: "scooter-front-view")?.imageWithColor(color1: .white).imageWithInsets(insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))
         }else if item.ticketTypeId == Constant.carId {
@@ -121,7 +121,11 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return 85
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -205,6 +209,11 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         if frame == nil {
             frame = self.view.frame
         }
+        
+        //Shadow navigation line
+        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
+        
         tbTicket.register(nib, forCellReuseIdentifier: "FeedbackItem")
         let tap = UITapGestureRecognizer(target: self, action:#selector(dismissKeyBoard))
         view.addGestureRecognizer(tap)
@@ -214,8 +223,6 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         if !isLogin {
             
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
             let loginStoryboard :UIStoryboard = UIStoryboard(name: "NotLoginScreen", bundle: nil)
             let loginView = loginStoryboard.instantiateViewController(withIdentifier: "loginView") as! NotLoginViewController
             self.addChildViewController(loginView)

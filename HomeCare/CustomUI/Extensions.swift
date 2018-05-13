@@ -12,6 +12,17 @@ extension UIColor {
     static func rbg(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
     }
+    /// Converts this `UIColor` instance to a 1x1 `UIImage` instance and returns it.
+    ///
+    /// - Returns: `self` as a 1x1 `UIImage`.
+    func as1ptImage() -> UIImage {
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        setFill()
+        UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
 
 extension UIView {

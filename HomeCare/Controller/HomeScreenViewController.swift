@@ -16,6 +16,7 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var tvName: UILabel!
     @IBOutlet weak var tvLogin: UIButton!
     @IBOutlet weak var tvUse: UILabel!
+    @IBOutlet weak var tvInfo: UILabel!
     
     var timer: Timer!
     var updateCounter:Int!
@@ -64,13 +65,18 @@ class HomeScreenViewController: UIViewController {
     @objc func reloadForm() {
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         if !isLogin {
-            tvLogin.setTitle("Đăng nhập", for:.normal)
+            //tvLogin.setTitle("Đăng nhập", for:.normal)
             tvUse.isHidden = false
+            tvLogin.isHidden = false
+            tvInfo.isHidden = true
             tvName.text = "Xin chào"
         }else{
-            tvLogin.setTitle("Đăng xuất", for:.normal)
+            //tvLogin.setTitle("Đăng xuất", for:.normal)
             tvUse.isHidden = true
+            tvLogin.isHidden = true
+            tvInfo.isHidden = false
             tvName.text = "\(GlobalInfo.sharedInstance.getUserInfo().fullName ?? "")"
+            tvInfo.text = "Căn hộ \(GlobalInfo.sharedInstance.getUserInfo().roomName ?? "") Toà nhà \(GlobalInfo.sharedInstance.getUserInfo().buildingName ?? "")\n234 Phạm Văn Đồng - Bắc Từ Liêm - Hà Nội"
         }
     }
     @IBAction func btNotification(_ sender: Any) {

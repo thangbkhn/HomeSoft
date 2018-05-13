@@ -27,7 +27,6 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         cell.tvTitle.text = item.title != nil ? "Tiêu đề: \(item.title ?? "")" : "Tiêu đề: "
         cell.tvDate.text = item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
         cell.tvToPerson.text = "Tới: \(item.ownerName ?? "")"
-        //cell.tvContent.text = item.desc != nil ? "Mô tả: \(item.desc ?? "")" : "Mô tả: "
         cell.tvContent.text = "Mô tả: \(item.desc ?? "")"
         cell.imgAttachment.isHidden = item.urlAttach == nil ? true:false
         let backgroundView = UIView()
@@ -36,16 +35,11 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         cell.selectionStyle = .none
         
         cell.backgroundColor = .white
-//        cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
-//        cell.layer.borderWidth = 1
-//        cell.layer.cornerRadius = 3
-//        cell.clipsToBounds = true
         cell.rightButtons = [MGSwipeButton(title: "Xoá", icon: nil, backgroundColor: UIColor.gray, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), callback: { (edit) -> Bool in
             
             return true
         }), MGSwipeButton(title: " Xem", icon: nil, backgroundColor: UIColor.brown, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), callback: { (open) -> Bool in
             let item = self.notificationList[indexPath.row]
-//            GlobalUtil.showInfoDialog(context: self, title: item.title ?? "", message: item.desc ?? "Nội dung không có sẵn")
             let storyBoard : UIStoryboard = UIStoryboard(name: "ReplyComment", bundle:nil)
             let commentViewController = storyBoard.instantiateViewController(withIdentifier: "replyComment") as! ReplyCommentViewController
             commentViewController.type = ReplyCommentViewController.NOTIFICATION
@@ -83,14 +77,11 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         let tap = UITapGestureRecognizer(target: self, action:#selector(dismissKeyBoard))
         view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = false
+        //Shadow navigation line
+        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
+        
         if !isLogin {
-//            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "lineShadow"), for: UIBarMetrics.default)
-//            self.navigationController?.navigationBar.shadowImage = UIImage(named: "lineShadow")
-            self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
-            self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-            self.navigationController?.navigationBar.layer.shadowRadius = 4.0
-            self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
-            self.navigationController?.navigationBar.layer.masksToBounds = false
             
             let loginStoryboard :UIStoryboard = UIStoryboard(name: "NotLoginScreen", bundle: nil)
             let loginView = loginStoryboard.instantiateViewController(withIdentifier: "loginView") as! NotLoginViewController
@@ -101,6 +92,12 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             self.view.addSubview(addView!)
             loginView.didMove(toParentViewController: self)
         }else{
+            
+            self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+            self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: self.frame.width, height: 2.0)
+            self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+            self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+            self.navigationController?.navigationBar.layer.masksToBounds = false
             self.tbNotification.separatorStyle = .none
             if let viewWithTag = self.view.viewWithTag(100){
                 viewWithTag.removeFromSuperview()

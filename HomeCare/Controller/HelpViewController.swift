@@ -23,6 +23,10 @@ class HelpViewController: UIPageViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Shadow navigation line
+        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
+        
         self.dataSource = self
         navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
         navigationController?.navigationBar.barTintColor = .white

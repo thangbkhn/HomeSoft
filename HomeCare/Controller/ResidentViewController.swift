@@ -19,6 +19,10 @@ class ResidentViewController: UIViewController, UITableViewDelegate, UITableView
     let loginTag = 1
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Shadow navigation line
+        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
+        
         self.tbResident.separatorStyle = .none
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard)))
         let tap = UITapGestureRecognizer(target: self, action:#selector(dismissKeyBoard))
