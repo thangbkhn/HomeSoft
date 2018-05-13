@@ -54,10 +54,10 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
         backgroundView.backgroundColor = UIColor.clear
         cell.selectedBackgroundView = backgroundView
         cell.selectionStyle = .none
-        cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 3
-        cell.clipsToBounds = true
+//        cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 3
+//        cell.clipsToBounds = true
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -168,12 +168,12 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func getFeeList(year:Int) {
         self.startLoading(mIsLoading: true)
         let getFeeListRequest = GetFeeListRequest()
-        getFeeListRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
-        getFeeListRequest.roomCode = GlobalInfo.sharedInstance.userInfo?.roomCode
+        getFeeListRequest.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
+        getFeeListRequest.roomCode = GlobalInfo.sharedInstance.getUserInfo().roomCode
         getFeeListRequest.year = "\(year)"
         getFeeListRequest.isPagging = false
         getFeeListRequest.page = "1"
-        ServiceApi.shareInstance.postWebService(objc: GetFeeListResponse.self, urlStr: Constant.getFeeListURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        ServiceApi.shareInstance.postWebService(objc: GetFeeListResponse.self, urlStr: Constant.sharedInstance.getFeeListURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if isSuccess{
                 let result = dataResponse as! GetFeeListResponse
                 if result.resultCode == "200"{

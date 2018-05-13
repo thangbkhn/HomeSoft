@@ -42,10 +42,15 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePi
         imgProfile.clipsToBounds = true
         loading.isHidden = true
         txtFullName.delegate = self
+        txtFullName.titleFont = txtFullName.titleLabel.font.withSize(10)
         txtMail.delegate = self
+        txtMail.titleFont = txtMail.titleLabel.font.withSize(10)
         txtPhone.delegate = self
+        txtPhone.titleFont = txtPhone.titleLabel.font.withSize(10)
         txtPhone.keyboardType = UIKeyboardType.numberPad
         txtIdentityNo.delegate = self
+        txtIdentityNo.titleFont = txtIdentityNo.titleLabel.font.withSize(10)
+        txtBirthday.titleFont = txtBirthday.titleLabel.font.withSize(10)
         imagePicker.delegate = self
         if isEdit{
             txtFullName.text = accout?.fullName
@@ -87,7 +92,7 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePi
         account.email = txtMail.text?.trimmingCharacters(in: .whitespaces)
         account.gender = self.gender
         account.isOwner =  isOwner.isSelected ? "1":"0"
-        account.roomId = GlobalInfo.sharedInstance.userInfo?.roomId
+        account.roomId = GlobalInfo.sharedInstance.getUserInfo().roomId
         updateResident(resident: account)
     }
     
@@ -165,10 +170,10 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePi
     }
     func updateResident(resident:Account) {
         let residentUpdateRequest = UpdateRequest()
-        residentUpdateRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
-        residentUpdateRequest.userId = GlobalInfo.sharedInstance.userInfo?.id
+        residentUpdateRequest.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
+        residentUpdateRequest.userId = GlobalInfo.sharedInstance.getUserInfo().id
         residentUpdateRequest.info = resident.toDict()
-        ServiceApi.shareInstance.postWebService(objc: UpdateResidentResponse.self, urlStr: Constant.updateResidentURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        ServiceApi.shareInstance.postWebService(objc: UpdateResidentResponse.self, urlStr: Constant.sharedInstance.updateResidentURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if isSuccess{
                 let result = dataResponse as! UpdateResidentResponse
                 if result.resultCode == "200"{

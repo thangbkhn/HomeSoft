@@ -10,6 +10,7 @@ import UIKit
 import DatePickerDialog
 import SkyFloatingLabelTextField
 import ActionSheetPicker_3_0
+import RAMAnimatedTabBarController
 
 protocol CallBack {
     func result(isSuccess:Bool)
@@ -17,7 +18,6 @@ protocol CallBack {
 class NewRequestViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var txtContent: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet var txtType: SkyFloatingLabelTextFieldWithIcon!
-    @IBOutlet var txtDateComplete: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet var isLoading: UIActivityIndicatorView!
     
     let dateFormatStr = "dd/MM/yyyy"
@@ -41,7 +41,8 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         txtContent.delegate = self
         txtType.delegate = self
-        txtDateComplete.delegate = self
+        txtContent.titleFont = txtContent.titleLabel.font.withSize(10)
+        txtType.titleFont = txtContent.titleLabel.font.withSize(10)
         isLoading.isHidden = true
         getTicketType()
         if(ticket != nil){
@@ -65,13 +66,12 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
             
         }else{
             ticket = TicketItem()
-            let userInfo = GlobalInfo.sharedInstance.userInfo
-            ticket?.createBy = userInfo?.id
-            ticket?.roomCode = userInfo?.roomCode
-            ticket?.ownerName = userInfo?.fullName
-            ticket?.ownerId = userInfo?.id
-            ticket?.finishDate = txtDateComplete.text
-            ticket?.clientId = userInfo?.clientId
+            let userInfo = GlobalInfo.sharedInstance.getUserInfo()
+            ticket?.createBy = userInfo.id
+            ticket?.roomCode = userInfo.roomCode
+            ticket?.ownerName = userInfo.fullName
+            ticket?.ownerId = userInfo.id
+            ticket?.clientId = userInfo.clientId
             ticket?.createdDatetime = GlobalUtil.getCurrentDate()
             ticket?.ticketTypeId = ticketType?.id
             ticket?.ticketTypeName = ticketType?.name
@@ -84,9 +84,8 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func txtTypeSelect(_ sender: Any) {
-        self.view.endEditing(true)
         DispatchQueue.main.asyncAfter(deadline: .now()
-            + 0.2) {
+            ) {
                 let datePicker = ActionSheetStringPicker(title: "Chọn loại yêu cầu", rows: self.ticketTypeListStr, initialSelection: self.ticketTypeListStr.count
                     / 2, doneBlock: { (picker, value, index) in
                         if index != nil{
@@ -94,29 +93,18 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
                             self.ticketType = self.ticketTypeList[value]
                             self.ticket?.ticketTypeId = self.ticketTypeList[value].id
                             self.ticket?.ticketTypeName = self.ticketTypeList[value].name
-                            self.view.endEditing(true)
+                            DispatchQueue.main.asyncAfter(deadline: .now()
+                                + 0.4) {
+                                    self.view.endEditing(true)
+                            }
                         }
                         return
                 }, cancel: nil, origin: (sender as AnyObject).superview!?.superview)
                 datePicker?.show()
         }
-    }
-    @IBAction func dateCompleteAction(_ sender: Any) {
-        self.view.endEditing(true)
         DispatchQueue.main.asyncAfter(deadline: .now()
-            + 0.2) {
-                self.datePickerTapped()
-        }
-    }
-    func datePickerTapped() {
-        DatePickerDialog().show("DatePicker", doneButtonTitle: "Xong", cancelButtonTitle: "Huỷ", datePickerMode: .date) {
-            (date) -> Void in
-            if let dt = date {
-                let formatter = DateFormatter()
-                formatter.dateFormat = self.dateFormatStr
-                self.txtDateComplete.text = formatter.string(from: dt)
-                
-            }
+            + 0.4) {
+                self.view.endEditing(true)
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -125,10 +113,10 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
     }
     func updateTicket(ticketItem:TicketItem) {
         let updateTicketRequest = UpdateRequest()
-        updateTicketRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
-        updateTicketRequest.userId = GlobalInfo.sharedInstance.userInfo?.id
+        updateTicketRequest.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
+        updateTicketRequest.userId = GlobalInfo.sharedInstance.getUserInfo().id
         updateTicketRequest.info = ticketItem.toDict()
-        ServiceApi.shareInstance.postWebService(objc: UpdateTicketResponse.self, urlStr: Constant.modifyTicket, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
+        ServiceApi.shareInstance.postWebService(objc: UpdateTicketResponse.self, urlStr: Constant.sharedInstance.modifyTicketURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
             if isSuccess {
                 let result = responseData as! UpdateTicketResponse
                 if result.resultCode == "200"{
@@ -147,8 +135,8 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
     }
     func getTicketType() {
         let getTicketTypeRequest = GetListRequest()
-        getTicketTypeRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
-        ServiceApi.shareInstance.postWebService(objc: GetTicketTypeResponse.self, urlStr: Constant.getTicketTypeURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        getTicketTypeRequest.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
+        ServiceApi.shareInstance.postWebService(objc: GetTicketTypeResponse.self, urlStr: Constant.sharedInstance.getTicketTypeURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if isSuccess{
                 let result = dataResponse as! GetTicketTypeResponse
                 if result.resultCode == "200"{
@@ -162,11 +150,15 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
             }
         }, parameter: getTicketTypeRequest.toDict())
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.barTintColor = .white
-//        
-//    }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
-//    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.showTabar(isShow: true)
+        self.navigationController?.navigationBar.barTintColor = .white
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.showTabar(isShow: false)
+    }
+    func showTabar(isShow:Bool)  {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(!isShow)
+    }
 }

@@ -750,6 +750,7 @@ CG_INLINE BOOL isIPhone4() {
         dispatch_async(dispatch_get_main_queue(), ^{
             [popover presentPopoverFromRect:_containerView.bounds inView:_containerView
                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//            [popover presentPopoverFromRect:CGRectMake(self->_containerView.frame.size.width / 2.f, self->_containerView.frame.size.height /2.f, 0, 0) inView:self->_containerView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
         });
         return;

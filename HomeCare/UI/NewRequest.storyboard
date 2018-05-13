@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="46" id="XD4-3h-9IP"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="ic_content"/>
@@ -32,7 +32,7 @@
                                         <color key="value" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iconWidth">
-                                        <real key="value" value="18"/>
+                                        <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iconMarginLeft">
                                         <real key="value" value="5"/>
@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="height" constant="46" id="N2Q-v5-Uxf"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="catalog"/>
@@ -63,7 +63,7 @@
                                         <color key="value" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iconWidth">
-                                        <real key="value" value="18"/>
+                                        <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iconMarginLeft">
                                         <real key="value" value="5"/>
@@ -83,40 +83,6 @@
                                     <action selector="txtTypeSelect:" destination="Vm6-fk-pPc" eventType="touchDown" id="LUQ-W7-rnd"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wtm-up-QCf" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="5" y="142" width="365" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="KX9-cW-zuX"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="calendar"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                        <color key="value" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconWidth">
-                                        <real key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMarginLeft">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Ngày hoàn thành"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedIconColor">
-                                        <color key="value" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMarginBottom">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconTypeValue">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="dateCompleteAction:" destination="Vm6-fk-pPc" eventType="touchDown" id="dNX-G8-9jF"/>
-                                </connections>
-                            </textField>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UOe-r7-JGI">
                                 <rect key="frame" x="177" y="196" width="20" height="20"/>
                                 <constraints>
@@ -125,11 +91,12 @@
                                 </constraints>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1f-1y-h0V">
-                                <rect key="frame" x="304" y="223" width="66" height="40"/>
+                                <rect key="frame" x="307" y="223" width="63" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="JHm-fk-33o"/>
                                     <constraint firstAttribute="height" constant="40" id="q4p-ue-AY9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="    Huỷ    "/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -147,12 +114,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-KS-4GB">
-                                <rect key="frame" x="229" y="223" width="70" height="40"/>
+                                <rect key="frame" x="232" y="223" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Nza-Qy-AmR"/>
                                     <constraint firstAttribute="height" constant="40" id="svL-tP-xWm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="  Lưu lại  "/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -173,27 +140,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ryQ-fp-IJV" firstAttribute="top" secondItem="2Or-hb-o1H" secondAttribute="bottom" constant="15" id="3VX-iU-iy0"/>
-                            <constraint firstItem="8jb-KS-4GB" firstAttribute="top" secondItem="Wtm-up-QCf" secondAttribute="bottom" constant="35" id="Hry-wG-LIa"/>
-                            <constraint firstItem="Wtm-up-QCf" firstAttribute="leading" secondItem="Kjq-1f-BlH" secondAttribute="leading" constant="5" id="I8t-1O-Wcw"/>
+                            <constraint firstItem="UOe-r7-JGI" firstAttribute="top" secondItem="ryQ-fp-IJV" secondAttribute="bottom" constant="10" id="B37-9o-YcB"/>
                             <constraint firstItem="F1f-1y-h0V" firstAttribute="leading" secondItem="8jb-KS-4GB" secondAttribute="trailing" constant="5" id="Jbr-hk-FEw"/>
                             <constraint firstItem="ryQ-fp-IJV" firstAttribute="leading" secondItem="Kjq-1f-BlH" secondAttribute="leading" constant="5" id="W6z-D1-G04"/>
                             <constraint firstItem="UOe-r7-JGI" firstAttribute="centerX" secondItem="Kjq-1f-BlH" secondAttribute="centerX" id="WOL-EH-hqU"/>
+                            <constraint firstItem="8jb-KS-4GB" firstAttribute="top" secondItem="F1f-1y-h0V" secondAttribute="top" id="a0T-q4-Nih"/>
                             <constraint firstAttribute="trailing" secondItem="F1f-1y-h0V" secondAttribute="trailing" constant="5" id="az2-Sv-3N7"/>
                             <constraint firstItem="Kjq-1f-BlH" firstAttribute="trailing" secondItem="2Or-hb-o1H" secondAttribute="trailing" constant="5" id="bP8-j5-Tm5"/>
                             <constraint firstItem="2Or-hb-o1H" firstAttribute="leading" secondItem="Kjq-1f-BlH" secondAttribute="leading" constant="5" id="ce6-Uh-aOC"/>
-                            <constraint firstItem="Kjq-1f-BlH" firstAttribute="trailing" secondItem="Wtm-up-QCf" secondAttribute="trailing" constant="5" id="gGh-yA-be2"/>
+                            <constraint firstItem="F1f-1y-h0V" firstAttribute="top" secondItem="ryQ-fp-IJV" secondAttribute="bottom" constant="96" id="gT7-tn-vj6"/>
                             <constraint firstItem="Kjq-1f-BlH" firstAttribute="trailing" secondItem="ryQ-fp-IJV" secondAttribute="trailing" constant="5" id="m7C-7V-jxS"/>
-                            <constraint firstItem="UOe-r7-JGI" firstAttribute="top" secondItem="Wtm-up-QCf" secondAttribute="bottom" constant="8" id="nE5-oa-sWY"/>
-                            <constraint firstItem="F1f-1y-h0V" firstAttribute="top" secondItem="Wtm-up-QCf" secondAttribute="bottom" constant="35" id="pCa-f3-BsX"/>
                             <constraint firstItem="2Or-hb-o1H" firstAttribute="top" secondItem="Kjq-1f-BlH" secondAttribute="top" id="pKP-K2-TgE"/>
-                            <constraint firstItem="Wtm-up-QCf" firstAttribute="top" secondItem="ryQ-fp-IJV" secondAttribute="bottom" constant="15" id="wfz-cB-iRr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kjq-1f-BlH"/>
                     </view>
                     <connections>
                         <outlet property="isLoading" destination="UOe-r7-JGI" id="Qme-8r-ZMI"/>
                         <outlet property="txtContent" destination="2Or-hb-o1H" id="1i4-11-Glr"/>
-                        <outlet property="txtDateComplete" destination="Wtm-up-QCf" id="qDg-IA-QEL"/>
                         <outlet property="txtType" destination="ryQ-fp-IJV" id="lKU-hr-8ha"/>
                     </connections>
                 </viewController>
@@ -203,7 +166,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" width="32" height="32"/>
         <image name="catalog" width="64" height="64"/>
         <image name="ic_content" width="64" height="64"/>
     </resources>

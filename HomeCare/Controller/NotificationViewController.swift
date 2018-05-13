@@ -36,10 +36,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         cell.selectionStyle = .none
         
         cell.backgroundColor = .white
-        cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 3
-        cell.clipsToBounds = true
+//        cell.layer.borderColor = GlobalUtil.getSeperateColor().cgColor
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 3
+//        cell.clipsToBounds = true
         cell.rightButtons = [MGSwipeButton(title: "Xoá", icon: nil, backgroundColor: UIColor.gray, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), callback: { (edit) -> Bool in
             
             return true
@@ -84,9 +84,14 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = false
         if !isLogin {
+//            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "lineShadow"), for: UIBarMetrics.default)
+//            self.navigationController?.navigationBar.shadowImage = UIImage(named: "lineShadow")
+            self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+            self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+            self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+            self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+            self.navigationController?.navigationBar.layer.masksToBounds = false
             
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
             let loginStoryboard :UIStoryboard = UIStoryboard(name: "NotLoginScreen", bundle: nil)
             let loginView = loginStoryboard.instantiateViewController(withIdentifier: "loginView") as! NotLoginViewController
             self.addChildViewController(loginView)
@@ -110,10 +115,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     func loadNotification(page:Int) {
         self.startLoading(mIsLoading: true)
          let notificationRequest = GetListRequest()
-        notificationRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
+        notificationRequest.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
         notificationRequest.isPagging = true
         notificationRequest.page = page
-        ServiceApi.shareInstance.postWebService(objc: NotificationResponnse.self, urlStr: Constant.getAllNotificationURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
+        ServiceApi.shareInstance.postWebService(objc: NotificationResponnse.self, urlStr: Constant.sharedInstance.getAllNotificationURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
             if isSuccess{
                 let notificationResponse = responseData as! NotificationResponnse
                 if notificationResponse.resultCode == "200"{

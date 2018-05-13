@@ -46,7 +46,7 @@
                                     <constraint firstAttribute="height" constant="118" id="h95-ca-bGx"/>
                                 </constraints>
                                 <string key="text">As application provides communication channels, the exhchanger between the Manager Board and apartment residents, allowing paid basic service charge by phone</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -67,7 +67,7 @@
                                 <string key="text">Email: sonns1@gmail.com
 Website: homesafe.cpm.vn
 Hotline: 0978954549</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -76,7 +76,7 @@ Hotline: 0978954549</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4Na-4R-Wx1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>

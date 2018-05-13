@@ -50,9 +50,9 @@ class OtherViewController: UIViewController {
             if let viewWithTag = self.view.viewWithTag(loginTag){
                 viewWithTag.removeFromSuperview()
             }
-            txtFullname.text = GlobalInfo.sharedInstance.userInfo?.fullName
-            txtPhone.text = GlobalInfo.sharedInstance.userInfo?.mobile != nil ? GlobalInfo.sharedInstance.userInfo?.mobile : "Chưa có số"
-            txtRoom.text = GlobalInfo.sharedInstance.userInfo?.roomCode
+            txtFullname.text = GlobalInfo.sharedInstance.getUserInfo().fullName
+            txtPhone.text = GlobalInfo.sharedInstance.getUserInfo().mobile != nil ? GlobalInfo.sharedInstance.getUserInfo().mobile : "Chưa có số"
+            txtRoom.text = GlobalInfo.sharedInstance.getUserInfo().roomCode
         }
     }
     @objc func reloadForm() {
@@ -133,10 +133,10 @@ class OtherViewController: UIViewController {
                 return
             }
             let requestChange = ChangePasswordRequest()
-            requestChange.username = GlobalInfo.sharedInstance.userInfo?.mobile
+            requestChange.username = GlobalInfo.sharedInstance.getUserInfo().mobile
             requestChange.password = textPassword.text
             requestChange.newpassword = textNewPassword.text
-            ServiceApi.shareInstance.postWebService(objc: ChangePasswordResponse.self, urlStr: Constant.changePasswordURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
+            ServiceApi.shareInstance.postWebService(objc: ChangePasswordResponse.self, urlStr: Constant.sharedInstance.changePasswordURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
                 if isSuccess{
                     let result = responseData as! ChangePasswordResponse
                     if result.resultCode == "200"{
@@ -161,10 +161,9 @@ class OtherViewController: UIViewController {
         NotificationCenter.default.post(name: NotificationConstant.loginNotification, object: nil)
         
         /// Unsubcrible topics
-        if let groupFCM = GlobalInfo.sharedInstance.groupFCM {
-            for fcm in groupFCM {
-                Messaging.messaging().unsubscribe(fromTopic: fcm)
-            }
+        let groupFCM = GlobalInfo.sharedInstance.getGroupFCM()
+        for fcm in groupFCM {
+            Messaging.messaging().unsubscribe(fromTopic: fcm)
         }
         //
     }

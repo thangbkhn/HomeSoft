@@ -26,15 +26,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         Messaging.messaging().delegate = self
         // [END set_messaging_delegate]
         
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .badge,.sound]) { (success, error) in
-            if error == nil{
-                print("Success Authoziration")
-                center.delegate = self
-            }
+        // [START register_for_notifications]
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(
+                options: authOptions,
+                completionHandler: {(success, error)in
+                    if error == nil{
+                        print("Success Authoziration")
+                        center.delegate = self
+                    }
+            })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
         }
         
         application.registerForRemoteNotifications()
+        
+        // [END register_for_notifications]
+//        let center = UNUserNotificationCenter.current()
+//        center.requestAuthorization(options: [.alert, .badge,.sound]) { (success, error) in
+//            if error == nil{
+//                print("Success Authoziration")
+//                center.delegate = self
+//            }
+//        }
+//        
+//        application.registerForRemoteNotifications()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshToken(notification:)), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
         

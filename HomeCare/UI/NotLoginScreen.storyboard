@@ -20,13 +20,16 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="not_available_icon" translatesAutoresizingMaskIntoConstraints="NO" id="uae-q0-3ac">
                                 <rect key="frame" x="50" y="50" width="275" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="0s9-AQ-FOd"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có thông tin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beq-rh-r49">
                                 <rect key="frame" x="50" y="365" width="275" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uo7-OX-mcr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -34,9 +37,10 @@
                                 <rect key="frame" x="50" y="425.5" width="275" height="50"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.5568627451" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="GyJ-aD-Baw"/>
                                     <constraint firstAttribute="height" constant="50" id="lKL-x1-XJz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="ĐĂNG NHẬP">
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
@@ -54,7 +58,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6Cb-Fh-uus"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Bạn chưa có tài khoản? Đăng ký ngay"/>
                             </button>
                         </subviews>
@@ -62,12 +66,9 @@
                         <constraints>
                             <constraint firstItem="Dcp-Gu-HMI" firstAttribute="centerX" secondItem="CYy-eQ-YDa" secondAttribute="centerX" id="3Ii-2z-vPh"/>
                             <constraint firstItem="uae-q0-3ac" firstAttribute="top" secondItem="CYy-eQ-YDa" secondAttribute="top" constant="30" id="5fE-Xe-NhS"/>
-                            <constraint firstItem="vTy-2q-L0e" firstAttribute="leading" secondItem="CYy-eQ-YDa" secondAttribute="leading" constant="50" id="942-ui-WQN"/>
                             <constraint firstItem="vTy-2q-L0e" firstAttribute="centerX" secondItem="CYy-eQ-YDa" secondAttribute="centerX" id="9gm-St-mLF"/>
-                            <constraint firstItem="uae-q0-3ac" firstAttribute="leading" secondItem="CYy-eQ-YDa" secondAttribute="leading" constant="50" id="JtL-dE-VkE"/>
-                            <constraint firstItem="CYy-eQ-YDa" firstAttribute="trailing" secondItem="vTy-2q-L0e" secondAttribute="trailing" constant="50" id="MwO-wj-nCx"/>
                             <constraint firstItem="vTy-2q-L0e" firstAttribute="top" secondItem="beq-rh-r49" secondAttribute="bottom" constant="39.5" id="Mxo-BV-9Zz"/>
-                            <constraint firstItem="CYy-eQ-YDa" firstAttribute="trailing" secondItem="uae-q0-3ac" secondAttribute="trailing" constant="50" id="Wha-Mx-y7d"/>
+                            <constraint firstItem="uae-q0-3ac" firstAttribute="centerX" secondItem="CYy-eQ-YDa" secondAttribute="centerX" id="cGO-vp-p0o"/>
                             <constraint firstItem="beq-rh-r49" firstAttribute="leading" secondItem="CYy-eQ-YDa" secondAttribute="leading" constant="50" id="i9u-T5-tG0"/>
                             <constraint firstItem="beq-rh-r49" firstAttribute="top" secondItem="uae-q0-3ac" secondAttribute="bottom" constant="15" id="lua-uE-0iz"/>
                             <constraint firstItem="Dcp-Gu-HMI" firstAttribute="leading" secondItem="CYy-eQ-YDa" secondAttribute="leading" constant="20" id="rXq-oI-bRg"/>

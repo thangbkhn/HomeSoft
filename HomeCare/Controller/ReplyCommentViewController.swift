@@ -17,6 +17,10 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tvDate: UILabel!
     @IBOutlet weak var tvContentSend: UITextField!
     @IBOutlet weak var tbReply: UITableView!
+    @IBOutlet weak var layoutContent: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mainView: UIView!
+    
     let nib = UINib(nibName: "CommentCell", bundle: nil)
     static let TICKET = 1
     static let FEEEDBACK = 2
@@ -32,12 +36,13 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
     let footerView = FooterView()
     var page = 1
     var searchController:UISearchController!
+    var tbHeightOri:CGFloat = 0.0 ;
     override func viewDidLoad() {
         super.viewDidLoad()
+        tbHeightOri = tbReply.frame.size.height
         self.searchController = UISearchController(searchResultsController: nil)
         self.navigationItem.titleView = self.searchController.searchBar;
         self.searchController.searchBar.isHidden = true
-        self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
         let backButton = UIBarButtonItem(title: "Bình luận", style: UIBarButtonItemStyle.done, target: nil, action: nil)
@@ -45,6 +50,8 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard)))
         tbReply.register(nib, forCellReuseIdentifier: "commmentCell")
+        tvContent.lineBreakMode = NSLineBreakMode.byWordWrapping
+        layoutContent.preservesSuperviewLayoutMargins = false
         if type == ReplyCommentViewController.TICKET {
             tvUSer.text = "Loại yêu cầu: \(requestItem.ticketTypeName ?? "")"
             tvContent.text = "Nội dung: \(requestItem.desc ?? "")"
@@ -99,6 +106,7 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         cell.tvUser.text = item.ownerFullname!
         cell.tvContent.text = item.content
         cell.tvDate.text = item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
+        cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -122,15 +130,15 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         if type == ReplyCommentViewController.TICKET {
             getCommentRequest.clientId = requestItem.clientId!
             getCommentRequest.id = requestItem.id
-            url = Constant.getTicketCommentURL
+            url = Constant.sharedInstance.getTicketCommentURL()
         }else if type == ReplyCommentViewController.NOTIFICATION{
             getCommentRequest.clientId = notificationItem.clientId!
             getCommentRequest.id = notificationItem.id
-            url = Constant.getNotificationCommentURL
+            url = Constant.sharedInstance.getNotificationCommentURL()
         }else if type == ReplyCommentViewController.FEEEDBACK{
             getCommentRequest.clientId = feedbackItem.clientId!
             getCommentRequest.id = feedbackItem.id
-            url = Constant.getFeedbackCommentURL
+            url = Constant.sharedInstance.getFeedbackCommentURL()
         }
         ServiceApi.shareInstance.postWebService(objc: GetCommentRespone.self, urlStr: url, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if self.page == 1{
@@ -169,6 +177,10 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         }
         self.commentList.append(contentsOf: dataList)
         self.tbReply.reloadData()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//            self.reloadForm()
+//        }
+        
     }
     func postComment() {
         let info = CommentItem()
@@ -181,17 +193,17 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         }
         info.postType = "\(type)"
         info.content = tvContentSend.text
-        info.ownerId = GlobalInfo.sharedInstance.userInfo?.id
-        info.ownerFullname = GlobalInfo.sharedInstance.userInfo?.fullName
-        info.postTitle = GlobalInfo.sharedInstance.userInfo?.fullName
-        info.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
+        info.ownerId = GlobalInfo.sharedInstance.getUserInfo().id
+        info.ownerFullname = GlobalInfo.sharedInstance.getUserInfo().fullName
+        info.postTitle = GlobalInfo.sharedInstance.getUserInfo().fullName
+        info.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
         info.createdDatetime = GlobalUtil.getCurrentDate()
         info.updatedDatetime = GlobalUtil.getCurrentDate()
         let request = UpdateRequest()
         request.info = info.toDict()
-        request.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
-        request.userId = GlobalInfo.sharedInstance.userInfo?.id
-        ServiceApi.shareInstance.postWebService(objc: ReplyComentResponse.self, urlStr: Constant.postCommentURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        request.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
+        request.userId = GlobalInfo.sharedInstance.getUserInfo().id
+        ServiceApi.shareInstance.postWebService(objc: ReplyComentResponse.self, urlStr: Constant.sharedInstance.postCommentURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if isSuccess{
                 let result = dataResponse as! ReplyComentResponse
                 if result.resultCode == "200"{
@@ -211,5 +223,29 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
     @objc func refreshData() {
         page = 1
         getComment()
+    }
+    func reloadForm(){
+        
+        self.tbReply.layoutIfNeeded()
+        let changeHeigh = tbReply.contentSize.height - tbHeightOri
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.mainView.setNeedsLayout()
+            self.mainView.layoutIfNeeded()
+            let layoutfrm = self.mainView.frame
+            self.mainView.frame.size.height = layoutfrm.height + changeHeigh
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.tbReply.setNeedsLayout()
+            self.tbReply.layoutIfNeeded()
+            let frm = self.tbReply.frame
+            self.tbReply.frame.size.height = frm.height + changeHeigh
+            //self.tbReply.contentSize = CGSize(width: frm.width, height: frm.height + changeHeigh)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){
+            self.scrollView.layoutIfNeeded()
+            self.scrollView.isScrollEnabled = true
+            let layoutfrm = self.scrollView.frame
+            self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: layoutfrm.height + changeHeigh)
+        }
     }
 }

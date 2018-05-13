@@ -15,6 +15,7 @@ class GlobalUtil: NSObject {
     static var tokenFCM = "tokenFCM"
     static var groupFCM = "groupFCM"
     static let keyLanguage = "keyLanguage"
+    static let hostURL = "hostURL"
     static func getMainColor() -> UIColor{
         //return UIColor.rbg(red: 67, green: 142, blue: 185)
         //return UIColor.rbg(red: 102, green: 117, blue: 133)
@@ -204,6 +205,16 @@ extension UIView {
         set {
             layer.borderColor = newValue?.cgColor
         }
+    }
+    func dropShadow(offsetX: CGFloat, offsetY: CGFloat, color: UIColor, opacity: Float, radius: CGFloat, scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowOffset = CGSize(width: offsetX, height: offsetY)
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowRadius = radius
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 }
 extension UITabBar {

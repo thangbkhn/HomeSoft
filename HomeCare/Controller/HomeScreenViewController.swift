@@ -70,7 +70,7 @@ class HomeScreenViewController: UIViewController {
         }else{
             tvLogin.setTitle("Đăng xuất", for:.normal)
             tvUse.isHidden = true
-            tvName.text = "\(GlobalInfo.sharedInstance.userInfo?.fullName ?? "")"
+            tvName.text = "\(GlobalInfo.sharedInstance.getUserInfo().fullName ?? "")"
         }
     }
     @IBAction func btNotification(_ sender: Any) {
@@ -108,12 +108,10 @@ class HomeScreenViewController: UIViewController {
         }else{
             GlobalUtil.setPreference(value: false, key: GlobalUtil.isLogin)
             NotificationCenter.default.post(name: NotificationConstant.loginNotification, object: nil)
-            
             /// Unsubcrible topics
-            if let groupFCM = GlobalInfo.sharedInstance.groupFCM {
-                for fcm in groupFCM {
-                    Messaging.messaging().unsubscribe(fromTopic: fcm)
-                }
+            let groupFCM = GlobalInfo.sharedInstance.getGroupFCM()
+            for fcm in groupFCM {
+                Messaging.messaging().unsubscribe(fromTopic: fcm)
             }
             //
         }

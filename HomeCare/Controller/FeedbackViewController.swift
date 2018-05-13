@@ -71,8 +71,8 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
         let item = feedbackList[indexPath.row]
-        cell.tvComment.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.preservesSuperviewLayoutMargins = false
+        //cell.tvComment.lineBreakMode = NSLineBreakMode.byWordWrapping
+        //cell.preservesSuperviewLayoutMargins = false
         cell.selectionStyle = .none
         cell.tvUser.text = item.ownerName
         cell.tvComment.text = item.content
@@ -94,6 +94,9 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
                 getFeedbackList()
             }
         }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
     @objc func refreshData() {
         page = 1
@@ -124,11 +127,11 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func getFeedbackList() {
         let request = GetFeedbackRequest()
-        request.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
+        request.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
         request.isPagging = true
         request.page = "1"
-        request.username = GlobalInfo.sharedInstance.userInfo?.mobile
-        ServiceApi.shareInstance.postWebService(objc: GetFeedbackResponse.self, urlStr: Constant.getFeedbackListUrl, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        request.username = GlobalInfo.sharedInstance.getUserInfo().mobile
+        ServiceApi.shareInstance.postWebService(objc: GetFeedbackResponse.self, urlStr: Constant.sharedInstance.getFeedbackListUrl(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if self.page == 1{
                 self.feedbackList = []
             }
@@ -169,18 +172,18 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
     func addFeedback(content:String) {
         let info = FeedbackItem()
         info.content = content
-        info.ownerId = GlobalInfo.sharedInstance.userInfo?.id
-        info.ownerName = GlobalInfo.sharedInstance.userInfo?.fullName
-        info.roomId = GlobalInfo.sharedInstance.userInfo?.roomId
-        info.roomCode = GlobalInfo.sharedInstance.userInfo?.roomCode
-        info.roomName = GlobalInfo.sharedInstance.userInfo?.roomName
+        info.ownerId = GlobalInfo.sharedInstance.getUserInfo().id
+        info.ownerName = GlobalInfo.sharedInstance.getUserInfo().fullName
+        info.roomId = GlobalInfo.sharedInstance.getUserInfo().roomId
+        info.roomCode = GlobalInfo.sharedInstance.getUserInfo().roomCode
+        info.roomName = GlobalInfo.sharedInstance.getUserInfo().roomName
         
         let request = AddObjectRequest()
-        request.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
-        request.userId = GlobalInfo.sharedInstance.userInfo?.id
+        request.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
+        request.userId = GlobalInfo.sharedInstance.getUserInfo().id
         request.info = info.toDict()
         
-        ServiceApi.shareInstance.postWebService(objc: AddFeedbackResponse.self, urlStr: Constant.addFeedback, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        ServiceApi.shareInstance.postWebService(objc: AddFeedbackResponse.self, urlStr: Constant.sharedInstance.addFeedback(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if isSuccess{
                 let data = dataResponse as! AddFeedbackResponse
                 if data.resultCode == "200"{

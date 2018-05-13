@@ -21,4 +21,16 @@ class GlobalInfo: NSObject {
     static let sharedInstance = GlobalInfo()
     var userInfo : SavedAccount?
     var groupFCM:[String]?
+    func setUser(_userInfo:SavedAccount){
+        self.userInfo = _userInfo
+    }
+    func getUserInfo() -> SavedAccount {
+        return self.userInfo!
+    }
+    func setGroupFCM(_groupFCM:[String]) {
+        self.groupFCM = _groupFCM
+    }
+    func getGroupFCM() -> [String] {
+        return self.groupFCM!
+    }
 }

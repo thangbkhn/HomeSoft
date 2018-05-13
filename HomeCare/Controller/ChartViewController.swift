@@ -20,8 +20,6 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.startLoading(mIsLoading: false)
-//        NotificationCenter.default.addObserver(self, selector: #selector(reloadForm(_:)), name: NotificationConstant.reloadFromPaymentView, object: nil)
-        //txtRoomNumber.text = "Căn hộ \(GlobalInfo.sharedInstance.userInfo?.roomName ?? "")"
         btYear.setTitle("\(currentYear)", for: .normal)
         chartView.removeAllSeries()
         let data = [
@@ -91,12 +89,12 @@ class ChartViewController: UIViewController {
     func getFeeList(year:Int) {
         self.startLoading(mIsLoading: true)
         let getFeeListRequest = GetFeeListRequest()
-        getFeeListRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
-        getFeeListRequest.roomCode = GlobalInfo.sharedInstance.userInfo?.roomCode
+        getFeeListRequest.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
+        getFeeListRequest.roomCode = GlobalInfo.sharedInstance.getUserInfo().roomCode
         getFeeListRequest.year = "\(year)"
         getFeeListRequest.isPagging = false
         getFeeListRequest.page = "1"
-        ServiceApi.shareInstance.postWebService(objc: GetFeeListResponse.self, urlStr: Constant.getFeeListURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        ServiceApi.shareInstance.postWebService(objc: GetFeeListResponse.self, urlStr: Constant.sharedInstance.getFeeListURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             var feeList:[FeeItem] = []
             if isSuccess{
                 let result = dataResponse as! GetFeeListResponse

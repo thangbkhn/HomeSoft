@@ -48,7 +48,6 @@
 		1C0E9450206B4CB70062DF67 /* Hero.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0E944F206B4CB70062DF67 /* Hero.ttf */; };
 		1C0E9454206B557B0062DF67 /* GetTicketTypeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0E9453206B557B0062DF67 /* GetTicketTypeResponse.swift */; };
 		1C27290E207B7E780031CA90 /* Courier Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C27290D207B7E740031CA90 /* Courier Oblique.otf */; };
-		1C48CCD3207F54D2001C661B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C48CCD2207F54D2001C661B /* GoogleService-Info.plist */; };
 		1C59AA4E20806E5900CAAE49 /* FilterTicketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C59AA4D20806E5900CAAE49 /* FilterTicketTableViewController.swift */; };
 		1C93DFD3207637C4009FB58F /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C93DFD1207637B9009FB58F /* Font Awesome 5 Brands-Regular-400.otf */; };
 		1C93DFD4207637C7009FB58F /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C93DFD2207637B9009FB58F /* Font Awesome 5 Free-Regular-400.otf */; };
@@ -100,6 +99,7 @@
 		A0011E992094E2C70006BEA0 /* KidToyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E982094E2C70006BEA0 /* KidToyCollectionViewCell.swift */; };
 		A0011E9B2094E3DE0006BEA0 /* AppliancesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E9A2094E3DE0006BEA0 /* AppliancesTest.swift */; };
 		A0011E9D2094E3F90006BEA0 /* KidToyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0011E9C2094E3F90006BEA0 /* KidToyTest.swift */; };
+		A032510020A69D450004B70F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03250FF20A69D450004B70F /* GoogleService-Info.plist */; };
 		A057FAD32088E32700322934 /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A057FAD22088E32700322934 /* RequestCell.xib */; };
 		A057FAD62088E65C00322934 /* ConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057FAD52088E65C00322934 /* ConvertHelper.swift */; };
 		A078192D2096A676003E1DA9 /* SqliteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192C2096A676003E1DA9 /* SqliteHelper.swift */; };
@@ -167,7 +167,6 @@
 		1C0E944F206B4CB70062DF67 /* Hero.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hero.ttf; sourceTree = "<group>"; };
 		1C0E9453206B557B0062DF67 /* GetTicketTypeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketTypeResponse.swift; sourceTree = "<group>"; };
 		1C27290D207B7E740031CA90 /* Courier Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Courier Oblique.otf"; sourceTree = "<group>"; };
-		1C48CCD2207F54D2001C661B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1C59AA4D20806E5900CAAE49 /* FilterTicketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTicketTableViewController.swift; sourceTree = "<group>"; };
 		1C936ED4206CECDA00E2AD3D /* HomeCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeCare.entitlements; sourceTree = "<group>"; };
 		1C93DFD0207637B8009FB58F /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
@@ -220,6 +219,7 @@
 		A0011E982094E2C70006BEA0 /* KidToyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidToyCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0011E9A2094E3DE0006BEA0 /* AppliancesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliancesTest.swift; sourceTree = "<group>"; };
 		A0011E9C2094E3F90006BEA0 /* KidToyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidToyTest.swift; sourceTree = "<group>"; };
+		A03250FF20A69D450004B70F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A057FAD22088E32700322934 /* RequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCell.xib; sourceTree = "<group>"; };
 		A057FAD52088E65C00322934 /* ConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertHelper.swift; sourceTree = "<group>"; };
 		A078192C2096A676003E1DA9 /* SqliteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteHelper.swift; sourceTree = "<group>"; };
@@ -277,6 +277,7 @@
 		1C0008C1205F471000971557 = {
 			isa = PBXGroup;
 			children = (
+				A03250FF20A69D450004B70F /* GoogleService-Info.plist */,
 				1C0008CC205F471000971557 /* HomeCare */,
 				1C0008CB205F471000971557 /* Products */,
 				051FC681F8EDD0DF28F5426B /* Pods */,
@@ -297,7 +298,6 @@
 			children = (
 				A07E36AF208B788E0010F97A /* NibUI */,
 				A057FAD42088E5FD00322934 /* Other */,
-				1C48CCD2207F54D2001C661B /* GoogleService-Info.plist */,
 				1C936ED4206CECDA00E2AD3D /* HomeCare.entitlements */,
 				1C0E944E206B4CB70062DF67 /* font */,
 				1C00096A20626F3200971557 /* API */,
@@ -610,11 +610,11 @@
 				A0D1AD54209C84BC00A0C032 /* CommentCell.xib in Resources */,
 				1C00090C2060C6AD00971557 /* NotLoginScreen.storyboard in Resources */,
 				1C0C622E206BC4B300CBAC1B /* ResidentManager.storyboard in Resources */,
-				1C48CCD3207F54D2001C661B /* GoogleService-Info.plist in Resources */,
 				1CBC3BFD20690B0000AA799B /* NewRequest.storyboard in Resources */,
 				1C0E9450206B4CB70062DF67 /* Hero.ttf in Resources */,
 				1C0009122060FF6B00971557 /* LoginScreen.storyboard in Resources */,
 				1C0C6238206BD55600CBAC1B /* NewResident.storyboard in Resources */,
+				A032510020A69D450004B70F /* GoogleService-Info.plist in Resources */,
 				1C0008D3205F471000971557 /* Main.storyboard in Resources */,
 				1C00095620612B7900971557 /* Chart.storyboard in Resources */,
 				1C93DFD5207637CA009FB58F /* Font Awesome 5 Free-Solid-900.otf in Resources */,
@@ -936,6 +936,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8SEM5YR976;
 				INFOPLIST_FILE = HomeCare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.viettel.thangnv62;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -953,6 +954,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8SEM5YR976;
 				INFOPLIST_FILE = HomeCare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.viettel.thangnv62;
 				PRODUCT_NAME = "$(TARGET_NAME)";

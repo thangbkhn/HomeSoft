@@ -17,7 +17,6 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var tbTicket: UITableView!
-    @IBOutlet var txtSum: UILabel!
     
     var isLogin = false
     var isSearch = false
@@ -62,7 +61,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
     let titleView : UILabel = {
         let titleV = UILabel()
         titleV.text = "YÊU CẦU"
-        titleV.textColor = .white
+        titleV.textColor = UIColor.rbg(red: 92, green: 94, blue: 102)
         titleV.font = UIFont.boldSystemFont(ofSize: 19)
         titleV.textAlignment = NSTextAlignment.center
         return titleV
@@ -158,35 +157,35 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
     func setNavigationBar() {
         
         addNavigationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addClicked)))
-        searchNavigationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(searchClicked)))
+//        searchNavigationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(searchClicked)))
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.isTranslucent = false
         
-        self.searchController = UISearchController(searchResultsController: self.resultController)
-        self.searchController.searchResultsUpdater = self
-        self.searchController.hidesNavigationBarDuringPresentation = false;
-        self.searchController.searchBar.searchBarStyle = .prominent;
-        self.searchController.searchBar.tintColor = .white
-        self.searchController.searchBar.placeholder = "Tìm kiếm"
-        self.searchController.searchBar.setValue("Huỷ", forKey: "_cancelButtonText")
-        self.searchController.searchBar.delegate = self
+//        self.searchController = UISearchController(searchResultsController: self.resultController)
+//        self.searchController.searchResultsUpdater = self
+//        self.searchController.hidesNavigationBarDuringPresentation = false;
+//        self.searchController.searchBar.searchBarStyle = .prominent;
+//        self.searchController.searchBar.tintColor = .white
+//        self.searchController.searchBar.placeholder = "Tìm kiếm"
+//        self.searchController.searchBar.setValue("Huỷ", forKey: "_cancelButtonText")
+//        self.searchController.searchBar.delegate = self
         self.navigationController?.navigationBar.tintColor = .white
         // Include the search bar within the navigation bar.
-        self.navigationItem.titleView = self.searchController.searchBar;
+        self.navigationItem.titleView = self.titleView
         //self.searchController.searchBar.isHidden = true
         self.definesPresentationContext = true;
         
-        self.searchController.searchBar.tintColor = GlobalUtil.getGrayColor()
-        for s in self.searchController.searchBar.subviews[0].subviews {
-            if s is UITextField {
-                s.layer.borderWidth = 1.0
-                s.layer.cornerRadius = 10
-                s.layer.borderColor = UIColor.gray.cgColor
-            }
-        }
+        //self.searchController.searchBar.tintColor = GlobalUtil.getGrayColor()
+//        for s in self.searchController.searchBar.subviews[0].subviews {
+//            if s is UITextField {
+//                s.layer.borderWidth = 1.0
+//                s.layer.cornerRadius = 10
+//                s.layer.borderColor = UIColor.gray.cgColor
+//            }
+//        }
     }
     func updateSearchResults(for searchController: UISearchController) {
         self.filtedTicketList = self.ticketList.filter { (ticket:TicketItem) -> Bool in
@@ -228,9 +227,9 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
             self.titleView.frame = (self.navigationController?.view.frame)!
             self.navigationItem.titleView = self.titleView
         }else{
-            self.navigationItem.titleView = self.searchController.searchBar;
+            self.navigationItem.titleView = self.titleView;
             self.tbTicket.separatorStyle = .none
-            setupResultController()
+            //setupResultController()
             if let viewWithTag = self.view.viewWithTag(loginTag){
                 viewWithTag.removeFromSuperview()
             }
@@ -262,11 +261,11 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
     }
     func loadTicket() {
         let ticketRequest = GetListRequest()
-        ticketRequest.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
+        ticketRequest.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
         ticketRequest.isPagging = true
         ticketRequest.page = self.page
-        ticketRequest.roomCode = GlobalInfo.sharedInstance.userInfo?.roomCode
-        ServiceApi.shareInstance.postWebService(objc: TicketResponse.self, urlStr: Constant.getAllTicketURL, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
+        ticketRequest.roomCode = GlobalInfo.sharedInstance.getUserInfo().roomCode
+        ServiceApi.shareInstance.postWebService(objc: TicketResponse.self, urlStr: Constant.sharedInstance.getAllTicketURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, responseData) in
             if self.page == 1{
                 self.ticketList = []
             }
@@ -298,7 +297,6 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
             self.isLoadMore = true
         }
         self.ticketList.append(contentsOf: dataList)
-        self.txtSum.text = "Tổng số yêu cầu :\(self.ticketList.count)"
         self.tbTicket.reloadData()
     }
     
@@ -332,6 +330,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
 //    }
     override func viewWillAppear(_ animated: Bool) {
         self.showTabar(isShow: true)
+        navigationController?.navigationBar.tintColor = .white
     }
     func showTabar(isShow:Bool)  {
         let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController

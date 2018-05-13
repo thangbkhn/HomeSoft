@@ -106,9 +106,9 @@ class ResidentViewController: UIViewController, UITableViewDelegate, UITableView
     func loadResident() {
         self.residentList = []
         let request = ResidentListRequest()
-        request.clientId = GlobalInfo.sharedInstance.userInfo?.clientId
-        request.roomId = GlobalInfo.sharedInstance.userInfo?.roomId
-        ServiceApi.shareInstance.postWebService(objc: ResidentListResponse.self, urlStr: Constant.getResidentList, headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
+        request.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
+        request.roomId = GlobalInfo.sharedInstance.getUserInfo().roomId
+        ServiceApi.shareInstance.postWebService(objc: ResidentListResponse.self, urlStr: Constant.sharedInstance.getResidentListURL(), headers: ServiceApi.shareInstance.getHeader(), completion: { (isSuccess, dataResponse) in
             if isSuccess{
                 let result = dataResponse as! ResidentListResponse
                 if result.resultCode == "200"{

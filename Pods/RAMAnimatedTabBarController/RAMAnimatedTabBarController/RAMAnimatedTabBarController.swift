@@ -187,8 +187,43 @@ extension RAMAnimatedTabBarController {
 
 /// UITabBarController with item animations
 open class RAMAnimatedTabBarController: UITabBarController {
+    
+    /**
+     The animated items displayed by the tab bar.
+     **/
+    open var animatedItems: [RAMAnimatedTabBarItem] {
+        return tabBar.items as? [RAMAnimatedTabBarItem] ?? []
+    }
+    
+    
+    /**
+     Show bottom line for indicating selected item, default value is false
+     **/
+    open var isBottomLineShow: Bool = false {
+        didSet {
+            if isBottomLineShow {
+                if bottomLine == nil { createBottomLine() }
+            } else {
+                if bottomLine != nil { removeBottomLine() }
+            }
+        }
+    }
+    
+    /**
+      Bottom line color
+     **/
+    open var bottomLineColor: UIColor = .black {
+        didSet {
+            bottomLine?.backgroundColor = bottomLineColor
+        }
+    }
+    
+    /**
+     Bottom line time of animations duration
+     **/
+    open var bottomLineMoveDuration: TimeInterval = 0.3
 
-    fileprivate var containers: [String: UIView] = [:]
+    var containers: [String: UIView] = [:]
     
     open override var viewControllers: [UIViewController]? {
         didSet {
@@ -200,6 +235,15 @@ open class RAMAnimatedTabBarController: UITabBarController {
         super.setViewControllers(viewControllers, animated: animated)
         initializeContainers()
     }
+    
+    open override var selectedIndex: Int {
+        didSet {
+           self.setBottomLinePosition(index: selectedIndex)
+        }
+    }
+
+    var lineLeadingConstraint: NSLayoutConstraint?
+    var bottomLine: UIView?
     
     // MARK: life circle
 
