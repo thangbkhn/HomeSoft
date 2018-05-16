@@ -211,8 +211,11 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         }
         
         //Shadow navigation line
-        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+        self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+        self.navigationController?.navigationBar.layer.masksToBounds = false
         
         tbTicket.register(nib, forCellReuseIdentifier: "FeedbackItem")
         let tap = UITapGestureRecognizer(target: self, action:#selector(dismissKeyBoard))

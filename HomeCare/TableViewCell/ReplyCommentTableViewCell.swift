@@ -12,6 +12,7 @@ class ReplyCommentTableViewCell: UITableViewCell {
     @IBOutlet weak var tvUser: UILabel!
     @IBOutlet weak var tvContent: UILabel!
     @IBOutlet weak var tvDate: UILabel!
+    
     var replyAction:(()->Void)? = nil
     
     override func awakeFromNib() {

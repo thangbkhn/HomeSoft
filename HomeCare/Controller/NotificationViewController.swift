@@ -77,9 +77,6 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         let tap = UITapGestureRecognizer(target: self, action:#selector(dismissKeyBoard))
         view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = false
-        //Shadow navigation line
-        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
         
         if !isLogin {
             
@@ -93,11 +90,11 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             loginView.didMove(toParentViewController: self)
         }else{
             
-            self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
-            self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: self.frame.width, height: 2.0)
-            self.navigationController?.navigationBar.layer.shadowRadius = 4.0
-            self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
-            self.navigationController?.navigationBar.layer.masksToBounds = false
+//            self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+//            self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: self.frame.width, height: 2.0)
+//            self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+//            self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+//            self.navigationController?.navigationBar.layer.masksToBounds = false
             self.tbNotification.separatorStyle = .none
             if let viewWithTag = self.view.viewWithTag(100){
                 viewWithTag.removeFromSuperview()
@@ -143,6 +140,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.showTabar(isShow: true)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.showTabar(isShow: false)

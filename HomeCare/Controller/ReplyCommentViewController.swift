@@ -35,14 +35,14 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
     var isLoadMore = true
     let footerView = FooterView()
     var page = 1
-    var searchController:UISearchController!
+    //var searchController:UISearchController!
     var tbHeightOri:CGFloat = 0.0 ;
     override func viewDidLoad() {
         super.viewDidLoad()
         tbHeightOri = tbReply.frame.size.height
-        self.searchController = UISearchController(searchResultsController: nil)
-        self.navigationItem.titleView = self.searchController.searchBar;
-        self.searchController.searchBar.isHidden = true
+//        self.searchController = UISearchController(searchResultsController: nil)
+//        self.navigationItem.titleView = self.searchController.searchBar;
+//        self.searchController.searchBar.isHidden = true
         self.navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
         let backButton = UIBarButtonItem(title: "Bình luận", style: UIBarButtonItemStyle.done, target: nil, action: nil)
@@ -107,6 +107,14 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         cell.tvContent.text = item.content
         cell.tvDate.text = item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
         cell.selectionStyle = .none
+        
+        //Shadow navigation line
+//        cell.tvView.layer.shadowColor = UIColor.black.cgColor
+//        cell.tvView.layer.shadowOffset = CGSize(width: 0.0, height: 0.5)
+//        cell.tvView.layer.shadowRadius = 2
+//        cell.tvView.layer.shadowOpacity = 0.7
+//        cell.tvView.layer.masksToBounds = false
+        
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

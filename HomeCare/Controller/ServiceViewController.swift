@@ -140,8 +140,12 @@ class ServiceViewController: UIViewController,UISearchResultsUpdating, UISearchB
         super.viewDidLoad()
         
         //Shadow navigation line
-        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+        self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        
         setNavigationBar()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard)))
         clvFood.reloadSections(IndexSet(integer: 0))

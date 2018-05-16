@@ -451,7 +451,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Iuq-Vu-t9q"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -459,7 +459,7 @@
                                                             <rect key="frame" x="90" y="37" width="265" height="37.666666666666657"/>
                                                             <string key="text">This game is very bad that I'm not tall this game is very important nice game.This game is very bad that I'm not tall this game is very important nice game</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RA-Zm-9Mu">
@@ -668,7 +668,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="3ll-ym-M3n"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ban quản lý toà nhà xin thông báo tới tất cả hộ dân về việc triển khai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuJ-PO-G8B">
@@ -677,7 +677,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="UeC-d8-dSM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mail_128" translatesAutoresizingMaskIntoConstraints="NO" id="w6H-lU-2kJ">
@@ -803,6 +803,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJT-RM-Hz3">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMain" translatesAutoresizingMaskIntoConstraints="NO" id="IwP-NA-ana">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NGUYEN VAN THANG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE4-FU-GCi">
                                                 <rect key="frame" x="80" y="5" width="287" height="21"/>
                                                 <constraints>
@@ -979,14 +982,6 @@
                                                     <constraint firstItem="HHM-fr-lHs" firstAttribute="width" secondItem="YLp-3p-9JE" secondAttribute="width" id="k4d-XI-TqJ"/>
                                                     <constraint firstItem="zPC-ZS-U7L" firstAttribute="width" secondItem="Zzn-Aq-l9K" secondAttribute="width" multiplier="1/4" id="uBb-Id-I1I"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb9-S9-VWs">
                                                 <rect key="frame" x="80" y="34" width="90" height="30"/>
@@ -1045,17 +1040,21 @@
                                             <constraint firstAttribute="trailing" secondItem="7zh-qm-OWO" secondAttribute="trailing" constant="20" id="Msp-7X-cd0"/>
                                             <constraint firstAttribute="trailing" secondItem="Zzn-Aq-l9K" secondAttribute="trailing" constant="-1" id="Ou2-Wz-Jz7"/>
                                             <constraint firstAttribute="trailing" secondItem="r9a-7a-eya" secondAttribute="trailing" constant="2" id="Oz0-rX-woy"/>
+                                            <constraint firstItem="IwP-NA-ana" firstAttribute="top" secondItem="HJT-RM-Hz3" secondAttribute="top" id="Q9i-Zu-c6b"/>
                                             <constraint firstAttribute="height" constant="150" id="RNE-Hc-w0c"/>
                                             <constraint firstItem="7zh-qm-OWO" firstAttribute="leading" secondItem="eb9-S9-VWs" secondAttribute="leading" id="dgk-2M-t2B"/>
                                             <constraint firstItem="Kmb-YE-tN2" firstAttribute="top" secondItem="HJT-RM-Hz3" secondAttribute="top" constant="5" id="fqh-Yg-2mz"/>
                                             <constraint firstItem="7zh-qm-OWO" firstAttribute="bottom" secondItem="eb9-S9-VWs" secondAttribute="bottom" id="fwc-Uv-pXd"/>
                                             <constraint firstItem="Kmb-YE-tN2" firstAttribute="leading" secondItem="HJT-RM-Hz3" secondAttribute="leading" constant="15" id="fzh-08-VsB"/>
+                                            <constraint firstAttribute="trailing" secondItem="IwP-NA-ana" secondAttribute="trailing" id="iJN-ab-pwR"/>
                                             <constraint firstAttribute="trailing" secondItem="jE4-FU-GCi" secondAttribute="trailing" constant="8" id="oJt-Kv-CAs"/>
+                                            <constraint firstItem="Zzn-Aq-l9K" firstAttribute="top" secondItem="IwP-NA-ana" secondAttribute="bottom" id="uwy-Ua-HtK"/>
+                                            <constraint firstItem="IwP-NA-ana" firstAttribute="leading" secondItem="HJT-RM-Hz3" secondAttribute="leading" id="wJR-oj-Dm1"/>
                                             <constraint firstItem="r9a-7a-eya" firstAttribute="leading" secondItem="eb9-S9-VWs" secondAttribute="trailing" constant="2" id="yCq-Pp-q0w"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15686274509803921" green="0.60784313725490191" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0039215686274509803" green="0.42352941176470588" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="HJT-RM-Hz3" secondAttribute="trailing" id="Xm3-AM-OoX"/>
                                     <constraint firstItem="HJT-RM-Hz3" firstAttribute="top" secondItem="p8H-jT-233" secondAttribute="top" id="m7s-Rc-oLr"/>
@@ -1598,7 +1597,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.15686274510000001" green="0.60784313729999995" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="s44-y2-UaR" firstAttribute="top" secondItem="gBa-9O-x30" secondAttribute="bottom" constant="4" id="Ch7-qJ-Zz7"/>
                                             <constraint firstItem="mAW-T7-yFO" firstAttribute="leading" secondItem="s44-y2-UaR" secondAttribute="trailing" constant="3" id="GzU-JX-DoW"/>
@@ -2114,11 +2113,12 @@
         <image name="anh1" width="1280" height="720"/>
         <image name="appliances1" width="600" height="400"/>
         <image name="background4" width="900" height="506"/>
+        <image name="backgroundMain" width="1080" height="190"/>
         <image name="banner" width="540" height="185"/>
         <image name="billgates" width="400" height="400"/>
-        <image name="coin2" width="128" height="128"/>
-        <image name="comment2" width="128" height="128"/>
-        <image name="earth2" width="128" height="128"/>
+        <image name="coin2" width="60" height="60"/>
+        <image name="comment2" width="47" height="60"/>
+        <image name="earth2" width="48" height="55"/>
         <image name="electric_ic" width="256" height="256"/>
         <image name="food1" width="576" height="330"/>
         <image name="group" width="547" height="553"/>
@@ -2134,7 +2134,7 @@
         <image name="ic_phone_64" width="64" height="64"/>
         <image name="ic_request_64" width="32" height="32"/>
         <image name="kidtoy1" width="500" height="378"/>
-        <image name="list2" width="128" height="128"/>
+        <image name="list2" width="60" height="55"/>
         <image name="motorbike_ic_64" width="64" height="64"/>
         <image name="other" width="32" height="32"/>
         <image name="power" width="256" height="256"/>

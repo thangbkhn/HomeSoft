@@ -19,7 +19,7 @@ class GlobalUtil: NSObject {
     static func getMainColor() -> UIColor{
         //return UIColor.rbg(red: 67, green: 142, blue: 185)
         //return UIColor.rbg(red: 102, green: 117, blue: 133)
-        return UIColor.rbg(red: 40, green: 155, blue: 211)
+        return UIColor.rbg(red: 0, green: 102, blue: 178)
     }
     static func getSeperateColor() -> UIColor{
         return UIColor.rbg(red: 235, green: 235, blue: 241)
