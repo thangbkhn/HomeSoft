@@ -102,7 +102,6 @@
 		A032510020A69D450004B70F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03250FF20A69D450004B70F /* GoogleService-Info.plist */; };
 		A057FAD32088E32700322934 /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A057FAD22088E32700322934 /* RequestCell.xib */; };
 		A057FAD62088E65C00322934 /* ConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057FAD52088E65C00322934 /* ConvertHelper.swift */; };
-		A05F25B920ADE01500412BEA /* ResidentModification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05F25B820ADE01500412BEA /* ResidentModification.storyboard */; };
 		A078192D2096A676003E1DA9 /* SqliteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192C2096A676003E1DA9 /* SqliteHelper.swift */; };
 		A078192F2096C520003E1DA9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */; };
 		A07819332096DA4C003E1DA9 /* ReviewDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */; };
@@ -223,7 +222,6 @@
 		A03250FF20A69D450004B70F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A057FAD22088E32700322934 /* RequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCell.xib; sourceTree = "<group>"; };
 		A057FAD52088E65C00322934 /* ConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertHelper.swift; sourceTree = "<group>"; };
-		A05F25B820ADE01500412BEA /* ResidentModification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResidentModification.storyboard; sourceTree = "<group>"; };
 		A078192C2096A676003E1DA9 /* SqliteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteHelper.swift; sourceTree = "<group>"; };
 		A078192E2096C520003E1DA9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A07819322096DA4C003E1DA9 /* ReviewDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewDialog.storyboard; sourceTree = "<group>"; };
@@ -431,7 +429,6 @@
 				1CC0B711207CDFE600CFD374 /* Help.storyboard */,
 				1CC0B71E207E47EA00CFD374 /* About.storyboard */,
 				A0BD9F212097EC8C00632CB4 /* ReplyComment.storyboard */,
-				A05F25B820ADE01500412BEA /* ResidentModification.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -608,7 +605,6 @@
 				A0BD9F222097EC8C00632CB4 /* ReplyComment.storyboard in Resources */,
 				1C93DFD4207637C7009FB58F /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				1CBC3BF72068A62400AA799B /* OtherNotLogin.storyboard in Resources */,
-				A05F25B920ADE01500412BEA /* ResidentModification.storyboard in Resources */,
 				1C93DFD3207637C4009FB58F /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				A057FAD32088E32700322934 /* RequestCell.xib in Resources */,
 				A0D1AD54209C84BC00A0C032 /* CommentCell.xib in Resources */,

@@ -17,15 +17,15 @@ protocol UpdateSuccess {
 }
 class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var imgProfile: UIButton!
-    @IBOutlet var txtFullName: SkyFloatingLabelTextFieldWithIcon!
-    @IBOutlet var txtIdentityNo: SkyFloatingLabelTextFieldWithIcon!
-    @IBOutlet var txtPhone: SkyFloatingLabelTextFieldWithIcon!
-    @IBOutlet var txtMail: SkyFloatingLabelTextFieldWithIcon!
+    @IBOutlet weak var txtFullName: UITextField!
+    @IBOutlet weak var txtIdentityNo: UITextField!
+    @IBOutlet weak var txtPhone: UITextField!
+    @IBOutlet weak var txtMail: UITextField!
     @IBOutlet var isOwner: BEMCheckBox!
     @IBOutlet var loading: UIActivityIndicatorView!
     @IBOutlet var btMale: UIButton!
     @IBOutlet var btFemale: UIButton!
-    @IBOutlet var txtBirthday: SkyFloatingLabelTextFieldWithIcon!
+    @IBOutlet weak var txtBirthday: UITextField!
     
     var gender:String = "Nam"
     var delegate : UpdateSuccess?
@@ -47,15 +47,10 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePi
         imgProfile.clipsToBounds = true
         loading.isHidden = true
         txtFullName.delegate = self
-        txtFullName.titleFont = txtFullName.titleLabel.font.withSize(10)
         txtMail.delegate = self
-        txtMail.titleFont = txtMail.titleLabel.font.withSize(10)
         txtPhone.delegate = self
-        txtPhone.titleFont = txtPhone.titleLabel.font.withSize(10)
         txtPhone.keyboardType = UIKeyboardType.numberPad
         txtIdentityNo.delegate = self
-        txtIdentityNo.titleFont = txtIdentityNo.titleLabel.font.withSize(10)
-        txtBirthday.titleFont = txtBirthday.titleLabel.font.withSize(10)
         imagePicker.delegate = self
         if isEdit{
             txtFullName.text = accout?.fullName
@@ -124,7 +119,7 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePi
         }
     }
     
-    @IBAction func dateAction(_ sender: Any) {
+    @IBAction func datePicker(_ sender: Any) {
         self.view.endEditing(true)
         DispatchQueue.main.asyncAfter(deadline: .now()
             + 0.2) {

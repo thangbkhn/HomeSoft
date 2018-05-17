@@ -446,7 +446,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thangbkhn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSF-KW-g5X">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thangbkhn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSF-KW-g5X">
                                                             <rect key="frame" x="89.999999999999986" y="7" width="186.66666666666663" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Iuq-Vu-t9q"/>
@@ -456,7 +456,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLi-rp-p7M">
-                                                            <rect key="frame" x="90" y="37" width="265" height="37.666666666666657"/>
+                                                            <rect key="frame" x="90" y="29.999999999999996" width="265" height="44.666666666666657"/>
                                                             <string key="text">This game is very bad that I'm not tall this game is very important nice game.This game is very bad that I'm not tall this game is very important nice game</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -490,7 +490,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="MLi-rp-p7M" secondAttribute="bottom" constant="10" id="VN6-4k-bQM"/>
                                                         <constraint firstItem="vSF-KW-g5X" firstAttribute="leading" secondItem="kuw-zS-yoR" secondAttribute="trailing" constant="20" id="b7L-cZ-xh9"/>
                                                         <constraint firstAttribute="trailing" secondItem="thp-ac-LXS" secondAttribute="trailing" constant="5" id="cYQ-nT-J1c"/>
-                                                        <constraint firstItem="MLi-rp-p7M" firstAttribute="top" secondItem="vSF-KW-g5X" secondAttribute="bottom" constant="10" id="g2m-75-Mb1"/>
+                                                        <constraint firstItem="MLi-rp-p7M" firstAttribute="top" secondItem="vSF-KW-g5X" secondAttribute="bottom" constant="3" id="g2m-75-Mb1"/>
                                                         <constraint firstItem="thp-ac-LXS" firstAttribute="top" secondItem="vSF-KW-g5X" secondAttribute="top" id="kLO-cU-AxJ"/>
                                                         <constraint firstItem="kuw-zS-yoR" firstAttribute="leading" secondItem="ilu-p6-rxt" secondAttribute="leading" constant="20" id="rcB-Fz-IqD"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="MLi-rp-p7M" secondAttribute="trailing" constant="5" id="t8e-IX-LDl"/>
