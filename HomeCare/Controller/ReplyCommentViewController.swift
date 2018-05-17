@@ -43,8 +43,8 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
 //        self.searchController = UISearchController(searchResultsController: nil)
 //        self.navigationItem.titleView = self.searchController.searchBar;
 //        self.searchController.searchBar.isHidden = true
-        self.navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        //self.navigationController?.navigationBar.tintColor = .white
+//        navigationController?.navigationBar.tintColor = .white
         let backButton = UIBarButtonItem(title: "Bình luận", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton

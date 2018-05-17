@@ -190,7 +190,7 @@ class OtherViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = .white
+        //self.navigationController?.navigationBar.barTintColor = .white
         //Shadow navigation line
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)

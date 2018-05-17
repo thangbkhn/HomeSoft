@@ -29,14 +29,14 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
         let chartNavigationIcon = UIButton(type: .system)
         chartNavigationIcon.setImage(UIImage(named: "stats_ic_64"), for: .normal)
         chartNavigationIcon.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        chartNavigationIcon.tintColor = GlobalUtil.getGrayColor()
+        chartNavigationIcon.tintColor = .white
         return chartNavigationIcon
     }()
     let paymentButton:UIButton = {
         let paymentNavigationIcon = UIButton(type: .system)
         paymentNavigationIcon.setImage(UIImage(named: "controls3"), for: .normal)
         paymentNavigationIcon.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        paymentNavigationIcon.tintColor = GlobalUtil.getGrayColor()
+        paymentNavigationIcon.tintColor = .white
         paymentNavigationIcon.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20)
         return paymentNavigationIcon
     }()
@@ -113,7 +113,7 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func setNavigationBar() {
         chartButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chartAction)))
         paymentButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(paymentAction)))
-        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        navigationController?.navigationBar.tintColor = .white
         let backButton = UIBarButtonItem(title: "Chi phí dịch vụ", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton

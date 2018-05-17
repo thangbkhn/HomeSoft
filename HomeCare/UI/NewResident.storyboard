@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="by0-Tt-Oqb" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="8" y="162" width="359" height="30"/>
+                                <rect key="frame" x="8" y="162" width="359" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="XLG-5Z-qjv"/>
                                     <constraint firstAttribute="height" constant="46" id="ZGh-wo-eUv"/>
@@ -62,7 +62,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="40I-st-fkx" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="8" y="264" width="359" height="30"/>
+                                <rect key="frame" x="8" y="264" width="359" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="4pT-XE-5Xz"/>
                                     <constraint firstAttribute="height" constant="46" id="fMp-uJ-5Ms"/>
@@ -95,7 +95,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="a9f-GX-daM" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="8" y="315" width="359" height="30"/>
+                                <rect key="frame" x="8" y="315" width="359" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="gtz-24-qtA"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="iWi-PY-0IG"/>
@@ -129,7 +129,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="gch-a2-cBq" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="8" y="366" width="359" height="30"/>
+                                <rect key="frame" x="8" y="366" width="359" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="4Xz-3K-kbg"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="R6t-sX-WNz"/>
@@ -282,7 +282,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="juR-Gt-fsI" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="8" y="213" width="359" height="30"/>
+                                <rect key="frame" x="8" y="213" width="359" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="GVb-Hf-nh0"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="IIS-4L-9cQ"/>

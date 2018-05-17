@@ -68,7 +68,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         if frame == nil {
             frame = self.view.frame
         }
-        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        //navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
         let backButton = UIBarButtonItem(title: "Thông báo", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton

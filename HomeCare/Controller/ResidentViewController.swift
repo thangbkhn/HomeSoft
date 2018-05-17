@@ -31,7 +31,7 @@ class ResidentViewController: UIViewController, UITableViewDelegate, UITableView
         if frame == nil {
             frame = self.view.frame
         }
-        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        navigationController?.navigationBar.tintColor = .white
         let backButton = UIBarButtonItem(title: "Thành viên gia đình", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton

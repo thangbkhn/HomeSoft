@@ -61,7 +61,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
     let titleView : UILabel = {
         let titleV = UILabel()
         titleV.text = "YÊU CẦU"
-        titleV.textColor = UIColor.rbg(red: 92, green: 94, blue: 102)
+        titleV.textColor = .white
         titleV.font = UIFont.boldSystemFont(ofSize: 17)
         titleV.textAlignment = NSTextAlignment.center
         return titleV
@@ -165,7 +165,7 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
-        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
         navigationController?.navigationBar.isTranslucent = false
         
 //        self.searchController = UISearchController(searchResultsController: self.resultController)

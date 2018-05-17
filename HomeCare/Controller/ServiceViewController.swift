@@ -80,7 +80,7 @@ class ServiceViewController: UIViewController,UISearchResultsUpdating, UISearchB
         let cartNavigationIcon = UIButton(type: .system)
         cartNavigationIcon.setImage(UIImage(named: "ic_cart_64_white"), for: .normal)
         cartNavigationIcon.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        cartNavigationIcon.tintColor = GlobalUtil.getGrayColor()
+        cartNavigationIcon.tintColor = .white
         return cartNavigationIcon
     }()
     
@@ -88,7 +88,7 @@ class ServiceViewController: UIViewController,UISearchResultsUpdating, UISearchB
         let searchNavigationIcon = UIButton(type: .system)
         searchNavigationIcon.setImage(UIImage(named: "ic_search_white_64-1"), for: .normal)
         searchNavigationIcon.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        searchNavigationIcon.tintColor = GlobalUtil.getGrayColor()
+        searchNavigationIcon.tintColor = .white
         return searchNavigationIcon
     }()
     
@@ -96,7 +96,7 @@ class ServiceViewController: UIViewController,UISearchResultsUpdating, UISearchB
         let infoNavigationIcon = UIButton(type: .system)
         infoNavigationIcon.setImage(UIImage(named: "ic_info_white_64"), for: .normal)
         infoNavigationIcon.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        infoNavigationIcon.tintColor = GlobalUtil.getGrayColor()
+        infoNavigationIcon.tintColor = .white
         return infoNavigationIcon
     }()
     
@@ -108,18 +108,18 @@ class ServiceViewController: UIViewController,UISearchResultsUpdating, UISearchB
     }
     func setNavigationBar() {
         searchNavigationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(searchClicked)))
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: GlobalUtil.getGrayColor()]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         navigationItem.rightBarButtonItems =  [UIBarButtonItem(customView: cartNavigationButton),UIBarButtonItem(customView: infoNavigationButton)]
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: searchNavigationButton)
-        
+        navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
         navigationController?.navigationBar.isTranslucent = false
         
         self.searchController = UISearchController(searchResultsController: self.resultController)
         self.searchController.searchResultsUpdater = self
         self.searchController.hidesNavigationBarDuringPresentation = false;
         self.searchController.searchBar.searchBarStyle = .prominent;
-        self.searchController.searchBar.tintColor = GlobalUtil.getGrayColor()
+        self.searchController.searchBar.tintColor = .white
         for s in self.searchController.searchBar.subviews[0].subviews {
             if s is UITextField {
                 s.layer.borderWidth = 1.0
@@ -130,7 +130,7 @@ class ServiceViewController: UIViewController,UISearchResultsUpdating, UISearchB
         self.searchController.searchBar.placeholder = "Tìm kiếm"
         self.searchController.searchBar.setValue("Huỷ", forKey: "_cancelButtonText")
         self.searchController.searchBar.delegate = self
-        self.navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        self.navigationController?.navigationBar.tintColor = .white
         // Include the search bar within the navigation bar.
         self.navigationItem.titleView = self.searchController.searchBar;
         self.searchController.searchBar.isHidden = true

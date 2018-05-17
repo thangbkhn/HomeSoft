@@ -31,7 +31,7 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
         navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
         
-        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
+        navigationController?.navigationBar.tintColor = .white
         let backButton = UIBarButtonItem(title: "Góp ý", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton

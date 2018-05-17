@@ -19,17 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng thành viên: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9B-TW-3LN">
-                                <rect key="frame" x="16" y="28" width="343" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="i9m-SJ-Eua"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.26274509800000001" green="0.5568627451" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oTm-rY-f2Z">
-                                <rect key="frame" x="0.0" y="57" width="375" height="610"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="637"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="residentCell" rowHeight="90" id="I1T-7f-k4w" customClass="ResidentTableViewCell" customModule="HomeCare" customModuleProvider="target">
@@ -135,7 +126,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVP-Ws-wYc">
-                                <rect key="frame" x="317" y="609" width="50" height="50"/>
+                                <rect key="frame" x="310" y="602" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3Jo-dl-roC"/>
                                     <constraint firstAttribute="width" constant="50" id="eK3-Re-tns"/>
@@ -148,15 +139,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="T7i-Vp-mdU" firstAttribute="trailing" secondItem="wVP-Ws-wYc" secondAttribute="trailing" constant="8" id="0bp-xJ-LVk"/>
-                            <constraint firstItem="A9B-TW-3LN" firstAttribute="top" secondItem="T7i-Vp-mdU" secondAttribute="top" constant="8" id="53a-bf-liA"/>
-                            <constraint firstItem="oTm-rY-f2Z" firstAttribute="top" secondItem="A9B-TW-3LN" secondAttribute="bottom" constant="8" id="5h9-fr-yvo"/>
-                            <constraint firstItem="A9B-TW-3LN" firstAttribute="leading" secondItem="T7i-Vp-mdU" secondAttribute="leading" constant="16" id="N47-65-vav"/>
+                            <constraint firstItem="T7i-Vp-mdU" firstAttribute="trailing" secondItem="wVP-Ws-wYc" secondAttribute="trailing" constant="15" id="0bp-xJ-LVk"/>
+                            <constraint firstItem="oTm-rY-f2Z" firstAttribute="top" secondItem="T7i-Vp-mdU" secondAttribute="top" constant="10" id="B0W-pU-a18"/>
                             <constraint firstItem="T7i-Vp-mdU" firstAttribute="bottom" secondItem="oTm-rY-f2Z" secondAttribute="bottom" id="hkc-M0-kY5"/>
-                            <constraint firstItem="T7i-Vp-mdU" firstAttribute="bottom" secondItem="wVP-Ws-wYc" secondAttribute="bottom" constant="8" id="irg-XF-YLn"/>
+                            <constraint firstItem="T7i-Vp-mdU" firstAttribute="bottom" secondItem="wVP-Ws-wYc" secondAttribute="bottom" constant="15" id="irg-XF-YLn"/>
                             <constraint firstItem="T7i-Vp-mdU" firstAttribute="trailing" secondItem="oTm-rY-f2Z" secondAttribute="trailing" id="jj4-ef-w5d"/>
                             <constraint firstItem="oTm-rY-f2Z" firstAttribute="leading" secondItem="T7i-Vp-mdU" secondAttribute="leading" id="lDf-WY-kdx"/>
-                            <constraint firstItem="T7i-Vp-mdU" firstAttribute="trailing" secondItem="A9B-TW-3LN" secondAttribute="trailing" constant="16" id="rkw-5R-tGE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T7i-Vp-mdU"/>
                     </view>

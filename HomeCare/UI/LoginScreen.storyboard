@@ -40,7 +40,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0915179555" placeholder="Tài khoản" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYM-xF-jEt">
-                                        <rect key="frame" x="34" y="3" width="301" height="34"/>
+                                        <rect key="frame" x="42" y="3" width="293" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -65,7 +65,7 @@
                                     <constraint firstItem="lPh-PL-35H" firstAttribute="top" secondItem="ZoX-te-jvN" secondAttribute="top" constant="8" id="1x0-VC-1zU"/>
                                     <constraint firstAttribute="bottom" secondItem="lPh-PL-35H" secondAttribute="bottom" constant="8" id="Ady-RB-F9S"/>
                                     <constraint firstAttribute="trailing" secondItem="l6V-bb-es1" secondAttribute="trailing" id="HXt-va-HJw"/>
-                                    <constraint firstItem="lYM-xF-jEt" firstAttribute="leading" secondItem="lPh-PL-35H" secondAttribute="trailing" constant="2" id="RGO-cs-9DK"/>
+                                    <constraint firstItem="lYM-xF-jEt" firstAttribute="leading" secondItem="lPh-PL-35H" secondAttribute="trailing" constant="10" id="RGO-cs-9DK"/>
                                     <constraint firstItem="lPh-PL-35H" firstAttribute="leading" secondItem="ZoX-te-jvN" secondAttribute="leading" constant="8" id="RkK-M5-LYK"/>
                                     <constraint firstAttribute="bottom" secondItem="l6V-bb-es1" secondAttribute="bottom" id="Ry0-Vy-jYq"/>
                                     <constraint firstItem="lYM-xF-jEt" firstAttribute="top" secondItem="ZoX-te-jvN" secondAttribute="top" constant="3" id="YuX-37-mdE"/>
@@ -160,7 +160,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" placeholder="Tài khoản" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rlo-Ny-6qV">
-                                        <rect key="frame" x="34" y="3" width="301" height="34"/>
+                                        <rect key="frame" x="42" y="3" width="293" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -183,7 +183,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1y2-3a-Xy4" secondAttribute="trailing" id="08i-sL-SP6"/>
-                                    <constraint firstItem="Rlo-Ny-6qV" firstAttribute="leading" secondItem="bO6-nT-VfF" secondAttribute="trailing" constant="2" id="BHV-hZ-7GW"/>
+                                    <constraint firstItem="Rlo-Ny-6qV" firstAttribute="leading" secondItem="bO6-nT-VfF" secondAttribute="trailing" constant="10" id="BHV-hZ-7GW"/>
                                     <constraint firstItem="1y2-3a-Xy4" firstAttribute="leading" secondItem="hQn-Ok-NZZ" secondAttribute="leading" constant="8" id="EGG-Le-WmN"/>
                                     <constraint firstItem="bO6-nT-VfF" firstAttribute="top" secondItem="hQn-Ok-NZZ" secondAttribute="top" constant="8" id="Ewg-0H-Z4s"/>
                                     <constraint firstAttribute="trailing" secondItem="Rlo-Ny-6qV" secondAttribute="trailing" id="JF3-29-8Kq"/>
