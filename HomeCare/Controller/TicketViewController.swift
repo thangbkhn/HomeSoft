@@ -117,6 +117,8 @@ class TicketViewController: UIViewController,UITableViewDelegate, UITableViewDat
             return true
         })]
         cell.rightSwipeSettings.transition = .rotate3D
+        cell.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
         return cell
     }
     

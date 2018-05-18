@@ -32,7 +32,7 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
         navigationController?.navigationBar.shadowImage = UIColor.gray.as1ptImage()
         
         navigationController?.navigationBar.tintColor = .white
-        let backButton = UIBarButtonItem(title: "Góp ý", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "   Góp ý", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)
@@ -78,6 +78,8 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
         cell.tvUser.text = item.ownerName
         cell.tvComment.text = item.content
         cell.tvDate.text =  item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
+        cell.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -17,7 +17,7 @@ class AboutViewController: UIViewController {
         //imgLogo.image = imgLogo.changeImageColor(color: .white)
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
-        let backButton = UIBarButtonItem(title: "Giới thiệu", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "   Giới thiệu", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }

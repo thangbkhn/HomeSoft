@@ -114,7 +114,7 @@ class PaymentViewController: UIViewController, UITableViewDelegate, UITableViewD
         chartButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chartAction)))
         paymentButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(paymentAction)))
         navigationController?.navigationBar.tintColor = .white
-        let backButton = UIBarButtonItem(title: "Chi phí dịch vụ", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "   Chi phí dịch vụ", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         navigationItem.rightBarButtonItems =  [UIBarButtonItem(customView: chartButton),UIBarButtonItem(customView: paymentButton)]

@@ -29,24 +29,32 @@ class ServiceViewController: UIViewController,UISearchResultsUpdating, UISearchB
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! FoodCollectionViewCell
             cell.imgFood.image = UIImage(named: item.imageUrl!)
             cell.tvNameFood.text = item.name!
+            cell.alpha = 0
+            UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
             return cell
         }else if collectionView == clvAppliances{
             let item = appliancesList[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "appliancesCell", for: indexPath) as! AppliancesCollectionViewCell
             cell.img.image = UIImage(named: item.imgUrl!)
             cell.tvName.text = item.name!
+            cell.alpha = 0
+            UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
             return cell
         }else if collectionView == clvKidToy{
             let item = kidToyList[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kidToyCell", for: indexPath) as! KidToyCollectionViewCell
             cell.img.image = UIImage(named: item.imgUrl!)
             cell.tvName.text = item.name!
+            cell.alpha = 0
+            UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
             return cell
         } else{
             let item = serviceList[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "serviceCell", for: indexPath) as! ServiceCollectionViewCell
             cell.imgService.image = UIImage(named: item.imgUrl!)
             cell.tvName.text = item.name!
+            cell.alpha = 0
+            UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
             return cell
         }
     }

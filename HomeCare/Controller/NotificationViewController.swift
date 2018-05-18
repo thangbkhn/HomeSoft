@@ -48,6 +48,8 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             return true
         })]
         cell.rightSwipeSettings.transition = .rotate3D
+        cell.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -71,7 +73,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         //navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.barTintColor = GlobalUtil.getMainColor()
-        let backButton = UIBarButtonItem(title: "Thông báo", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "   Thông báo", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)

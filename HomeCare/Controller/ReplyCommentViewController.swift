@@ -45,7 +45,7 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
 //        self.searchController.searchBar.isHidden = true
         //self.navigationController?.navigationBar.tintColor = .white
 //        navigationController?.navigationBar.tintColor = .white
-        let backButton = UIBarButtonItem(title: "Bình luận", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "   Bình luận", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard)))
@@ -107,14 +107,8 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         cell.tvContent.text = item.content
         cell.tvDate.text = item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
         cell.selectionStyle = .none
-        
-        //Shadow navigation line
-//        cell.tvView.layer.shadowColor = UIColor.black.cgColor
-//        cell.tvView.layer.shadowOffset = CGSize(width: 0.0, height: 0.5)
-//        cell.tvView.layer.shadowRadius = 2
-//        cell.tvView.layer.shadowOpacity = 0.7
-//        cell.tvView.layer.masksToBounds = false
-        
+        cell.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -126,6 +120,12 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
     }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        for cell in tbReply.visibleCells as [UITableViewCell] {
+//            let point = tbReply.convert(cell.center, to: tbReply.superview)
+//            cell.alpha = ((point.y * 100) / tbReply.bounds.maxY) / 100
+//        }
+//    }
     //keyboard
     @objc func dismissKeyBoard(){
         self.view.endEditing(true)

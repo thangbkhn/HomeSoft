@@ -32,7 +32,7 @@ class ResidentViewController: UIViewController, UITableViewDelegate, UITableView
             frame = self.view.frame
         }
         navigationController?.navigationBar.tintColor = .white
-        let backButton = UIBarButtonItem(title: "Thành viên gia đình", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "   Thành viên gia đình", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
@@ -82,6 +82,8 @@ class ResidentViewController: UIViewController, UITableViewDelegate, UITableView
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 3
         cell.clipsToBounds = true
+        cell.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
