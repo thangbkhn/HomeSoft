@@ -1152,6 +1152,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="cRo-AS-Tnf"/>
                     <connections>
+                        <outlet property="btFeedback" destination="C2f-pv-Puy" id="vOh-mQ-lqm"/>
+                        <outlet property="btNotification" destination="6ZN-aV-ghf" id="vy7-CH-7hf"/>
+                        <outlet property="btPayment" destination="tha-49-W8p" id="sTc-TM-Zcs"/>
+                        <outlet property="btResident" destination="Yb4-YP-9IQ" id="pg1-XV-BjV"/>
                         <outlet property="imgAdvert" destination="6RW-Be-zrm" id="iLK-34-aIp"/>
                         <outlet property="pageControll" destination="5bj-QP-HNi" id="sOT-7O-iEL"/>
                         <outlet property="tvInfo" destination="7zh-qm-OWO" id="ntq-f2-wCa"/>

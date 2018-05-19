@@ -17,10 +17,16 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var tvLogin: UIButton!
     @IBOutlet weak var tvUse: UILabel!
     @IBOutlet weak var tvInfo: UILabel!
-    
     var timer: Timer!
+    var timerShakeButton:Timer!
+    var i = 0
     var updateCounter:Int!
     let imgListStr = ["anh1","anh2","anh3"]
+    
+    @IBOutlet weak var btNotification: UIButton!
+    @IBOutlet weak var btPayment: UIButton!
+    @IBOutlet weak var btFeedback: UIButton!
+    @IBOutlet weak var btResident: UIButton!
     
     var isLogin = false
     
@@ -40,7 +46,7 @@ class HomeScreenViewController: UIViewController {
         updateCounter = 0
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         //Load page cotroll
-        
+        timerShakeButton = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(shakeView), userInfo: nil, repeats: true)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         reloadForm()
@@ -57,9 +63,9 @@ class HomeScreenViewController: UIViewController {
         //navigationController?.navigationBar.barTintColor = .white
         //Shadow navigation line
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
-        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        self.navigationController?.navigationBar.layer.shadowRadius = 4.0
-        self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 2.0
+        self.navigationController?.navigationBar.layer.shadowOpacity = 1
         self.navigationController?.navigationBar.layer.masksToBounds = false
     }
     @objc internal func updateTimer(){
@@ -70,6 +76,23 @@ class HomeScreenViewController: UIViewController {
         }else{
             updateCounter = 0
         }
+    }
+    @objc internal func shakeView(){
+        switch i {
+        case 0:
+            btNotification.shake()
+            break
+        case 1:
+            btPayment.shake()
+            break
+        case 2:
+            btFeedback.shake()
+            break
+        default:
+            btResident.shake()
+            break
+        }
+        i = (i + 1)%4
     }
     @objc func reloadForm() {
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
