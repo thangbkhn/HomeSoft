@@ -27,7 +27,7 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePi
     @IBOutlet var btFemale: UIButton!
     @IBOutlet weak var txtBirthday: UITextField!
     
-    var gender:String = "Nam"
+    var gender:String = "1"
     var delegate : UpdateSuccess?
     var isEdit = false
     var accout:Account?
@@ -58,7 +58,7 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePi
             txtMail.text = accout?.email
             txtBirthday.text = accout?.birdthDay?.substring(with: 0..<10)
             txtPhone.text = accout?.mobile
-            if accout?.gender == "Nam"{
+            if accout?.gender == "1"{
                 selectButton(btView: btFemale, isSelect: false)
                 selectButton(btView: btMale, isSelect: true)
             }else{
@@ -102,12 +102,12 @@ class NewResidentViewController: UIViewController, UITextFieldDelegate,UIImagePi
     @IBAction func btMaleAction(_ sender: Any) {
         selectButton(btView: btFemale, isSelect: false)
         selectButton(btView: btMale, isSelect: true)
-        gender = "Nam"
+        gender = "1"
     }
     @IBAction func btFemaleAction(_ sender: Any) {
         selectButton(btView: btFemale, isSelect: true)
         selectButton(btView: btMale, isSelect: false)
-        gender = "Nữ"
+        gender = "0"
     }
     func selectButton(btView:UIButton, isSelect:Bool) {
         if isSelect{

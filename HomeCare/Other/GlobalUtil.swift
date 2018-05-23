@@ -136,6 +136,72 @@ class GlobalUtil: NSObject {
         alert.addAction(UIAlertAction(title: "Đóng", style: .default, handler: nil))
         context.present(alert,animated: true)
     }
+    static func getUIImageFromUrl(url:String) ->UIImage!{
+        let url = URL(string: url)
+        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        if(data == nil){
+            return nil
+        }
+        let result =  UIImage(data: data!)
+        if result != nil{
+            return result!
+        }
+        return nil
+    }
+    static func getCurrentFolder()->URL{
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
+    static func downLoadFile(fileName:String, url:String)  -> Bool{
+        let fileURL = GlobalUtil.getCurrentFolder().appendingPathComponent("\(fileName)")
+        let url = URL(string: url)
+        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        if(data == nil){
+            return false
+        }
+        let result =  UIImage(data: data!)
+        if result == nil{
+            return false
+        }
+        do{
+            if let pngImageData = UIImagePNGRepresentation(result!) {
+                try pngImageData.write(to: fileURL, options: .atomic)
+            }
+        }catch {
+            return false
+        }
+        return true
+    }
+    static func getImage(fileName:String)->UIImage{
+        let documentsURL = GlobalUtil.getCurrentFolder()
+        let filePath = documentsURL.appendingPathComponent("\(fileName)").path
+        if FileManager.default.fileExists(atPath: filePath) {
+            return UIImage(contentsOfFile: filePath)!
+        }
+        return UIImage(named: "imgAvatar")!
+    }
+    static func getAvatarImg()->UIImage!{
+        let filePath = GlobalUtil.getCurrentFolder().appendingPathComponent("\(Constant.avatarPath)").path
+        if FileManager.default.fileExists(atPath: filePath) {
+            return GlobalUtil.getImage(fileName: Constant.avatarPath)
+        }else{
+            if GlobalUtil.downLoadFile(fileName: Constant.avatarPath, url: GlobalInfo.sharedInstance.getUserInfo().imageUrl!.replacingOccurrences(of: "~", with: Constant.sharedInstance.downFileUrl)){
+                return GlobalUtil.getImage(fileName: Constant.avatarPath)
+            }else{
+                return UIImage(named: "imgAvatar")
+            }
+        }
+    }
+    static func deleteFile(fileName:String){
+        let fileManager = FileManager.default
+        let filePath = GlobalUtil.getCurrentFolder().appendingPathComponent("\(fileName)").path
+        if fileManager.fileExists(atPath: filePath) {
+            do{
+               try fileManager.removeItem(atPath: filePath)
+            }catch let error as NSError{
+                print(error)
+            }
+        }
+    }
 }
 extension String {
     func index(from: Int) -> Index {

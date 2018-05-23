@@ -31,6 +31,7 @@ class OtherViewController: UIViewController {
         setNavigationBar()
         imgProfile.layer.cornerRadius = imgProfile.frame.height/2
         imgProfile.clipsToBounds = true
+        imgProfile.image = GlobalUtil.getAvatarImg()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         if !isLogin {
@@ -157,6 +158,7 @@ class OtherViewController: UIViewController {
     }
     
     @IBAction func btLogout(_ sender: Any) {
+        GlobalUtil.deleteFile(fileName: Constant.avatarPath)
         GlobalUtil.setPreference(value: false, key: GlobalUtil.isLogin)
         NotificationCenter.default.post(name: NotificationConstant.loginNotification, object: nil)
         

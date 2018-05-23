@@ -17,6 +17,8 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var tvLogin: UIButton!
     @IBOutlet weak var tvUse: UILabel!
     @IBOutlet weak var tvInfo: UILabel!
+    @IBOutlet weak var imgAvatar: UIButton!
+    
     var timer: Timer!
     var timerShakeButton:Timer!
     var i = 0
@@ -46,7 +48,7 @@ class HomeScreenViewController: UIViewController {
         updateCounter = 0
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         //Load page cotroll
-        timerShakeButton = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(shakeView), userInfo: nil, repeats: true)
+        //timerShakeButton = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(shakeView), userInfo: nil, repeats: true)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadForm), name: NotificationConstant.loginNotification, object: nil)
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         reloadForm()
@@ -60,7 +62,6 @@ class HomeScreenViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     override func viewWillDisappear(_ animated: Bool) {
-        //navigationController?.navigationBar.barTintColor = .white
         //Shadow navigation line
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
@@ -102,6 +103,7 @@ class HomeScreenViewController: UIViewController {
             tvLogin.isHidden = false
             tvInfo.isHidden = true
             tvName.text = "Xin chào"
+            imgAvatar.setImage(UIImage(named: "imgAvatar"), for: .normal)
         }else{
             //tvLogin.setTitle("Đăng xuất", for:.normal)
             tvUse.isHidden = true
@@ -109,6 +111,7 @@ class HomeScreenViewController: UIViewController {
             tvInfo.isHidden = false
             tvName.text = "\(GlobalInfo.sharedInstance.getUserInfo().fullName ?? "")"
             tvInfo.text = "Căn hộ \(GlobalInfo.sharedInstance.getUserInfo().roomName ?? "") Toà nhà \(GlobalInfo.sharedInstance.getUserInfo().buildingName ?? "")\n234 Phạm Văn Đồng - Bắc Từ Liêm - Hà Nội"
+            imgAvatar.setImage(GlobalUtil.getAvatarImg(), for: .normal)
         }
     }
     @IBAction func btNotification(_ sender: Any) {

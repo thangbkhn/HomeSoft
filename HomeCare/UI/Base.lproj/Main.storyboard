@@ -1157,6 +1157,7 @@
                         <outlet property="btPayment" destination="tha-49-W8p" id="sTc-TM-Zcs"/>
                         <outlet property="btResident" destination="Yb4-YP-9IQ" id="pg1-XV-BjV"/>
                         <outlet property="imgAdvert" destination="6RW-Be-zrm" id="iLK-34-aIp"/>
+                        <outlet property="imgAvatar" destination="Kmb-YE-tN2" id="ghF-wG-1xs"/>
                         <outlet property="pageControll" destination="5bj-QP-HNi" id="sOT-7O-iEL"/>
                         <outlet property="tvInfo" destination="7zh-qm-OWO" id="ntq-f2-wCa"/>
                         <outlet property="tvLogin" destination="eb9-S9-VWs" id="3K8-JV-PN4"/>

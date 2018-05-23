@@ -283,12 +283,3 @@ class SqliteHelper: NSObject {
 extension NSObject : PropertyNames{
     
 }
-
-//extension Database {
-//    func tableExists(tableName: String) -> Bool {
-//        return db.scalar(
-//            "SELECT EXISTS(SELECT name FROM sqlite_master WHERE name = ?)", tableName
-//            ) as Bool
-//    }
-//}
-

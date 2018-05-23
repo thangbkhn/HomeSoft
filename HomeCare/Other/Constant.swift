@@ -16,7 +16,9 @@ class Constant: NSObject {
     static let sharedInstance = Constant()
     
     static var dateFormatStr = "yyyy-MM-dd"
+    static let avatarPath = "homesofeAvatarImg.png"
     var baseUrl = "http://103.63.109.42:8086"
+    var downFileUrl = "http://homesoft.vn"
     
     func getBaserUrl() ->String{
         baseUrl = GlobalUtil.getStringPreference(key: GlobalUtil.hostURL)

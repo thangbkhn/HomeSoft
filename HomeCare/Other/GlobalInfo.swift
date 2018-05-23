@@ -21,6 +21,7 @@ class GlobalInfo: NSObject {
     static let sharedInstance = GlobalInfo()
     var userInfo : SavedAccount?
     var groupFCM:[String]?
+    var imgAvater:UIImage?
     func setUser(_userInfo:SavedAccount){
         self.userInfo = _userInfo
     }
@@ -32,5 +33,8 @@ class GlobalInfo: NSObject {
     }
     func getGroupFCM() -> [String] {
         return self.groupFCM!
+    }
+    func setAvatarImg(img:UIImage!) {
+        self.imgAvater = img
     }
 }

@@ -35,7 +35,6 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.tintColor = .white
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard)))
-        navigationController?.navigationBar.tintColor = GlobalUtil.getGrayColor()
         let backButton = UIBarButtonItem(title: "Thêm yêu cầu", style: UIBarButtonItemStyle.done, target: nil, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)], for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
@@ -152,7 +151,6 @@ class NewRequestViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.showTabar(isShow: true)
-        self.navigationController?.navigationBar.barTintColor = .white
     }
     override func viewWillAppear(_ animated: Bool) {
         self.showTabar(isShow: false)

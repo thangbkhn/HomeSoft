@@ -82,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     }
     @objc func refreshToken(notification:NSNotification) {
         let refreshToken = InstanceID.instanceID().token()!
+        GlobalUtil.setPreference(value: refreshToken, key: GlobalUtil.tokenFCM)
         print("****\(refreshToken)****")
         Messaging.messaging().subscribe(toTopic: "alert")
         FBHandler()

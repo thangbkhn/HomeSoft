@@ -62,7 +62,7 @@ class ResidentViewController: UIViewController, UITableViewDelegate, UITableView
         }else{
             cell.txtDateOfBirth.text = "Ngày sinh:"
         }
-        cell.txtGender.text = item.gender != nil ? "Giới tính: \(item.gender ?? "")" : "Giới tính: "
+        cell.txtGender.text = "Giới tính: \(item.gender == "1" ? "Nam":"Nữ")"
         if(!(item.isOwner == "1" || item.isOwner == "true")){
             cell.imgOwner.isHidden = true
         }else{
