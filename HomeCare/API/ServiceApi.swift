@@ -28,7 +28,7 @@ class ServiceApi: NSObject {
     }
     
     func getHeader() -> HTTPHeaders {
-        let header:HTTPHeaders = ["Content-Type":"application/json","Accept-Charset":"UTF-8"]
+        let header:HTTPHeaders = ["Content-Type":"application/json","Accept-Charset":"UTF-8","Authorization":token ?? ""]
         return header
     }
     
@@ -67,6 +67,9 @@ class ServiceApi: NSObject {
                 
             }
         }
+    }
+    func setToken(_token:String)  {
+        token = "bearer \(_token)"
     }
 }
 

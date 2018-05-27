@@ -14,4 +14,5 @@ class LoginResponse: BaseObject {
     var status: String?
     var accountInfo:Account?
     var groupFCM:[FCMObject]?
+    var token:String?
 }

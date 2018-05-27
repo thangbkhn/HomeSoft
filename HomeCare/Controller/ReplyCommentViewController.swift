@@ -8,6 +8,7 @@
 
 import UIKit
 import RAMAnimatedTabBarController
+import Kingfisher
 
 class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,6 +21,8 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var layoutContent: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var imageAvatar: UIImageView!
+    @IBOutlet weak var imgOwner: UIImageView!
     
     let nib = UINib(nibName: "CommentCell", bundle: nil)
     static let TICKET = 1
@@ -40,6 +43,8 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tbHeightOri = tbReply.frame.size.height
+        imageAvatar.image = GlobalUtil.getAvatarImg()
+        imgOwner.image = GlobalUtil.getAvatarImg()
 //        self.searchController = UISearchController(searchResultsController: nil)
 //        self.navigationItem.titleView = self.searchController.searchBar;
 //        self.searchController.searchBar.isHidden = true
@@ -106,6 +111,11 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         cell.tvUser.text = item.ownerFullname!
         cell.tvContent.text = item.content
         cell.tvDate.text = item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
+//        if(item.ownerImg != nil){
+//            cell.imgOwner.kf.setImage(with: URL(string:(item.ownerImg?.replacingOccurrences(of: "~", with: Constant.sharedInstance.downFileUrl))!))
+//        }
+        let url = "~/Content/images/user.png".replacingOccurrences(of: "~", with: Constant.sharedInstance.downFileUrl)
+        cell.imgOwner.kf.setImage(with: URL(string:url	))
         cell.selectionStyle = .none
         cell.alpha = 0
         UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
@@ -207,6 +217,7 @@ class ReplyCommentViewController: UIViewController, UITableViewDelegate, UITable
         info.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId
         info.createdDatetime = GlobalUtil.getCurrentDate()
         info.updatedDatetime = GlobalUtil.getCurrentDate()
+        info.ownerImg = GlobalInfo.sharedInstance.getUserInfo().imageUrl
         let request = UpdateRequest()
         request.info = info.toDict()
         request.clientId = GlobalInfo.sharedInstance.getUserInfo().clientId

@@ -161,6 +161,7 @@
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imgOwner" destination="WIO-fA-98Z" id="yMt-of-kU2"/>
                 <outlet property="tvContent" destination="9gW-D1-ueh" id="YP7-PN-4kJ"/>
                 <outlet property="tvDate" destination="IAW-Qe-laS" id="fMa-ej-pXh"/>
                 <outlet property="tvUser" destination="PBw-aW-Xjr" id="Te9-OJ-YkD"/>

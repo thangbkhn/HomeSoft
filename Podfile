@@ -27,4 +27,5 @@ target 'HomeCare' do
   #https://swift.unicorn.tv/screencasts/create-an-animated-tabbar
   pod 'RAMAnimatedTabBarController'
   pod 'SQLite.swift', '~> 0.11.4'
+  pod 'Kingfisher', '~> 4.0'
 end

@@ -22,7 +22,7 @@ class SqliteHelper: NSObject {
             if (!file.fileExists(atPath: dataPath as String)) {
                 db = try Connection(dataPath as String)
                 //Start: Tao bang
-//                createTable(tableName: Constant.NotificationTable, columns: NotificationItem().propertyNames())
+                createTable(tableName: Constant.NotificationTable, columns: NotificationItem().propertyNames())
                 //End:Tao bang
             }else{
                 db = try Connection(dataPath as String)
@@ -38,7 +38,7 @@ class SqliteHelper: NSObject {
     func getPath() {
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let docsDir = NSString(string: dirPath[0])
-        //dataPath = docsDir.appendingPathComponent(Constant.databaseFileName) as NSString
+        dataPath = docsDir.appendingPathComponent(Constant.databaseFileName) as NSString
     }
     func createTable(tableName:String, columns:[String]) {
         do {

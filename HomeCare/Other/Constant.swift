@@ -10,6 +10,8 @@ import UIKit
 
 class Constant: NSObject {
     
+    static let NotificationTable = "Notification"
+    static let databaseFileName = "homeSoft.db"
     override init() {
         super.init()
     }

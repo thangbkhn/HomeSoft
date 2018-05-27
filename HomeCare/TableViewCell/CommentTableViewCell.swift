@@ -13,6 +13,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var tvUser: UILabel!
     @IBOutlet weak var tvDate: UILabel!
     @IBOutlet weak var tvComment: UILabel!
+    @IBOutlet weak var imgAvatar: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

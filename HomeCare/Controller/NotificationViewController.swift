@@ -17,6 +17,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     var isLogin = false
     var frame:CGRect!
     var notificationList :[NotificationItem] = []
+    var networkAvalible = true
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notificationList.count
     }
@@ -93,12 +94,6 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             self.view.addSubview(addView!)
             loginView.didMove(toParentViewController: self)
         }else{
-            
-//            self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
-//            self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: self.frame.width, height: 2.0)
-//            self.navigationController?.navigationBar.layer.shadowRadius = 4.0
-//            self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
-//            self.navigationController?.navigationBar.layer.masksToBounds = false
             self.tbNotification.separatorStyle = .none
             if let viewWithTag = self.view.viewWithTag(100){
                 viewWithTag.removeFromSuperview()
@@ -110,6 +105,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
         self.viewDidLoad()
     }
+    func loadDatabase() {
+        var notification = NotificationItem()
+        self.notificationList = SqliteHelper.shareInstance.getDataList(tableName: Constant.NotificationTable, keyIdList: [], keyValueList: [], classtype: &notification)
+    }
     func loadNotification(page:Int) {
         self.startLoading(mIsLoading: true)
          let notificationRequest = GetListRequest()
@@ -120,7 +119,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             if isSuccess{
                 let notificationResponse = responseData as! NotificationResponnse
                 if notificationResponse.resultCode == "200"{
+                    var notification = NotificationItem()
                     self.notificationList = notificationResponse.list!
+                    SqliteHelper.shareInstance.insertOrUpdateList(tableName: Constant.NotificationTable, dataList: notificationResponse.list!, keyId: "id", classtype: &notification)
                     self.tbNotification.reloadData()
                 }else{
                     GlobalUtil.showToast(context: self, message: "Không thể lấy danh sách thông báo")

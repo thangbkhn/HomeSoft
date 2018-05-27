@@ -439,7 +439,7 @@
                                                                     <real key="value" value="25"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="value" red="0.48168123999937507" green="0.38035767102766971" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                     <real key="value" value="0.5"/>
@@ -498,6 +498,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="imgAvatar" destination="kuw-zS-yoR" id="ypD-3g-kDY"/>
                                                     <outlet property="tvComment" destination="MLi-rp-p7M" id="f4M-WH-WD9"/>
                                                     <outlet property="tvDate" destination="thp-ac-LXS" id="GnU-wK-zuK"/>
                                                     <outlet property="tvUser" destination="vSF-KW-g5X" id="KPb-b5-W7g"/>
@@ -2120,7 +2121,7 @@
         <image name="background4" width="900" height="506"/>
         <image name="backgroundMain" width="1080" height="190"/>
         <image name="banner" width="540" height="185"/>
-        <image name="billgates" width="400" height="400"/>
+        <image name="billgates" width="512" height="512"/>
         <image name="coin2" width="60" height="60"/>
         <image name="comment2" width="47" height="60"/>
         <image name="earth2" width="48" height="55"/>

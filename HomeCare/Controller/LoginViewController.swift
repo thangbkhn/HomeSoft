@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
                     let savedAccount = SavedAccount(account: loginResponse.accountInfo!)
                     GlobalInfo.sharedInstance.setUser(_userInfo: savedAccount)
                     GlobalUtil.saveObject(object: savedAccount)
+                    ServiceApi.shareInstance.setToken(_token: loginResponse.token!)
                     if let groupFCM = loginResponse.groupFCM{
                         var groupString:[String] = []
                         for fcm in groupFCM {

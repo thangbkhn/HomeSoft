@@ -79,6 +79,7 @@ class FeedbackViewController: UIViewController, UITableViewDelegate, UITableView
         cell.tvComment.text = item.content
         cell.tvDate.text =  item.updatedDatetime != nil ? item.updatedDatetime?.substring(with: 0..<10) : ""
         cell.alpha = 0
+        cell.imgAvatar.image = GlobalUtil.getAvatarImg()
         UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
         return cell
     }
