@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseMessaging
 
 class OtherViewController: UIViewController {
     @IBOutlet var imgProfile: UIImageView!

@@ -48,8 +48,8 @@ open class RAMBounceAnimation: RAMItemAnimation {
         textLabel.textColor = defaultTextColor
 
         if let iconImage = icon.image {
-            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImageRenderingMode.alwaysOriginal :
-                UIImageRenderingMode.alwaysTemplate
+            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImage.RenderingMode.alwaysOriginal :
+                UIImage.RenderingMode.alwaysTemplate
             let renderImage = iconImage.withRenderingMode(renderMode)
             icon.image = renderImage
             icon.tintColor = defaultIconColor
@@ -74,10 +74,10 @@ open class RAMBounceAnimation: RAMItemAnimation {
 
     func playBounceAnimation(_ icon: UIImageView) {
 
-        let bounceAnimation = CAKeyframeAnimation(keyPath: Constants.AnimationKeys.Scale)
+        let bounceAnimation = CAKeyframeAnimation(keyPath: Constants.AnimationKeys.scale)
         bounceAnimation.values = [1.0, 1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
         bounceAnimation.duration = TimeInterval(duration)
-        bounceAnimation.calculationMode = kCAAnimationCubic
+        bounceAnimation.calculationMode = CAAnimationCalculationMode.cubic
 
         icon.layer.add(bounceAnimation, forKey: nil)
 

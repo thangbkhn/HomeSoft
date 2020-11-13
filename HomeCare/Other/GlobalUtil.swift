@@ -184,7 +184,8 @@ class GlobalUtil: NSObject {
         if FileManager.default.fileExists(atPath: filePath) {
             return GlobalUtil.getImage(fileName: Constant.avatarPath)
         }else{
-            if GlobalUtil.downLoadFile(fileName: Constant.avatarPath, url: GlobalInfo.sharedInstance.getUserInfo().imageUrl!.replacingOccurrences(of: "~", with: Constant.sharedInstance.downFileUrl)){
+            let isLogin = GlobalUtil.getBoolPreference(key: GlobalUtil.isLogin)
+            if isLogin && GlobalUtil.downLoadFile(fileName: Constant.avatarPath, url: GlobalInfo.sharedInstance.getUserInfo().imageUrl!.replacingOccurrences(of: "~", with: Constant.sharedInstance.downFileUrl)){
                 return GlobalUtil.getImage(fileName: Constant.avatarPath)
             }else{
                 return UIImage(named: "imgAvatar")

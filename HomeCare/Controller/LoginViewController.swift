@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Firebase
+import FirebaseMessaging
 class LoginViewController: UIViewController {
     @IBOutlet var txtUser: UITextField!
     @IBOutlet var txtPassword: UITextField!

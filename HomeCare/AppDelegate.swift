@@ -81,11 +81,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         FBHandler()
     }
     @objc func refreshToken(notification:NSNotification) {
-        let refreshToken = InstanceID.instanceID().token()!
-        GlobalUtil.setPreference(value: refreshToken, key: GlobalUtil.tokenFCM)
-        print("****\(refreshToken)****")
-        Messaging.messaging().subscribe(toTopic: "alert")
-        FBHandler()
+        InstanceID.instanceID().instanceID { (result, error) in
+            if let error = error{
+                print("Error \(error)")
+            }else if let result = result {
+                let refreshToken = result.token
+                GlobalUtil.setPreference(value: refreshToken, key: GlobalUtil.tokenFCM)
+                print("****\(refreshToken)****")
+                Messaging.messaging().subscribe(toTopic: "alert")
+                self.FBHandler()
+            }
+        }
     }
     func FBHandler() {
         Messaging.messaging().shouldEstablishDirectChannel = true

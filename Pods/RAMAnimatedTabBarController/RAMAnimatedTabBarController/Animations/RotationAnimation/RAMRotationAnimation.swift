@@ -63,8 +63,8 @@ open class RAMRotationAnimation: RAMItemAnimation {
         textLabel.textColor = defaultTextColor
 
         if let iconImage = icon.image {
-            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImageRenderingMode.alwaysOriginal :
-                UIImageRenderingMode.alwaysTemplate
+            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImage.RenderingMode.alwaysOriginal :
+                UIImage.RenderingMode.alwaysTemplate
             let renderImage = iconImage.withRenderingMode(renderMode)
             icon.image = renderImage
             icon.tintColor = defaultIconColor
@@ -83,13 +83,13 @@ open class RAMRotationAnimation: RAMItemAnimation {
         if let iconImage = icon.image {
             let renderImage = iconImage.withRenderingMode(.alwaysTemplate)
             icon.image = renderImage
-            icon.tintColor = textSelectedColor
+            icon.tintColor = iconSelectedColor
         }
     }
 
     func playRoatationAnimation(_ icon: UIImageView) {
 
-        let rotateAnimation = CABasicAnimation(keyPath: Constants.AnimationKeys.Rotation)
+        let rotateAnimation = CABasicAnimation(keyPath: Constants.AnimationKeys.rotation)
         rotateAnimation.fromValue = 0.0
 
         var toValue = CGFloat.pi * 2
@@ -111,18 +111,18 @@ open class RAMRotationAnimation: RAMItemAnimation {
 }
 
 /// The RAMLeftRotationAnimation class provides letf rotation animation.
-class RAMLeftRotationAnimation: RAMRotationAnimation {
+open class RAMLeftRotationAnimation: RAMRotationAnimation {
 
-    override init() {
+    public override init() {
         super.init()
         direction = RAMRotationDirection.left
     }
 }
 
 /// The RAMRightRotationAnimation class provides rigth rotation animation.
-class RAMRightRotationAnimation: RAMRotationAnimation {
+open class RAMRightRotationAnimation: RAMRotationAnimation {
 
-    override init() {
+    public override init() {
         super.init()
         direction = RAMRotationDirection.right
     }

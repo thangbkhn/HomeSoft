@@ -19,7 +19,6 @@ target 'HomeCare' do
   pod 'MGSwipeTableCell'
   pod "SwiftChart"
   pod 'ActionSheetPicker-3.0'
-  pod 'Floaty', '~> 4.0.0' # Use version 4.0.0 for Swift 4.0
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'DLRadioButton', '~> 1.4'
   pod 'IQKeyboardManagerSwift'

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#import "FIRMessaging.h"
+#import <FirebaseMessaging/FIRMessaging.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -137,6 +137,16 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return The new topic name with the "/topics/" prefix added.
  */
 + (NSString *)addPrefixToTopic:(NSString *)topic;
+
+/**
+ *  Removes the "/topics/" prefix from the topic.
+ *
+ *  @param topic The topic to remove the prefix from.
+ *
+ *  @return The new topic name with the "/topics/" prefix removed.
+ */
+
++ (NSString *)removePrefixFromTopic:(NSString *)topic;
 
 /**
  *  Check if the topic name has "/topics/" prefix.

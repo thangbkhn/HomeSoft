@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import RAMAnimatedTabBarController
+import FirebaseMessaging
 
 class HomeScreenViewController: UIViewController {
     @IBOutlet var imgAdvert: UIImageView!
